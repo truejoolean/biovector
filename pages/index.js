@@ -1,65 +1,35 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import JobListItem from '../components/jobListItem'
+import Layout from '../components/layout'
+import NavBar from '../components/navbar'
+import { getAllJobsData } from '../lib/jobs'
 
-export default function Home() {
+const siteTitle = "Biovector | Biotechnology Jobs Germany"
+
+export default function Home( { allJobsData }) {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+	<Layout>
+		<Head><title>{siteTitle}</title></Head>
+		<NavBar />
+		<div className="relative top-0 z-10 mx-auto max-w-screen-xl">
+			<img src="/images/lab.png" className="mx-auto"/>
+		</div>
+		<section className="jobsAndFilter max-w-screen-xl flex mx-auto justify-between">
+			<div className="bg-black w-3/12 h-32"></div>
+			<ul className="w-8/12">
+				{allJobsData.map(( { id, title, description } ) => <JobListItem id={id} title={title} description={description} />)}
+			</ul>
+		</section>
+	</Layout>
   )
+}
+
+export async function getStaticProps() {
+	const allJobsData = getAllJobsData()
+	return {
+		props: {
+			allJobsData
+		}
+	}
 }
