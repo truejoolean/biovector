@@ -6,15 +6,13 @@ import NavBar from '../components/navbar'
 import FilterSection from '../components/filterSection'
 import { getAllJobsData, getPosts } from '../lib/jobs'
 
-// const { PrismaClient } = require("@prisma/client")
-
 const siteTitle = "Biovector | Biotechnology Jobs Germany"
 
-function handleChange() {
-  console.log("New Filter activated.");
+function handleChangeGlobal() {
+  console.log("New Filter activated");
 }
 
-export default function Home( { allJobsData }) {
+export default function Home( { posts }) {
 	{/*
 	constructor(props) {
 		super(props);
@@ -41,10 +39,10 @@ export default function Home( { allJobsData }) {
 		*/}
 		<section className="jobsAndFilter max-w-screen-xl flex mx-auto justify-between">
 			<div className="border w-2/12">
-				<FilterSection handleChange={handleChange}/>
+				<FilterSection handleChangeIndex={handleChangeGlobal}/>
 			</div>
 			<ul className="w-9/12">
-				{allJobsData.map(( { id, title, description } ) => <JobListItem id={id} title={title} description={description} />)}
+				{posts.map(( { id, title, description } ) => <JobListItem id={id} title={title} description={description} />)}
 			</ul>
 		</section>
 	</Layout>
@@ -52,10 +50,19 @@ export default function Home( { allJobsData }) {
 }
 
 export async function getStaticProps() {
-	const allJobsData = getAllJobsData()
-	return {
-		props: {
-			allJobsData
-		}
-	}
+  const { db } = await connectToDatabase();
+
+  const listings = await db
+    .collection("listings")
+    .find({})
+    .limit(1000)
+    .toArray();
+
+  console.log(listings)
+
+  return {
+    props: {
+      listings: JSON.parse(JSON.stringify(listings)),
+    },
+  };
 }

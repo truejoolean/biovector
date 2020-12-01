@@ -1,4 +1,7 @@
+import { useState } from 'react'
+
 function handleChange(e) {
+
 {/*
 if (filterActivated) {
 		filterActivated = false;
@@ -8,10 +11,12 @@ if (filterActivated) {
 */}
 	
 	console.log(e.target.value)
-	
+
+
 }
 
-export default function Filter({ name }) {
+export default function Filter({ name, handleChange }) {
+	const myState = useState(0);
 	let filterActivated = false;
 	return (
 		<div className="flex items-center my-2">
