@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import Layout from '../../components/layout'
 import { connectToDatabase } from "../../util/mongodb";
-var ObjectId = require('mongodb').ObjectID;
+let ObjectId = require('mongodb').ObjectID;
+import cheerio from 'cheerio'
 
 export default function Post({ listing }) {
-	// console.log("listingData: ", listingData)
+	// const $ = cheerio.load(listing.content);
 	return (
 		<Layout>
 			<Head><title>Biovector | {listing.title}</title></Head>
@@ -23,7 +24,9 @@ export default function Post({ listing }) {
 			</section>
 			<br/>
 			<section className="max-w-screen-lg mx-auto text-gray-800">
-				<p className="text-gray-800">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum  Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
+				{/*<p className="text-gray-800">{listing.content}</p>*/}
+				<p dangerouslySetInnerHTML={{__html: listing.content}}></p>
+
 			</section>
 		</Layout>
 

@@ -13,7 +13,11 @@ export default function FilterSection( { handleChangeGlobal }) {
 		},
 		{
 			filterTitle: "type",
-			filterOptions: ["full time", "part time", "internship", "Thesis"]
+			filterOptions: ["full time", "part time", "internship", "thesis"]
+		},
+		{
+			filterTitle: "city",
+			filterOptions: ["muenchen", "heidelberg"]
 		}
 	]
 	return (

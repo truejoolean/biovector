@@ -44,7 +44,7 @@ export default function Home({ listings }) {
 				<FilterSection handleChangeIndex={handleChangeGlobal}/>
 			</div>
 			<ul className="w-9/12">
-				{listings.map(( { _id, title, description } ) => <JobListItem id={_id} title={title} description={description} />)}
+				{listings.map(( { _id, title, description, city, employer, type } ) => <JobListItem id={_id} title={title} description={description} city={city} employer={employer} type={type} />)}
 			</ul>
 		</section>
 	</Layout>
