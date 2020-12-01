@@ -1,11 +1,13 @@
+import Link from 'next/link'
 export default function NavBar() {
 	return (
 		<nav>
-
+		<Link href="/"><a>
 			<div className="relative bg-white h-16 text-xl opacity-40 z-30" />
 			<div className="absolute top-1 left-5 z-40">
 				<img src="/images/logo.png" className="w-60 z-40"/>
 			</div>
+		</a></Link>
 		</nav>
 	)
 }

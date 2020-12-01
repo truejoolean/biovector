@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
 export default function JobListItem( { id, title, description }) {
-	console.log("id: ", id);
 	return (
 		<Link href={"/posts/" + id}>
 		<a>

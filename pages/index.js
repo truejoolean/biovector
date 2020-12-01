@@ -28,7 +28,7 @@ export default function Home({ listings }) {
   return (
 	<Layout>
 		<Head><title>{siteTitle}</title></Head>
-		<NavBar />
+		
 		<div className="relative -top-20 z-10 mx-auto w-full">
 			<img src="/images/lab.png" className="mx-auto"/>
 		</div>
