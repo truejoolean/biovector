@@ -1,0 +1,14 @@
+{
+	title: "DEOXY Hardware Job",
+	content: "Wow this really is an amazing job"
+	employer: "", // this can either be startup, academia or industry
+	type: "" // this can either be full time, part time, internship, or thesis
+}
+
+{
+	title: "DEOXY Hardware Job",
+	content: "Wow this really is an amazing job"
+	employer: "", // this can either be startup, academia or industry
+	type: "", // this can either be full time, part time, internship, or thesis
+	city: "" // options: all German cities
+}

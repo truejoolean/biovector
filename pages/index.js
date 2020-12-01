@@ -1,10 +1,12 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import JobListItem from '../components/jobListItem'
 import Layout from '../components/layout'
 import NavBar from '../components/navbar'
 import FilterSection from '../components/filterSection'
-import { getAllJobsData, getPosts } from '../lib/jobs'
+// import { getAllJobsData, getPosts } from '../lib/jobs'
+import { connectToDatabase } from "../util/mongodb";
 
 const siteTitle = "Biovector | Biotechnology Jobs Germany"
 
@@ -12,7 +14,7 @@ function handleChangeGlobal() {
   console.log("New Filter activated");
 }
 
-export default function Home( { posts }) {
+export default function Home({ listings }) {
 	{/*
 	constructor(props) {
 		super(props);
@@ -42,7 +44,7 @@ export default function Home( { posts }) {
 				<FilterSection handleChangeIndex={handleChangeGlobal}/>
 			</div>
 			<ul className="w-9/12">
-				{posts.map(( { id, title, description } ) => <JobListItem id={id} title={title} description={description} />)}
+				{listings.map(( { id, title, description } ) => <JobListItem id={id} title={title} description={description} />)}
 			</ul>
 		</section>
 	</Layout>
@@ -52,13 +54,13 @@ export default function Home( { posts }) {
 export async function getStaticProps() {
   const { db } = await connectToDatabase();
 
-  const listings = await db
-    .collection("listings")
-    .find({})
-    .limit(1000)
-    .toArray();
+	const listings = await db
+		.collection("listings")
+		.find({})
+		.limit(1000)
+		.toArray();
 
-  console.log(listings)
+	console.log(listings)
 
   return {
     props: {
