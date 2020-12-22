@@ -6,7 +6,6 @@ import Layout from '../components/layout'
 import NavBar from '../components/navbar'
 import FilterSection from '../components/filterSection'
 // import { getAllJobsData, getPosts } from '../lib/jobs'
-import { connectToDatabase } from "../util/mongodb";
 
 const siteTitle = "Biovector | Biotechnology Jobs Germany"
 
@@ -44,13 +43,14 @@ export default function Home({ listings }) {
 				<FilterSection handleChangeIndex={handleChangeGlobal}/>
 			</div>
 			<ul className="w-9/12">
-				{listings.map(( { _id, title, description, city, employer, type } ) => <JobListItem id={_id} title={title} description={description} city={city} employer={employer} type={type} />)}
+				{/*{listings.map(( { _id, title, description, city, employer, type } ) => <JobListItem id={_id} title={title} description={description} city={city} employer={employer} type={type} />)}*/}
 			</ul>
 		</section>
 	</Layout>
   )
 }
 
+{/* 
 export async function getStaticProps() {
   const { db } = await connectToDatabase();
 
@@ -68,3 +68,4 @@ export async function getStaticProps() {
     },
   };
 }
+*/}
