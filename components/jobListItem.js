@@ -1,18 +1,21 @@
-import Link from 'next/link'
+import Link from 'next/link';
+import { getStrapiMedia } from "../lib/media";
 
-export default function JobListItem( { id, title, description, city, employer, type }) {
+export default function JobListItem( { listing } ) {
+	const imageUrl = getStrapiMedia(listing.image);
+
 	return (
-		<Link href={"/posts/" + id}>
+		<Link as={`/posts/${listing.slug}`} href="/posts/[id]">
 			<a>
 				<li className="w-full h-28 flex bg-white hover:shadow-lg mb-5 duration-300">
 					<div className="content flex my-auto ml-12">
-						<img src="/images/profile.jpg" className="h-16"/>
+						<img src={imageUrl} className="h-16"/>
 						<div className="ml-8 my-auto text-2xl">
 							<div>
-								{title}
+								{listing.title}
 							</div>
 							<div className="text-base text-gray-400">
-								{city} · {employer} · {type}
+								{listing.state} · {listing.city} · {listing.employerType}
 							</div>
 						</div>
 					</div>

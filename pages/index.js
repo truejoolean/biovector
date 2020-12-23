@@ -5,13 +5,11 @@ import JobListItem from '../components/jobListItem'
 import Layout from '../components/layout'
 import NavBar from '../components/navbar'
 import FilterSection from '../components/filterSection'
+import { fetchAPI } from "../lib/api";
+
 // import { getAllJobsData, getPosts } from '../lib/jobs'
 
 const siteTitle = "Biovector | Biotechnology Jobs Germany"
-
-function handleChangeGlobal() {
-  console.log("New Filter activated");
-}
 
 export default function Home({ listings }) {
 	{/*
@@ -24,11 +22,12 @@ export default function Home({ listings }) {
 		console.log("handle Change called in index.js! this keyword: " + this);
 	}*/}
 
+	console.log(listings)
   return (
 	<Layout>
 		<Head><title>{siteTitle}</title></Head>
 		
-		<div className="relative -top-20 z-10 mx-auto w-full">
+		<div className="w-full">
 			<img src="/images/lab.png" className="mx-auto"/>
 		</div>
 		{/*
@@ -38,34 +37,28 @@ export default function Home({ listings }) {
 				<span className="slogantext">Biovector.</span>
 		</div>
 		*/}
-		<section className="jobsAndFilter max-w-screen-xl flex mx-auto justify-between">
+		<section className="jobsAndFilter max-w-screen-xl flex mx-auto justify-between mt-16">
 			<div className="border w-2/12">
 				<FilterSection handleChangeIndex={handleChangeGlobal}/>
 			</div>
 			<ul className="w-9/12">
-				{/*{listings.map(( { _id, title, description, city, employer, type } ) => <JobListItem id={_id} title={title} description={description} city={city} employer={employer} type={type} />)}*/}
+				{listings.map((listing, i) => <JobListItem listing = {listing} />)}
 			</ul>
 		</section>
 	</Layout>
   )
 }
 
-{/* 
 export async function getStaticProps() {
-  const { db } = await connectToDatabase();
-
-	const listings = await db
-		.collection("listings")
-		.find({})
-		.limit(1000)
-		.toArray();
-
-	console.log(listings)
+  // Run API calls in parallel
+  const [listings, categories, homepage] = await Promise.all([
+    fetchAPI("/articles?status=published"), // articles are now called listings
+    fetchAPI("/categories"),
+    fetchAPI("/homepage"),
+  ]);
 
   return {
-    props: {
-      listings: JSON.parse(JSON.stringify(listings)),
-    },
+    props: { listings, categories, homepage },
+    revalidate: 1,
   };
 }
-*/}
