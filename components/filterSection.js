@@ -1,11 +1,6 @@
 import Filter from './filter'
 
-function sectionFilter(handleChangeGlobal) {
-	console.log("function sectionFilter in filterSection called")
-	handleChangeGlobal();
-}
-
-export default function FilterSection( { handleChangeGlobal }) {
+export default function FilterSection( { filterHandler }) {
 	let filters = [
 		{
 			filterTitle: "employer",
@@ -26,7 +21,7 @@ export default function FilterSection( { handleChangeGlobal }) {
 				return (
 					<div>
 						<h1 className="text-2xl">{filterTitle.charAt(0).toUpperCase() + filterTitle.slice(1)}</h1>
-						{filterOptions.map( (filterOption) => <Filter name={filterOption} handleChange={sectionFilter}/>)}
+						{filterOptions.map( (filterOption) => <Filter name={filterOption} filterHandler = {filterHandler}/>)}
 					</div>	
 				)
 			})}

@@ -6,12 +6,14 @@ import Layout from '../components/layout'
 import NavBar from '../components/navbar'
 import FilterSection from '../components/filterSection'
 import { fetchAPI } from "../lib/api";
+import React, { useState } from 'react';
 
 // import { getAllJobsData, getPosts } from '../lib/jobs'
 
 const siteTitle = "Biovector | Biotechnology Jobs Germany"
 
 export default function Home({ listings }) {
+	// const [filters, setFilters] = useState(0);
 	{/*
 	constructor(props) {
 		super(props);
@@ -21,6 +23,19 @@ export default function Home({ listings }) {
 	function handleChange() {
 		console.log("handle Change called in index.js! this keyword: " + this);
 	}*/}
+
+	let filters = []
+
+	function filterHandler(newFilter) {
+		console.log("filterHandler called in index.js");
+		if (filters.includes(newFilter)) {
+			filters = filters.filter(e => e !== newFilter)
+		} else {
+			console.log("pushing in new filter: " + newFilter)
+			filters.push(newFilter)
+		}
+		console.log("New Filters: ", filters);
+	}
 
 	console.log(listings)
   return (
@@ -39,7 +54,7 @@ export default function Home({ listings }) {
 		*/}
 		<section className="jobsAndFilter max-w-screen-xl flex mx-auto justify-between mt-16">
 			<div className="border w-2/12">
-				<FilterSection handleChangeIndex={handleChangeGlobal}/>
+				<FilterSection filterHandler={filterHandler}/>
 			</div>
 			<ul className="w-9/12">
 				{listings.map((listing, i) => <JobListItem listing = {listing} />)}
