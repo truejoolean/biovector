@@ -1,7 +1,7 @@
 import Filter from './filter'
 
 export default function FilterSection( { filterHandler }) {
-	let filters = [
+	const filtersToRender = [
 		{
 			filterTitle: "employer",
 			filterOptions: ["startup", "academia", "corporate"]
@@ -17,7 +17,7 @@ export default function FilterSection( { filterHandler }) {
 	]
 	return (
 		<div>
-			{filters.map( ({ filterTitle, filterOptions }) => {
+			{filtersToRender.map( ({ filterTitle, filterOptions }) => {
 				return (
 					<div>
 						<h1 className="text-2xl">{filterTitle.charAt(0).toUpperCase() + filterTitle.slice(1)}</h1>

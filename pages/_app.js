@@ -13,6 +13,20 @@ import { fetchAPI } from "../lib/api";
 export const GlobalContext = createContext({});
 
 const MyApp = ({ Component, pageProps }) => {
+  let activeFilters = [
+    {
+      filterTitle: "employer",
+      filterOptions: ["startup", "academia", "corporate"]
+    },
+    {
+      filterTitle: "type",
+      filterOptions: ["full time", "part time", "internship", "thesis"]
+    },
+    {
+      filterTitle: "city",
+      filterOptions: ["muenchen", "heidelberg"]
+    }
+  ]
   const { global } = pageProps;
 
   return (
@@ -31,7 +45,7 @@ const MyApp = ({ Component, pageProps }) => {
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.js" />
       </Head>
-      <GlobalContext.Provider value={global}>
+      <GlobalContext.Provider value={{global: global, activeFilters: activeFilters}}>
         <Component {...pageProps} />
       </GlobalContext.Provider>
     </>
@@ -43,6 +57,8 @@ const MyApp = ({ Component, pageProps }) => {
 // Hopefully we can replace this with getStaticProps once this issue is fixed:
 // https://github.com/vercel/next.js/discussions/10949
 MyApp.getInitialProps = async (ctx) => {
+
+  
   // Calls page's `getInitialProps` and fills `appProps.pageProps`
   const appProps = await App.getInitialProps(ctx);
   // Fetch global site settings from Strapi

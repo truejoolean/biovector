@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useContext } from 'react';
+import GlobalContext from '../pages/_app.js'
 
 function handleChange(e) {
 
@@ -16,6 +17,9 @@ if (filterActivated) {
 }
 
 export default function Filter({ name, filterHandler }) {
+	// const { activeFilters } = useContext(GlobalContext);
+
+	
 	function changeHandler(e) {
 		console.log(e.target.value);
 		filterHandler(e.target.value);
