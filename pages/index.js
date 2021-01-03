@@ -13,6 +13,7 @@ import React, { useState, useReducer } from 'react';
 const siteTitle = "Biovector | Biotechnology Jobs Germany"
 
 const filterInitState = {
+	search: '',
 	city: 'blank',
 	state: 'blank',
 	extra: ['thesis', 'full vacancy', 'working student', 'internship'],
@@ -38,6 +39,14 @@ const filterReducer = (state, { payload, actionType }) => {
 				...state,
 				[filterTitle]: prop
 			};
+		}
+
+		case 'SEARCHBAR_SET_FILTER': {
+			const { value } = payload.value;
+			return {
+				...state,
+				search: value
+			}
 		}
 
 		case 'RESET_FILTER': {
@@ -76,6 +85,7 @@ export default function Home({ listings }) {
 					.filter(({ employerType }) => filterState.employerType.includes(employerType))
 					// .filter(({ city }) => filterState.city === city)
 					.filter(({ city }) => filterState.city === 'blank' ? filterState : filterState.city === city)
+					.filter(({ search }) => filterState.search === '' ? filterState : filterState.title.includes(search))
 					.map((listing, i) => <JobListItem listing={listing} />)}
 			</ul>
 		</section>

@@ -34,6 +34,15 @@ export default function FilterSection({ filterState, filterDispatch }) {
 		});
 	}
 
+	function searchFilter(e) {
+		console.log(e.target.value);
+		filterDispatch({
+			payload: {
+				prop: e.target.value
+			}
+		})
+	}
+
 	function disableFilter(filterTitle) {
 		console.log("disabling filter: " + filterTitle )
 		if (filterTitle === 'location') { // location needs to disable two filters
@@ -49,7 +58,7 @@ export default function FilterSection({ filterState, filterDispatch }) {
 				},
 				actionType: 'RESET_FILTER'
 			})
-			return;
+			return; // no need for further un-filtering
 		}
 		filterDispatch({
 			payload: {filterTitle},
@@ -60,11 +69,11 @@ export default function FilterSection({ filterState, filterDispatch }) {
 	return (
 		<div>
 			<div className="mb-4">
-				<input type="text" placeholder="Anything specific?" className="w-full p-2 border-gray-500 border-b-2"/>
+				<input type="text" placeholder="Anything specific?" className="w-full p-2 border-gray-500 border-b-2" onChange={searchFilter}/>
 			</div>
 			<div className="flex justify-between">
 				<div className="">
-					<div className="flex items-center justify-between"><h1 className="text-2xl">Location</h1><span className="underline text-sm" onClick={() => disableFilter('location')}>reset filter</span></div>
+					<div className="flex items-center justify-between"><h1 className="text-2xl">Location</h1><span className="cursor-pointer underline text-sm" onClick={() => disableFilter('location')}>reset filter</span></div>
 						<div className="flex flex-col content-around">
 							<select name="city" id="city" className="w-52 p-2" onChange={dropdownHandler}>
 								<option value="blank">Any city...</option>
@@ -87,7 +96,7 @@ export default function FilterSection({ filterState, filterDispatch }) {
 						<div className="mr-16">
 							<div className="flex items-center justify-between">
 								<h1 className="text-2xl">{filterTitle.charAt(0).toUpperCase() + filterTitle.slice(1)}</h1>
-								<span className="underline text-sm" onClick={() => disableFilter(filterTitle)}>reset filter</span>
+								<span className="cursor-pointer underline text-sm" onClick={() => disableFilter(filterTitle)}>reset filter</span>
 							</div>
 								{filterOptions.map((filterOption) =>
 									<Filter name={filterOption} checked={filterState[filterTitle]?.includes(filterOption)} changeHandler={(args) => changeHandler({ ...args, filterTitle })} />)}
