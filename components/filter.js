@@ -1,35 +1,13 @@
 import { useContext } from 'react';
 import GlobalContext from '../pages/_app.js'
 
-function handleChange(e) {
-
-{/*
-if (filterActivated) {
-		filterActivated = false;
-	} else {
-		filterActivated = true;
-	}
-*/}
-	
-	console.log(e.target.value)
-
-
-}
-
-export default function Filter({ name, filterHandler }) {
-	// const { activeFilters } = useContext(GlobalContext);
-
-	
-	function changeHandler(e) {
-		console.log(e.target.value);
-		filterHandler(e.target.value);
-	}
-	let filterActivated = false;
+export default function Filter({ name, checked, changeHandler }) {
 	return (
 		<div className="flex items-center my-2">
-			<input type="checkbox" value={name} name={name} id={name} onChange={changeHandler}/>
-			<label for={name} className={filterActivated ? "text-3xl" : "ml-1"}>
-				{name.charAt(0).toUpperCase() + name.slice(1)}
+			<label for={name} className={"ml-1"}>
+				<input type="checkbox" checked={checked} name={name} id={name} onChange={e =>
+					changeHandler({ value: e.currentTarget.checked, prop: name })} />
+					{name.charAt(0).toUpperCase() + name.slice(1)}
 			</label>
 		</div>
 	)
