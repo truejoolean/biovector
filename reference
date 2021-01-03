@@ -1,0 +1,24 @@
+Location // Stadtstaaten zu City, alle auf Deutsch
+	City
+		Hamburg
+		Muenchen
+		Heidelberg
+	State
+		Bayern
+		Baden-Wuerttemberg
+
+Extra // "only" button?
+	Thesis
+	Full vacancy
+	Working student
+	Internship
+
+Employer
+	Startup
+	Academia
+	Corporate
+	// Consulting?
+
+Necessary Languages // welche Sprache muss der Bewerber sprechen können
+	German
+	English
