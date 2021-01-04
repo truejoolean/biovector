@@ -64,6 +64,7 @@ const filterReducer = (state, { payload, actionType }) => {
 
 export default function Home({ listings }) {
 	const [filterState, filterDispatch] = useReducer(filterReducer, filterInitState);
+	console.log("listings", listings)
 
   return (
 	<Layout bg="bg-gray-100">
@@ -80,11 +81,11 @@ export default function Home({ listings }) {
 				<FilterSection filterState={filterState} filterDispatch={filterDispatch} />
 			</div>
 			<ul className="w-full mt-4">
-			{console.log(listings[0].city)}
+			{console.log("companyCity: " + listings[0].companyCity)}
 				{listings
 					.filter(({ employerType }) => filterState.employerType.includes(employerType))
 					// .filter(({ city }) => filterState.city === city)
-					.filter(({ city }) => filterState.city === 'blank' ? filterState : filterState.city === city)
+					.filter(({ companyCity }) => filterState.city === 'blank' ? filterState : filterState.city === companyCity)
 					.filter(({ search }) => filterState.search === '' ? filterState : filterState.title.includes(search))
 					.map((listing, i) => <JobListItem listing={listing} />)}
 			</ul>

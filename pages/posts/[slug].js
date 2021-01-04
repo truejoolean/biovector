@@ -10,13 +10,39 @@ import Head from 'next/head';
 // import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-
 export default function Post({ listing }) {
+  const structuredData = {
+    "@context": "https://schema.org/",
+    "@†ype": "JobPosting",
+    "title": listing.title,
+    "description": listing.content,
+    "datePosted": listing.publishedAt, // todo: check if correct format
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": listing.companyName,
+      "logo": "http://localhost:3000" + listing.image.formats.thumbnail.url,
+      "sameAs": "http://biovector.de" // todo
+    },
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": listing.companyStreet,
+        "addressLocality": listing.companyCity,
+        "addressRegion": listing.companyState,
+        "postalCode": listing.companyPostalCode,
+        "addressCountry": "de"
+      }
+    }
+  }
   const imageUrl = getStrapiMedia(listing.image);
-  // const $ = cheerio.load(listing.content);
+
   return (
     <Layout>
-      <Head><title>Biovector | {listing.title}</title></Head>
+      <Head>
+        <title>Biovector | {listing.title}</title>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}/>
+      </Head>
       <section class="max-w-screen-lg flex mx-auto">
       {/*<div onClick={() => Router.back()}>--Go back</div> */}
         <div class="header mt-8 flex items-center">
