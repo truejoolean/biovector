@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import ReactMarkdown from "react-markdown";
 import Moment from "react-moment";
 import { fetchAPI } from "../../lib/api";
@@ -6,11 +7,18 @@ import Image from "../../components/image";
 import { getStrapiMedia } from "../../lib/media";
 import Router from 'next/router';
 import Head from 'next/head';
+
+import { Document, Page, pdfjs } from 'react-pdf';
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 // import { ReactElement } from 'react';
 // import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+
 export default function Post({ listing }) {
+  console.log(listing)
+  console.log("http://localhost:1337" + listing.pdfFile.url)
+  console.log("http://localhost:1337" + listing.image.formats.thumbnail.url)
   const structuredData = {
     "@context": "https://schema.org/",
     "@†ype": "JobPosting",
@@ -20,7 +28,7 @@ export default function Post({ listing }) {
     "hiringOrganization": {
       "@type": "Organization",
       "name": listing.companyName,
-      "logo": "http://localhost:3000" + listing.image.formats.thumbnail.url,
+      "logo": "http://localhost:1337" + listing.image.formats.thumbnail.url,
       "sameAs": "http://biovector.de" // todo
     },
     "jobLocation": {
@@ -36,6 +44,13 @@ export default function Post({ listing }) {
     }
   }
   const imageUrl = getStrapiMedia(listing.image);
+  const [numPages, setNumPages] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
+
+  function onDocumentLoadSuccess({ numPages }) {
+    console.log("TRIGGA")
+    setNumPages(numPages);
+  }
 
   return (
     <Layout>
@@ -60,26 +75,44 @@ export default function Post({ listing }) {
         </div>
       </section>
       <hr className="my-4 max-w-screen-lg mx-auto"/>
-      <section className="max-w-screen-md mx-auto text-gray-800">
+
         {/*<p className="text-gray-800">{listing.content}</p>*/}
-        <ReactMarkdown source={listing.content} escapeHtml={false} className="markdown"/>
+        {listing.usePdf ? (<div className="max-w-screen-lg mx-auto text-gray-800">
+          <Document
+            file={"http://localhost:1337" + listing.pdfFile.url}
+            onLoadSuccess={onDocumentLoadSuccess}
+            className="max-w-screen-lg"
+            >
+            {[1,2].map(page => (
+            <Page pageNumber={page} width={1000} />
+             ))}
+          </Document>
+          <hr /><hr className="mt-2" />
+        </div>)
+          : <section className="max-w-screen-md mx-auto text-gray-800"><ReactMarkdown source={listing.content} escapeHtml={false} className="markdown"/></section>
+        }
+        <section className="max-w-screen-md mx-auto text-gray-800">
         <div className="flex mt-6">
           <div className="w-1/2 border-l-4 pl-4">
             <h2 className="text-2xl">Kontakt</h2>
-            Dr. Peter Pan<br />
-            0152341248498<br />
-            peter@pan.de<br />
+            {listing.firstName} {listing.lastName}<br />
+            {listing.telephoneNumber}<br />
+            {listing.mail}<br />
           </div>
           <div className="w-1/2 border-l-4 pl-4">
             <h2 className="text-2xl">Location</h2>
-              Leibniz-Institut für Naturstoff-Forschung und Infektionsbiologie e. V.<br />Adolf-Reichwein-Straße 23<br />07745 Jena<br />Thüringen
-              <br />Deutschland
-
+              {listing.companyName}<br />
+              {listing.companyStreet}<br />
+              {listing.companyPostalCode} {listing.companyCity.charAt(0).toUpperCase() + listing.companyCity.slice(1)}<br />
+              {listing.companyState.charAt(0).toUpperCase() + listing.companyState.slice(1)}
           </div>
         </div>
-        <button className="mt-4 w-full h-28 bg-blue-700 rounded items-center flex justify-center hover:bg-blue-800">
-          <h1 className="text-4xl text-white text-center">Bewerbung</h1>
-        </button>
+        <div className="h-20 w-full" />
+        <div className="fixed left-0 bottom-0 w-full h-16 border-t-2 bg-white">
+          <div className="flex justify-end">
+            <button className="p-2 my-2 mr-8 text-white bg-blue-700">Apply now</button>
+          </div>
+        </div>
       </section>
     </Layout>
 
