@@ -91,6 +91,7 @@ export default function Post({ listing }) {
         </div>)
           : <section className="max-w-screen-md mx-auto text-gray-800"><ReactMarkdown source={listing.content} escapeHtml={false} className="markdown"/></section>
         }
+
         <section className="max-w-screen-md mx-auto text-gray-800">
         <div className="flex mt-6">
           <div className="w-1/2 border-l-4 pl-4">

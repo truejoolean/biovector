@@ -93,9 +93,6 @@ export default function Home({ listings }) {
 					.map((listing, i) => <JobListItem listing={listing} />)}
 			</ul>
 		</section>
-		<section>
-			Footer
-		</section>
 	</Layout>
   )
 }
