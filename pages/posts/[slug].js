@@ -40,8 +40,9 @@ export default function Post({ listing }) {
   return (
     <Layout>
       <Head>
-        <title>Biovector | {listing.title}</title>
+        <title>{listing.title} | Biovector</title>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}/>
+        <meta name="description" content={listing.description} />
       </Head>
       <section class="max-w-screen-lg flex mx-auto">
       {/*<div onClick={() => Router.back()}>--Go back</div> */}

@@ -68,11 +68,14 @@ export default function Home({ listings }) {
 
   return (
 	<Layout bg="bg-gray-100">
-		<Head><title>{siteTitle}</title></Head>
+		<Head>
+			<title>{siteTitle}</title>
+			<meta name="description" content="The Biovector lists biotechnology jobs and vacancies and thus connects employees and employers in this nascent field." />
+		</Head>
 
 		<div style={{ backgroundImage: 'url(/images/lab.png)', backgroundPosition: 'center' }}>
 			<div className="mx-auto max-w-screen-lg py-32">
-				<h1 className="text-5xl font-semibold inline-block p-2" style={{ background: 'rgba(255,255,255,.9)' }}>Find Germany's most exciting jobs in Biotech.</h1>
+				<h1 className="text-5xl font-semibold inline-block p-2" style={{ background: 'rgba(255,255,255,.9)' }}>Find Germany's most exciting jobs in Biotechnology.</h1>
 			</div>
 		</div>
 
