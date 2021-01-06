@@ -7,10 +7,6 @@
                       </url>
                   
                       <url>
-                          <loc>https://biovector.de/dbtest</loc>
-                      </url>
-                  
-                      <url>
                           <loc>https://biovector.de/findTalent</loc>
                       </url>
                   
@@ -20,6 +16,10 @@
                   
                       <url>
                           <loc>https://biovector.de/legal-disclosure</loc>
+                      </url>
+                  
+                      <url>
+                          <loc>https://biovector.de/test</loc>
                       </url>
                   
                       <url>

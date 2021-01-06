@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "npm run build && next export -o _static"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
@@ -20,7 +21,7 @@
     "jsdom": "^16.4.0",
     "moment": "^2.29.1",
     "mongodb": "^3.6.3",
-    "next": "10.0.2",
+    "next": "^10.0.2",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^6.7.0",
     "react": "17.0.1",

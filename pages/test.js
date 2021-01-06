@@ -3,8 +3,7 @@
 export default function Test() {
 	return (
 		<div>
-			<button onClick={showModal} />
-			<Modal />
+			<button />
 		</div>
   )
 }
