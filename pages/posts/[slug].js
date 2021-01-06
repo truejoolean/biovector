@@ -4,6 +4,7 @@ import Moment from "react-moment";
 import { fetchAPI } from "../../lib/api";
 import Layout from "../../components/layout";
 import Image from "../../components/image";
+// import Modal from "../../components/modal"
 import { getStrapiMedia } from "../../lib/media";
 import Router from 'next/router';
 import Head from 'next/head';
@@ -14,11 +15,24 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 // import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+let show = false;
 
 export default function Post({ listing }) {
+  // function showModal() {
+  //   console.log('showModal called')
+  //   show = true;
+  //   console.log("show is now: ", show)
+  // }
+  // function hideModal() {
+  //   console.log("hideModal called")
+  //   show = false;
+  // }
+
+  // showModal = showModal.bind(this)
+
   console.log(listing)
-  console.log("http://localhost:1337" + listing.pdfFile.url)
-  console.log("http://localhost:1337" + listing.image.formats.thumbnail.url)
+  // console.log("http://localhost:1337" + listing.pdfFile.url)
+  // console.log("http://localhost:1337" + listing.image.formats.thumbnail.url)
   const structuredData = {
     "@context": "https://schema.org/",
     "@†ype": "JobPosting",
@@ -53,14 +67,15 @@ export default function Post({ listing }) {
   }
 
   return (
-    <Layout>
+    <Layout footer={false}>
       <Head>
         <title>{listing.title} | Biovector</title>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}/>
         <meta name="description" content={listing.description} />
       </Head>
       <section class="max-w-screen-lg flex mx-auto">
-      {/*<div onClick={() => Router.back()}>--Go back</div> */}
+      <div className="absolute" onClick={() => Router.back()}><img src="/images/icons/icon_back.svg" /></div>
+
         <div class="header mt-8 flex items-center">
           <div>
             <img src={getStrapiMedia(listing.image)} className="w-32"/>
@@ -108,12 +123,15 @@ export default function Post({ listing }) {
               {listing.companyState.charAt(0).toUpperCase() + listing.companyState.slice(1)}
           </div>
         </div>
-        <div className="h-20 w-full" />
+        {/*<Modal show={show} handleClose={hideModal}><p>Modal</p></Modal>*/}
         <div className="fixed left-0 bottom-0 w-full h-16 border-t-2 bg-white">
           <div className="flex justify-end">
-            <button className="p-2 my-2 mr-8 text-white bg-blue-700">Apply now</button>
+            <button
+            // onClick={showModal}
+            className="p-2 my-2 mr-8 text-white bg-blue-700">Apply now</button>
           </div>
         </div>
+        <div className="h-20 w-full" />
       </section>
     </Layout>
 

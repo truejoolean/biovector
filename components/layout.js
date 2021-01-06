@@ -2,12 +2,14 @@ import NavBar from './navbar'
 import Footer from './footer'
 
 
-export default function Layout({ children, bg }) {
+export default function Layout({ children, bg, footer }) {
 	return(
 		<div className={bg}>
 			<NavBar />
 			{children}
-			<Footer />
+			{footer
+				? <Footer />
+				: <div/>}
 		</div>
 	)
 }

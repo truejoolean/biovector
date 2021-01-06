@@ -67,7 +67,7 @@ export default function Home({ listings }) {
 	console.log("listings", listings)
 
   return (
-	<Layout bg="bg-gray-100">
+	<Layout bg="bg-gray-100" footer={true}>
 		<Head>
 			<title>{siteTitle}</title>
 			<meta name="description" content="The Biovector lists biotechnology jobs and vacancies and thus connects employees and employers in this nascent field." />
