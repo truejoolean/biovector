@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/layout'
-import NavBar from '../components/navbar'
+import NavBar from '../components/navBar'
 
 import { ReactElement } from 'react';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';

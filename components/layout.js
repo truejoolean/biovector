@@ -1,4 +1,4 @@
-import NavBar from './navbar'
+import NavBar from './navBar'
 import Footer from './footer'
 
 
