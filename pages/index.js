@@ -3,7 +3,6 @@ import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import JobListItem from '../components/jobListItem'
 import Layout from '../components/layout'
-import NavBar from '../components/navBar'
 import FilterSection from '../components/filterSection'
 import { fetchAPI } from "../lib/api";
 import React, { useState, useReducer } from 'react';

@@ -1,4 +1,4 @@
-import NavBar from './navbar'
+import NavigationBar from './navigationBar'
 import Link from 'next/link'
 
 export default function Footer() {

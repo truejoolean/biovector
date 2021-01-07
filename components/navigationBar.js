@@ -10,7 +10,7 @@ import Link from 'next/link'
 	)
 } */
 
-export default function NavBar() {
+export default function NavigationBar() {
 	return(
 		<div />
 	)
