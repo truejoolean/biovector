@@ -32,7 +32,7 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <link rel="shortcut icon" href={getStrapiMedia(global.favicon)} />
+        {/* <link rel="shortcut icon" href={getStrapiMedia(global.favicon)} /> */}
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Staatliches"
@@ -56,15 +56,17 @@ const MyApp = ({ Component, pageProps }) => {
 // have getStaticProps. So article, category and home pages still get SSG.
 // Hopefully we can replace this with getStaticProps once this issue is fixed:
 // https://github.com/vercel/next.js/discussions/10949
-MyApp.getInitialProps = async (ctx) => {
 
-  
+
+MyApp.getInitialProps = async (ctx) => {
   // Calls page's `getInitialProps` and fills `appProps.pageProps`
   const appProps = await App.getInitialProps(ctx);
   // Fetch global site settings from Strapi
   const global = await fetchAPI("/global");
   // Pass the data to our page via props
+  // console.log("global: ", global)
   return { ...appProps, pageProps: { global } };
 };
+
 
 export default MyApp;

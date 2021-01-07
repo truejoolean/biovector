@@ -63,7 +63,7 @@ const filterReducer = (state, { payload, actionType }) => {
 
 export default function Home({ listings }) {
 	const [filterState, filterDispatch] = useReducer(filterReducer, filterInitState);
-	console.log("listings", listings)
+	console.log("listings HOME HOMEBOY", listings)
 
   return (
 	<Layout bg="bg-gray-100" footer={true}>
@@ -85,10 +85,9 @@ export default function Home({ listings }) {
 			<ul className="w-full mt-4">
 			{console.log("companyCity: " + listings[0].companyCity)}
 				{listings
-					.filter(({ employerType }) => filterState.employerType.includes(employerType))
-					// .filter(({ city }) => filterState.city === city)
-					.filter(({ companyCity }) => filterState.city === 'blank' ? filterState : filterState.city === companyCity)
-					.filter(({ search }) => filterState.search === '' ? filterState : filterState.title.includes(search))
+					// .filter(({ employerType }) => filterState.employerType.includes(employerType))
+					// .filter(({ companyCity }) => filterState.city === 'blank' ? filterState : filterState.city === companyCity)
+					// .filter(({ search }) => filterState.search === '' ? filterState : filterState.title.includes(search))
 					.map((listing, i) => <JobListItem listing={listing} />)}
 			</ul>
 		</section>
@@ -98,14 +97,14 @@ export default function Home({ listings }) {
 
 export async function getStaticProps() {
   // Run API calls in parallel
-  const [listings, categories, homepage] = await Promise.all([
-    fetchAPI("/articles?status=published"), // articles are now called listings
-    fetchAPI("/categories"),
-    fetchAPI("/homepage"),
+  const listingsAsArray = await Promise.all([
+    fetchAPI("/articles?status=published") // articles are now called listings
   ]);
+  const listings = listingsAsArray[0]
+  // console.log(listings)
 
   return {
-    props: { listings, categories, homepage },
+    props: { listings },
     revalidate: 1,
   };
 }
