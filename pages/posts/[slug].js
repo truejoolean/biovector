@@ -18,7 +18,6 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 let show = false;
 
 export default function Post({ listing }) {
-  console.log("process.env.STRAPI_URL: ", process.env.NEXT_PUBLIC_STRAPI_API_URL)
   // function showModal() {
   //   console.log('showModal called')
   //   show = true;
