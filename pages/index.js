@@ -105,6 +105,6 @@ export async function getStaticProps() {
 
   return {
     props: { listings },
-    revalidate: 1,
+    // revalidate: 10,
   };
 }
