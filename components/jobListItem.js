@@ -12,7 +12,7 @@ export default function JobListItem( { listing } ) {
 			<a>
 				<li className="w-full h-36 flex bg-white hover:shadow-lg duration-300 mb-5">
 					<div className="content flex my-auto ml-12">
-						<img src={imageUrl} className="w-32 py-2"/>
+						<img src={imageUrl} className="h-32 w-32 py-2"/>
 						{/*<img src={require("/uploads/hki_bcd123e80a.jpg")} />*/}
 						{/*<img src={require("" + listing.image.url)} />*/}
 						{/* <Image src="http://localhost:1337/uploads/hki_bcd123e80a.jpg" laoyut="fill"/>*/}
