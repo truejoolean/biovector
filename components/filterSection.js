@@ -4,17 +4,17 @@ import { fetchAPI } from "../lib/api";
 
 const filtersToRender = [
 	{
-		filterTitle: "extra",
-		filterOptions: ["thesis", "fullVacancy", "workingStudent", "internship"]
-	},
-	{
 		filterTitle: "employerType",
 		filterOptions: ["startup", "academia", "corporate", "consulting"]
 	},
 	{
-		filterTitle: "language",
-		filterOptions: ["german", "english"]
-	}
+		filterTitle: "extra",
+		filterOptions: ["thesis", "fullVacancy", "workingStudent", "internship"]
+	},
+	// {
+	// 	filterTitle: "language",
+	// 	filterOptions: ["german", "english"]
+	// }
 ]
 
 export default function FilterSection({ filterState, filterDispatch, allCities, allStates }) {
@@ -41,7 +41,8 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 		filterDispatch({
 			payload: {
 				prop: e.target.value
-			}
+			},
+			actionType: 'SEARCHBAR_SET_FILTER'
 		})
 	}
 
@@ -71,7 +72,7 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 	return (
 		<div>
 			<div className="mb-4">
-				<input type="text" placeholder="Anything specific?" className="w-full p-2 border-gray-500 border-b-2" onChange={searchFilter}/>
+				<input type="text" value={filterState['search']} placeholder="Anything specific?" className="w-full p-2 border-gray-500 border-b-2" onChange={searchFilter}/>
 			</div>
 			<div className="flex justify-between">
 				<div className="">

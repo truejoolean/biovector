@@ -8,6 +8,7 @@ import Image from "../../components/image";
 import { getStrapiMedia } from "../../lib/media";
 import Router from 'next/router';
 import Head from 'next/head';
+import Link from 'next/link';
 
 import { Document, Page, pdfjs } from 'react-pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -126,9 +127,17 @@ export default function Post({ listing }) {
         {/*<Modal show={show} handleClose={hideModal}><p>Modal</p></Modal>*/}
         <div className="fixed left-0 bottom-0 w-full h-16 border-t-2 bg-white">
           <div className="flex justify-end">
-            <button
-            // onClick={showModal}
-            className="p-2 my-2 mr-8 text-white bg-blue-700">Apply now</button>
+          {console.log(listing.redirectTo)}
+          {
+            listing.redirectForApplication ?
+              <Link href={listing.redirectTo ? listing.redirectTo : "https://biovector.de"}><a><button
+              // onClick={showModal}
+              className="p-2 my-2 mr-8 text-white bg-blue-700">Apply now</button>
+              </a></Link>
+              : <button
+              // onClick={showModal}
+              className="p-2 my-2 mr-8 text-white bg-blue-700">Apply now</button>
+          }
           </div>
         </div>
         <div className="h-20 w-full" />

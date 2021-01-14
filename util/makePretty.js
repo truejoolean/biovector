@@ -1,14 +1,15 @@
 export const prettify = (s) => {
+	s = s.toLowerCase()
 	let map = {
-		'employerType': 'Employer Type',
-		'workingStudent': "Working student",
-		'fullVacancy': 'Full vacancy',
+		'employertype': 'Employer Type',
+		'workingstudent': "Working student",
+		'fullvacancy': 'Full vacancy',
 		'internship': 'Internship',
 
-		'badenWuerttemberg': 'Baden-Wuerttemberg'
+		'badenwuerttemberg': 'Baden-Wuerttemberg'
 	}
 
 	if (map[s] !== undefined) return map[s];
-	else return s.charAt(0).toUpperCase() + s.slice(1)
+	else return s?.charAt(0).toUpperCase() + s?.slice(1)
 	// else return s;
 }

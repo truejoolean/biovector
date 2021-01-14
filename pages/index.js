@@ -12,7 +12,7 @@ import React, { useState, useReducer } from 'react';
 const siteTitle = "Biovector | Biotechnology Jobs Germany"
 
 const filterInitState = {
-	search: '',
+	search: "",
 	city: 'blank',
 	state: 'blank',
 	extra: ['thesis', 'fullVacancy', 'workingStudent', 'internship'],
@@ -41,10 +41,10 @@ const filterReducer = (state, { payload, actionType }) => {
 		}
 
 		case 'SEARCHBAR_SET_FILTER': {
-			const { value } = payload.value;
+			const { prop } = payload.prop;
 			return {
 				...state,
-				search: value
+				search: prop
 			}
 		}
 
@@ -95,7 +95,8 @@ export default function Home({ listings, allCities, allStates }) {
 					.filter(({ employerType }) => filterState.employerType.includes(employerType))
 					.filter(({ companyCity }) => filterState.city === 'blank' ? filterState : filterState.city === companyCity)
 					.filter(({ companyState }) => filterState.state === 'blank' ? filterState : filterState.state === companyState)
-					// .filter(({ search }) => filterState.search === '' ? filterState : filterState.title.includes(search))
+					// .filter(({ title }) => filterState.search === '' ? filterState : filterState.search.includes(title))
+					.filter(({ title }) => filterState.search === '' ? filterState : title.includes(filterState.search))
 					.map((listing, i) => <JobListItem listing={listing} />)}
 			</ul>
 		</section>
@@ -115,8 +116,8 @@ export async function getStaticProps() {
   let allStates = [];
 
   for (let i = 0; i < listings.length; i++) {
-  	if (!allCities.includes(listings[i].companyCity)) allCities.push(listings[i].companyCity);
-  	if (!allStates.includes(listings[i].companyState)) allStates.push(listings[i].companyState);
+  	if (!allCities.includes(listings[i].companyCity.toLowerCase())) allCities.push(listings[i].companyCity.toLowerCase());
+  	if (!allStates.includes(listings[i].companyState.toLowerCase() )) allStates.push(listings[i].companyState.toLowerCase());
   }
 
   return {
