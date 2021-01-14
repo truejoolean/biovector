@@ -36,8 +36,8 @@ export default function Post({ listing }) {
   // console.log("http://localhost:1337" + listing.pdfFile.url)
   // console.log("http://localhost:1337" + listing.image.formats.thumbnail.url)
   const structuredData = {
+    "@type": "JobPosting",
     "@context": "https://schema.org/",
-    "@†ype": "JobPosting",
     "title": listing.title,
     "description": listing.content,
     "datePosted": listing.publishedAt, // todo: check if correct format
@@ -76,7 +76,7 @@ export default function Post({ listing }) {
         <meta name="description" content={listing.description} />
       </Head>
       <section class="max-w-screen-lg flex mx-auto">
-      <div className="relative" onClick={() => Router.back()}><img src="/images/icons/icon_back.svg" /></div>
+      <div className="relative" onClick={() => Router.back()}><img src="/images/icons/left-arrow.svg" className="w-16 back-button"/></div>
 
         <div class="header mt-8 flex items-center">
           <div>
