@@ -44,7 +44,7 @@ export default function Post({ listing }) {
     "hiringOrganization": {
       "@type": "Organization",
       "name": listing.companyName,
-      "logo": "http://localhost:1337" + listing.image.formats.thumbnail.url,
+      "logo": "https://api.biovector.de" + listing.image.formats.thumbnail.url,
       "sameAs": "http://biovector.de" // todo
     },
     "jobLocation": {
@@ -96,7 +96,7 @@ export default function Post({ listing }) {
         {/*<p className="text-gray-800">{listing.content}</p>*/}
         {listing.usePdf ? (<div className="max-w-screen-lg mx-auto text-gray-800">
           <Document
-            file={"http://localhost:1337" + listing.pdfFile.url}
+            file={"https://api.biovector.de" + listing.pdfFile.url}
             onLoadSuccess={onDocumentLoadSuccess}
             className="max-w-screen-lg"
             >
