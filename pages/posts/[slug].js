@@ -154,9 +154,10 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const jobs = await fetchAPI(
-    `/jobs?slug=${params.slug}&status=published`
-  );
+    `/jobs?slug=${params.slug}`
+  ); // not exactly sure about &status=published
   // const categories = await fetchAPI("/categories");
+  console.log("jobs: ", jobs)
 
   return {
     props: { listing: jobs[0] },

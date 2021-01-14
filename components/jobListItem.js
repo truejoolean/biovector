@@ -21,7 +21,7 @@ export default function JobListItem( { listing } ) {
 								{listing.title}
 							</div>
 							<div className="text-base text-gray-400">
-								{listing.state} · {listing.city} · {listing.employerType}
+								{listing.companyState} · {listing.companyCity} · {listing.employerType}
 							</div>
 						</div>
 					</div>

@@ -1,9 +1,11 @@
 import Filter from './filter'
+import { prettify } from '../util/makePretty.js'
+import { fetchAPI } from "../lib/api";
 
 const filtersToRender = [
 	{
 		filterTitle: "extra",
-		filterOptions: ["thesis", "full vacancy", "working student", "internship"]
+		filterOptions: ["thesis", "fullVacancy", "workingStudent", "internship"]
 	},
 	{
 		filterTitle: "employerType",
@@ -15,7 +17,7 @@ const filtersToRender = [
 	}
 ]
 
-export default function FilterSection({ filterState, filterDispatch }) {
+export default function FilterSection({ filterState, filterDispatch, allCities, allStates }) {
 	const changeHandler = (payload) => {
 		console.log(payload);
 		filterDispatch({
@@ -77,16 +79,12 @@ export default function FilterSection({ filterState, filterDispatch }) {
 						<div className="flex flex-col content-around">
 							<select name="city" id="city" className="w-52 p-2" onChange={dropdownHandler}>
 								<option value="blank">Any city...</option>
-								<option value="muenchen">Muenchen</option>
-								<option value="heidelberg">Heidelberg</option>
-								<option value="jena">Jena</option>
+								{allCities.map((city) => <option value={city}>{prettify(city)}</option>)}
 							</select>
 							<p className="text-lg text-center font-bold">OR</p>
 							<select name="state" id="state" className="w-52 p-2" onChange={dropdownHandler}>
 								<option value="blank">Any state...</option>
-								<option value="bayern">Bayern</option>
-								<option value="brandenburg">Brandenburg</option>
-								<option value="baden-wuerttemberg">Baden-Wuerttemberg</option>
+								{allStates.map((state) => <option value={state}>{prettify(state)}</option>)}
 							</select>
 						</div>
 				</div>
@@ -95,7 +93,7 @@ export default function FilterSection({ filterState, filterDispatch }) {
 					return (
 						<div className="mr-16">
 							<div className="flex items-center justify-between">
-								<h1 className="text-2xl">{filterTitle.charAt(0).toUpperCase() + filterTitle.slice(1)}</h1>
+								<h1 className="text-2xl">{prettify(filterTitle)}</h1>
 								<span className="cursor-pointer underline text-sm" onClick={() => disableFilter(filterTitle)}>reset filter</span>
 							</div>
 								{filterOptions.map((filterOption) =>
@@ -107,4 +105,28 @@ export default function FilterSection({ filterState, filterDispatch }) {
 		</div>
 	)
 }
+// get all possible cities and all possible states
+// export async function getStaticProps() {
+// 	console.log("is this even running?")
+//   // Run API calls in parallel
+//   const listingsAsArray = await Promise.all([
+//     fetchAPI("/jobs") // articles are now called listings
+//   ]);
+//   const listings = listingsAsArray[0]
+//   console.log(listingsAsArray);
+
+//   let allCities = [];
+//   let allStates = [];
+
+//   for (let i = 0; i < listings.length; i++) {
+//   	allCities.push(listings[i].companyCity);
+//   	allStates.push(listings[i].companyState);
+//   }
+//   console.log("allCities in gsp: " , allCities)
+
+//   return {
+//     props: { allCities, allStates },
+//     // revalidate: 10,
+//   };
+// }
 

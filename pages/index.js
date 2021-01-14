@@ -15,7 +15,7 @@ const filterInitState = {
 	search: '',
 	city: 'blank',
 	state: 'blank',
-	extra: ['thesis', 'full vacancy', 'working student', 'internship'],
+	extra: ['thesis', 'fullVacancy', 'workingStudent', 'internship'],
 	employerType: ['corporate', 'startup', 'academia', 'consulting'],
 	language: ['german', 'english']
 }
@@ -55,15 +55,22 @@ const filterReducer = (state, { payload, actionType }) => {
 				[filterTitle]: filterInitState[filterTitle]
 			}
 		}
+		
+		// case 'RESET_FILTER': {
+		// 	let newPayload = {}
+		// 	filterReducer({ // or filterDispatch??
+
+		// 	}) 
+		// }
 
 		default:
 			return state;
 	}
 }
 
-export default function Home({ listings }) {
+export default function Home({ listings, allCities, allStates }) {
 	const [filterState, filterDispatch] = useReducer(filterReducer, filterInitState);
-	console.log("listings HOME HOMEBOY", listings)
+	console.log("allCities: ", allCities);
 
   return (
 	<Layout bg="bg-gray-100" footer={true}>
@@ -80,13 +87,14 @@ export default function Home({ listings }) {
 
 		<section className="jobsAndFilter max-w-screen-lg mx-auto mt-16">
 			<div className="w-full">
-				<FilterSection filterState={filterState} filterDispatch={filterDispatch} />
+				<FilterSection allCities={allCities} allStates={allStates} filterState={filterState} filterDispatch={filterDispatch} />
 			</div>
 			<ul className="w-full mt-4">
 			{console.log("companyCity: " + listings[0].companyCity)}
 				{listings
-					// .filter(({ employerType }) => filterState.employerType.includes(employerType))
-					// .filter(({ companyCity }) => filterState.city === 'blank' ? filterState : filterState.city === companyCity)
+					.filter(({ employerType }) => filterState.employerType.includes(employerType))
+					.filter(({ companyCity }) => filterState.city === 'blank' ? filterState : filterState.city === companyCity)
+					.filter(({ companyState }) => filterState.state === 'blank' ? filterState : filterState.state === companyState)
 					// .filter(({ search }) => filterState.search === '' ? filterState : filterState.title.includes(search))
 					.map((listing, i) => <JobListItem listing={listing} />)}
 			</ul>
@@ -101,10 +109,18 @@ export async function getStaticProps() {
     fetchAPI("/jobs") // articles are now called listings
   ]);
   const listings = listingsAsArray[0]
-  console.log(listingsAsArray)
+
+  // The filter section is rendered based on the available cities
+  let allCities = [];
+  let allStates = [];
+
+  for (let i = 0; i < listings.length; i++) {
+  	if (!allCities.includes(listings[i].companyCity)) allCities.push(listings[i].companyCity);
+  	if (!allStates.includes(listings[i].companyState)) allStates.push(listings[i].companyState);
+  }
 
   return {
-    props: { listings },
+    props: { listings, allCities, allStates },
     // revalidate: 10,
   };
 }

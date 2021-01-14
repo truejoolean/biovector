@@ -27,6 +27,7 @@ const MyApp = ({ Component, pageProps }) => {
       filterOptions: ["muenchen", "heidelberg"]
     }
   ]
+  
   const { global } = pageProps;
 
   return (
