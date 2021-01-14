@@ -9,6 +9,7 @@ import { getStrapiMedia } from "../../lib/media";
 import Router from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
+import { prettify } from '../../util/makePretty.js'
 
 import { Document, Page, pdfjs } from 'react-pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -75,18 +76,18 @@ export default function Post({ listing }) {
         <meta name="description" content={listing.description} />
       </Head>
       <section class="max-w-screen-lg flex mx-auto">
-      <div className="absolute" onClick={() => Router.back()}><img src="/images/icons/icon_back.svg" /></div>
+      <div className="relative" onClick={() => Router.back()}><img src="/images/icons/icon_back.svg" /></div>
 
         <div class="header mt-8 flex items-center">
           <div>
-            <img src={getStrapiMedia(listing.image)} className="w-32"/>
+            <img src={getStrapiMedia(listing.image)} className="w-60"/>
           </div>
           <div className="ml-8">
-          {listing.company}
+          {listing.companyName}
             <h1 className="text-4xl">
               {listing.title}
             </h1>
-            <p className="text-base text-gray-700">{listing.state} · {listing.employerType}</p>
+            <p className="text-base text-gray-700">{prettify(listing.companyState)} · {listing.employerType}</p>
           </div>
         </div>
       </section>

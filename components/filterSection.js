@@ -1,6 +1,6 @@
 import Filter from './filter'
 import { prettify } from '../util/makePretty.js'
-import { fetchAPI } from "../lib/api";
+// import { fetchAPI } from "../lib/api";
 
 const filtersToRender = [
 	{
