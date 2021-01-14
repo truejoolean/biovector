@@ -140,12 +140,12 @@ export default function Post({ listing }) {
 
 
 export async function getStaticPaths() {
-  const articles = await fetchAPI("/articles");
+  const jobs = await fetchAPI("/jobs");
 
   return {
-    paths: articles.map((article) => ({
+    paths: jobs.map((job) => ({
       params: {
-        slug: article.slug,
+        slug: job.slug,
       },
     })),
     fallback: false,
@@ -153,13 +153,13 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const articles = await fetchAPI(
-    `/articles?slug=${params.slug}&status=published`
+  const jobs = await fetchAPI(
+    `/jobs?slug=${params.slug}&status=published`
   );
-  const categories = await fetchAPI("/categories");
+  // const categories = await fetchAPI("/categories");
 
   return {
-    props: { listing: articles[0], categories },
+    props: { listing: jobs[0] },
     revalidate: 1,
   };
 }

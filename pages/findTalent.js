@@ -9,6 +9,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const siteTitle = "Biovector | Biotechnology Jobs Germany"
 
+const tile = "mx-auto hover:shadow-lg hover:bg-gray-100 duration-300"
+
 export default function FindTalent() {
 
   return (
@@ -28,7 +30,7 @@ export default function FindTalent() {
 			<h2 className="text-4xl text-center font-semibold">We are unlike any other job platform. Here's why:</h2>
 			<div className="flex mx-auto max-w-screen-lg mt-8">
 				<div className="w-1/2 border-r-2">
-					<div className="mx-auto hover:shadow-lg hover:bg-gray-100 duration-300">
+					<div className={tile}>
 						<div className="flex flex-col align-items w-96 items-center mx-auto h-64">
 							<img className="w-24" src="/images/icons/icon_target.png" />
 							<h2 className="text-xl mt-2">Targeted listings</h2>
@@ -36,7 +38,7 @@ export default function FindTalent() {
 						</div>
 					</div>
 					<hr className=""/>
-					<div className="mx-auto hover:shadow-lg hover:bg-gray-100 duration-300">
+					<div className="mx-auto hover:shadow-lg hover:bg-gray-100 duration-300" reuse="tile">
 						<div className="flex flex-col align-items w-96 items-center mx-auto pt-4 h-64">
 							<img className="w-24" src="/images/icons/icon_pricing.png" />
 							<h2 className="text-xl mt-2">Fair pricing</h2>
@@ -45,7 +47,7 @@ export default function FindTalent() {
 					</div>
 				</div>
 				<div className="w-1/2">
-					<div className="mx-auto hover:shadow-lg hover:bg-gray-100 duration-300">
+					<div className="mx-auto hover:shadow-lg hover:bg-gray-100 duration-300" reuse="til">
 						<div className="flex flex-col align-items w-96 items-center mx-auto h-64">
 							<img className="w-24" src="/images/icons/icon_scientist.png" />
 							<h2 className="text-xl mt-2">Focussed expertise</h2>

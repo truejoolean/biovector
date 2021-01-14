@@ -98,10 +98,10 @@ export default function Home({ listings }) {
 export async function getStaticProps() {
   // Run API calls in parallel
   const listingsAsArray = await Promise.all([
-    fetchAPI("/articles?status=published") // articles are now called listings
+    fetchAPI("/jobs") // articles are now called listings
   ]);
   const listings = listingsAsArray[0]
-  // console.log(listings)
+  console.log(listingsAsArray)
 
   return {
     props: { listings },
