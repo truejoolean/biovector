@@ -77,12 +77,12 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 				<div className="">
 					<div className="flex items-center justify-between"><h1 className="text-2xl">Location</h1><span className="cursor-pointer underline text-sm" onClick={() => disableFilter('location')}>reset filter</span></div>
 						<div className="flex flex-col content-around">
-							<select name="city" id="city" className="w-52 p-2" onChange={dropdownHandler}>
+							<select value={filterState['city']} name="city" id="city" className="w-52 p-2" onChange={dropdownHandler}>
 								<option value="blank">Any city...</option>
 								{allCities.map((city) => <option value={city}>{prettify(city)}</option>)}
 							</select>
 							<p className="text-lg text-center font-bold">OR</p>
-							<select name="state" id="state" className="w-52 p-2" onChange={dropdownHandler}>
+							<select value={filterState['state']} name="state" id="state" className="w-52 p-2" onChange={dropdownHandler}>
 								<option value="blank">Any state...</option>
 								{allStates.map((state) => <option value={state}>{prettify(state)}</option>)}
 							</select>

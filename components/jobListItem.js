@@ -1,6 +1,7 @@
 import Link from 'next/link';
 // import Image from 'next/image'
 import { getStrapiMedia } from "../lib/media";
+import { prettify } from '../util/makePretty.js'
 
 export default function JobListItem( { listing } ) {
 	// console.log("listing.image in JobListItem: ", listing.image);
@@ -21,7 +22,7 @@ export default function JobListItem( { listing } ) {
 								{listing.title}
 							</div>
 							<div className="text-base text-gray-400">
-								{listing.companyState} · {listing.companyCity} · {listing.employerType}
+								{prettify(listing.companyState)} · {prettify(listing.companyCity)} · {prettify(listing.employerType)}
 							</div>
 						</div>
 					</div>

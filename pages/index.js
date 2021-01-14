@@ -55,7 +55,7 @@ const filterReducer = (state, { payload, actionType }) => {
 				[filterTitle]: filterInitState[filterTitle]
 			}
 		}
-		
+
 		// case 'RESET_FILTER': {
 		// 	let newPayload = {}
 		// 	filterReducer({ // or filterDispatch??
@@ -90,7 +90,7 @@ export default function Home({ listings, allCities, allStates }) {
 				<FilterSection allCities={allCities} allStates={allStates} filterState={filterState} filterDispatch={filterDispatch} />
 			</div>
 			<ul className="w-full mt-4">
-			{console.log("companyCity: " + listings[0].companyCity)}
+			{/*console.log("companyCity: " + listings[0].companyCity)*/}
 				{listings
 					.filter(({ employerType }) => filterState.employerType.includes(employerType))
 					.filter(({ companyCity }) => filterState.city === 'blank' ? filterState : filterState.city === companyCity)
