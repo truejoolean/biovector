@@ -68,6 +68,10 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 			actionType: 'RESET_FILTER'
 		})
 	}
+	
+	function renderFilters(filterTitle, filterOptions) {
+
+	}
 
 	return (
 		<div>
@@ -97,8 +101,11 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 								<h1 className="text-2xl">{prettify(filterTitle)}</h1>
 								<span className="cursor-pointer underline text-sm" onClick={() => disableFilter(filterTitle)}>reset filter</span>
 							</div>
-								{filterOptions.map((filterOption) =>
-									<Filter name={filterOption} checked={filterState[filterTitle]?.includes(filterOption)} changeHandler={(args) => changeHandler({ ...args, filterTitle })} />)}
+							<div>
+								{filterOptions.map((filterOption) => {
+									return(<Filter name={filterOption} checked={filterState[filterTitle]?.includes(filterOption)} changeHandler={(args) => changeHandler({ ...args, filterTitle })} />)
+								})}
+							</div>
 						</div>
 					)
 				})}

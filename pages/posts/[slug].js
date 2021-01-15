@@ -75,10 +75,10 @@ export default function Post({ listing }) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}/>
         <meta name="description" content={listing.description} />
       </Head>
-      <section class="max-w-screen-lg flex mx-auto">
-      <div className="relative" onClick={() => Router.back()}><img src="/images/icons/left-arrow.svg" className="w-16 back-button"/></div>
+      <section className="max-w-screen-lg flex mx-auto">
+      <div className="" onClick={() => Router.back()}><img src="/images/icons/left-arrow.svg" className="w-16 back-button"/></div>
 
-        <div class="header mt-8 flex items-center">
+        <div className="header mt-8 flex items-center">
           <div>
             <img src={getStrapiMedia(listing.image)} className="w-60"/>
           </div>
@@ -87,7 +87,7 @@ export default function Post({ listing }) {
             <h1 className="text-4xl">
               {listing.title}
             </h1>
-            <p className="text-base text-gray-700">{prettify(listing.companyState)} · {listing.employerType}</p>
+            <p className="text-base text-gray-700">{prettify(listing.companyCity)} · {prettify(listing.employerType)}</p>
           </div>
         </div>
       </section>
@@ -126,22 +126,21 @@ export default function Post({ listing }) {
           </div>
         </div>
         {/*<Modal show={show} handleClose={hideModal}><p>Modal</p></Modal>*/}
+        {
+          listing.redirectForApplication ?
+
+        <div>
         <div className="fixed left-0 bottom-0 w-full h-16 border-t-2 bg-white">
           <div className="flex justify-end">
-          {console.log(listing.redirectTo)}
-          {
-            listing.redirectForApplication ?
-              <Link href={listing.redirectTo ? listing.redirectTo : "https://biovector.de"}><a><button
+              <Link href={listing.redirectTo}><a><button
               // onClick={showModal}
               className="p-2 my-2 mr-8 text-white bg-blue-700">Apply now</button>
               </a></Link>
-              : <button
-              // onClick={showModal}
-              className="p-2 my-2 mr-8 text-white bg-blue-700">Apply now</button>
-          }
           </div>
         </div>
-        <div className="h-20 w-full" />
+
+        <div className="h-20 w-full" /></div>
+        : <div />}
       </section>
     </Layout>
 

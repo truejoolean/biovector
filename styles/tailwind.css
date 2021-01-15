@@ -26,7 +26,7 @@
 		margin-bottom: 20px;
 	}
 	.markdown ul > li {
-		margin-bottom: 5px;
+		margin-bottom: 8px;
 	}
 
 	.markdown h2 {
@@ -35,6 +35,7 @@
 
 	.markdown h3 {
 		@apply text-2xl font-bold;
+		margin-top: 10px;
 	}
 
 	.back-button:hover {
