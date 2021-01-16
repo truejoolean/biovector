@@ -9,7 +9,7 @@ import { getStrapiMedia } from "../../lib/media";
 import Router from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
-import { prettify } from '../../util/makePretty.js'
+import { prettify, processOneJob } from '../../util/makePretty.js'
 
 import { Document, Page, pdfjs } from 'react-pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -44,7 +44,8 @@ export default function Post({ listing }) {
     "hiringOrganization": {
       "@type": "Organization",
       "name": listing.companyName,
-      "logo": "https://api.biovector.de" + listing.image.formats.thumbnail.url,
+      // "logo": "https://api.biovector.de" + listing.image.formats.thumbnail.url,
+      "logo": "https://api.biovector.de" + listing.image.url,
       "sameAs": "http://biovector.de" // todo
     },
     "jobLocation": {
@@ -75,7 +76,7 @@ export default function Post({ listing }) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}/>
         <meta name="description" content={listing.description} />
       </Head>
-      <section className="max-screen-lg flex mx-auto">
+      <section className="max-screen-lg flex mx-auto md:mt-4">
       <div className="" onClick={() => Router.back()}><img src="/images/icons/left-arrow.svg" className="w-16 back-button"/></div>
 
         <div className="header mt-8 flex items-center">
@@ -132,7 +133,7 @@ export default function Post({ listing }) {
         <div>
         <div className="fixed left-0 bottom-0 w-full h-16 border-t-2 bg-white">
           <div className="flex justify-end">
-              <Link href={listing.redirectTo}><a><button
+              <Link href={listing.redirectTo}><a target="_blank" /*rel="noopener noreferrer"*/><button
               // onClick={showModal}
               className="p-2 my-2 mr-8 text-white bg-blue-700">Apply now</button>
               </a></Link>
@@ -162,14 +163,16 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const jobs = await fetchAPI(
+  const data = await fetchAPI(
     `/jobs?slug=${params.slug}`
   ); // not exactly sure about &status=published
   // const categories = await fetchAPI("/categories");
-  console.log("jobs: ", jobs)
+  let listing = data[0];
+  listing = processOneJob(listing)
+  console.log(listing)
 
   return {
-    props: { listing: jobs[0] },
+    props: { listing },
     revalidate: 1,
   };
 }

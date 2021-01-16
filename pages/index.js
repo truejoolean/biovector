@@ -6,6 +6,7 @@ import Layout from '../components/layout'
 import FilterSection from '../components/filterSection'
 import { fetchAPI } from "../lib/api";
 import React, { useState, useReducer } from 'react';
+import { processJobs } from '../util/makePretty.js'
 
 // import { getAllJobsData, getPosts } from '../lib/jobs'
 
@@ -109,19 +110,22 @@ export async function getStaticProps() {
   const listingsAsArray = await Promise.all([
     fetchAPI("/jobs") // articles are now called listings
   ]);
-  const listings = listingsAsArray[0]
+
+  let listingsPre = listingsAsArray[0]
 
   // The filter section is rendered based on the available cities
   let allCities = [];
   let allStates = [];
 
-  for (let i = 0; i < listings.length; i++) {
-  	if (!allCities.includes(listings[i].companyCity.toLowerCase())) allCities.push(listings[i].companyCity.toLowerCase());
-  	if (!allStates.includes(listings[i].companyState.toLowerCase() )) allStates.push(listings[i].companyState.toLowerCase());
+  for (let i = 0; i < listingsPre.length; i++) {
+  	if (!allCities.includes(listingsPre[i].companyCity.toLowerCase())) allCities.push(listingsPre[i].companyCity.toLowerCase());
+  	if (!allStates.includes(listingsPre[i].companyState.toLowerCase() )) allStates.push(listingsPre[i].companyState.toLowerCase());
   }
 
+  let listingsPost = processJobs(listingsPre)
+
   return {
-    props: { listings, allCities, allStates },
-    // revalidate: 10,
+    props: { listings: listingsPost , allCities, allStates },
+    revalidate: 60,
   };
 }
