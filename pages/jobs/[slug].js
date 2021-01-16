@@ -77,11 +77,11 @@ export default function Post({ listing }) {
         <meta name="description" content={listing.description} />
       </Head>
       <section className="max-screen-lg flex mx-auto md:mt-4">
-      <div className="" onClick={() => Router.back()}><img src="/images/icons/left-arrow.svg" className="w-16 back-button"/></div>
+      <div className="" onClick={() => Router.back()}><img src="/images/icons/left-arrow.svg" alt="left arrow icon" className="w-16 back-button"/></div>
 
         <div className="header mt-8 flex items-center">
           <div>
-            <img src={getStrapiMedia(listing.image)} className="w-60"/>
+            <img src={getStrapiMedia(listing.image)} className="w-60" alt={listing.companyName + " logo"}/>
           </div>
           <div className="ml-8">
           {listing.companyName}
@@ -135,7 +135,7 @@ export default function Post({ listing }) {
           <div className="flex justify-end">
               <Link href={listing.redirectTo}><a target="_blank" /*rel="noopener noreferrer"*/><button
               // onClick={showModal}
-              className="p-2 my-2 mr-8 text-white bg-blue-700">Apply now</button>
+              className="p-2 my-2 mr-8 text-white bg-blue-700">Apply now at {listing.companyName}</button>
               </a></Link>
           </div>
         </div>

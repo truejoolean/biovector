@@ -77,7 +77,7 @@ export default function Home({ listings, allCities, allStates }) {
 	<Layout bg="bg-gray-100" footer={true}>
 		<Head>
 			<title>{siteTitle}</title>
-			<meta name="description" content="The Biovector lists biotechnology jobs and vacancies and thus connects employees and employers in this nascent field." />
+			<meta name="description" content="Visit the Biovector for Germany's top biotechnology jobs and vacancies. Easily search and filter vacancies based on your skillset!" />
 		</Head>
 
 		<div style={{ backgroundImage: 'url(/images/lab.png)', backgroundPosition: 'center' }}>

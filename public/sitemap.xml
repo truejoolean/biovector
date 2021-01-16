@@ -1,30 +1,9 @@
-
-      <?xml version="1.0" encoding="UTF-8"?>
-      <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-          
-                      <url>
-                          <loc>https://biovector.de/404</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://biovector.de/findTalent</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://biovector.de</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://biovector.de/legal-disclosure</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://biovector.de/test</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://biovector.de/posts/[slug]</loc>
-                      </url>
-                  
-      </urlset>
-  
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://example.com</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-01-16T20:56:40.520Z</lastmod></url>
+<url><loc>https://example.com/findTalent</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-01-16T20:56:40.520Z</lastmod></url>
+<url><loc>https://example.com/legal-disclosure</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-01-16T20:56:40.520Z</lastmod></url>
+<url><loc>https://example.com/test</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-01-16T20:56:40.520Z</lastmod></url>
+<url><loc>https://example.com/jobs/senior-hardware-engineer</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-01-16T20:56:40.520Z</lastmod></url>
+<url><loc>https://example.com/jobs/student-hi-wi-biology-biotech-nanotech-m-w-d</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-01-16T20:56:40.520Z</lastmod></url>
+</urlset>
