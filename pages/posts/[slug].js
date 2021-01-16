@@ -39,7 +39,7 @@ export default function Post({ listing }) {
     "@type": "JobPosting",
     "@context": "https://schema.org/",
     "title": listing.title,
-    "description": listing.content,
+    "description": listing.description,
     "datePosted": listing.publishedAt, // todo: check if correct format
     "hiringOrganization": {
       "@type": "Organization",
@@ -75,7 +75,7 @@ export default function Post({ listing }) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}/>
         <meta name="description" content={listing.description} />
       </Head>
-      <section className="max-w-screen-lg flex mx-auto">
+      <section className="max-screen-lg flex mx-auto">
       <div className="" onClick={() => Router.back()}><img src="/images/icons/left-arrow.svg" className="w-16 back-button"/></div>
 
         <div className="header mt-8 flex items-center">
@@ -84,21 +84,21 @@ export default function Post({ listing }) {
           </div>
           <div className="ml-8">
           {listing.companyName}
-            <h1 className="text-4xl">
+            <h1 className="text-4xl lg:text-2xl md:text-lg">
               {listing.title}
             </h1>
             <p className="text-base text-gray-700">{prettify(listing.companyCity)} · {prettify(listing.employerType)}</p>
           </div>
         </div>
       </section>
-      <hr className="my-4 max-w-screen-lg mx-auto"/>
+      <hr className="my-4 max-screen-lg mx-auto"/>
 
         {/*<p className="text-gray-800">{listing.content}</p>*/}
-        {listing.usePdf ? (<div className="max-w-screen-lg mx-auto text-gray-800">
+        {listing.usePdf ? (<div className="max-screen-lg mx-auto text-gray-800">
           <Document
             file={"https://api.biovector.de" + listing.pdfFile.url}
             onLoadSuccess={onDocumentLoadSuccess}
-            className="max-w-screen-lg"
+            className="max-screen-lg"
             >
             {[1,2].map(page => (
             <Page pageNumber={page} width={1000} />
@@ -106,10 +106,10 @@ export default function Post({ listing }) {
           </Document>
           <hr /><hr className="mt-2" />
         </div>)
-          : <section className="max-w-screen-md mx-auto text-gray-800"><ReactMarkdown source={listing.content} escapeHtml={false} className="markdown"/></section>
+          : <section className="max-screen-md mx-auto text-gray-800 md:w-11/12"><ReactMarkdown source={listing.content} escapeHtml={false} className="markdown"/></section>
         }
 
-        <section className="max-w-screen-md mx-auto text-gray-800">
+        <section className="max-screen-md mx-auto text-gray-800">
         <div className="flex mt-6">
           <div className="w-1/2 border-l-4 pl-4">
             <h2 className="text-2xl">Kontakt</h2>

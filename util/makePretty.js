@@ -1,7 +1,7 @@
 export const prettify = (s) => {
 	s = s.toLowerCase()
 	let map = {
-		'employertype': 'Employer Type',
+		'employertype': 'Employer',
 		'workingstudent': "Working student",
 		'fullvacancy': 'Full vacancy',
 		'internship': 'Internship',

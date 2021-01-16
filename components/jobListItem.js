@@ -10,13 +10,13 @@ export default function JobListItem( { listing } ) {
 	return (
 		<Link as={`/posts/${listing.slug}`} href="/posts/[id]">
 			<a>
-				<li className="w-full h-36 flex bg-white hover:shadow-lg duration-300 mb-5">
-					<div className="content flex my-auto ml-12">
-						<img src={imageUrl} className="h-32 w-32 py-2"/>
+				<li className="w-full h-36 flex bg-white hover:shadow-lg duration-300 mb-5 lg:h-auto">
+					<div className="flex my-auto items-center">
+						<img src={imageUrl} className="h-32 w-32 md:w-20 md:h-20 ml-4"/>
 						{/*<img src={require("/uploads/hki_bcd123e80a.jpg")} />*/}
 						{/*<img src={require("" + listing.image.url)} />*/}
 						{/* <Image src="http://localhost:1337/uploads/hki_bcd123e80a.jpg" laoyut="fill"/>*/}
-						<div className="ml-8 my-auto text-2xl">
+						<div className="ml-4 my-auto text-2xl lg:text-lg">
 							<div className="text-base text-gray-400">{listing.companyName}</div>
 							<div>
 								{listing.title}

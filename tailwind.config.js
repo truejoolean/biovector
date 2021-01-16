@@ -5,22 +5,41 @@ module.exports = {
     './pages/**/*.js',
     './components/**/*.js'
   ],
-  /*theme: {
-  	screens: {
-  	'sm': {'max':'640px'},
-    // => @media (min-width: 640px) { ... }
+  // theme: {
+  //   screens: {
+  //     '2xl': {'max': '1535px'},
+  //     // => @media (max-width: 1535px) { ... }
 
-    'md': {"max": '768px'},
-      // => @media (min-width: 768px) { ... }
+  //     'xl': {'max': '1279px'},
+  //     // => @media (max-width: 1279px) { ... }
 
-      'lg': {'max': '1024px'},
-      // => @media (min-width: 1024px) { ... }
+  //     'lg': {'max': '1023px'},
+  //     // => @media (max-width: 1023px) { ... }
 
-      'xl': {'max': '1280px'},
-      // => @media (min-width: 1280px) { ... }
+  //     'md': {'max': '767px'},
+  //     // => @media (max-width: 767px) { ... }
 
-      '2xl': {'max': '1536px'},
-      // => @media (min-width: 1536px) { ... }
-  	}
-  }*/
+  //     'sm': {'max': '639px'},
+  //     // => @media (max-width: 639px) { ... }
+  //   }
+  // }
+  theme: {
+    screens: {
+      'sm': {'max': '639px'},
+  //     // => @media (max-width: 639px) { ... }
+  
+      'md': {'max': '767px'},
+      //     // => @media (max-width: 767px) { ... }
+
+      'lg': {'max': '1023px'},
+      // => @media (max-width: 1023px) { ... }
+
+      'xl': {'max': '1279px'},
+      // => @media (max-width: 1279px) { ... }
+
+      '2xl': {'max': '1535px'},
+      // => @media (max-width: 1535px) { ... }
+    }
+  }
+
 }

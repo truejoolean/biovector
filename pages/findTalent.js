@@ -21,15 +21,15 @@ export default function FindTalent() {
 		</Head>
 		<section>
 			<div style={{ backgroundImage: 'url(/images/female_scientist.jpg)', backgroundPosition: 'center', backgroundSize: 'cover' }}>
-				<div className="mx-auto max-w-screen-lg py-32">
-					<h1 className="text-5xl font-semibold inline-block p-2 w-1/2" style={{ background: 'rgba(255,255,255,.9)' }}>Grow your biotech company with the best talents.</h1>
+				<div className="mx-auto max-screen-lg md:w-11/12 py-32">
+					<h1 className="text-5xl md:text-2xl font-semibold inline-block p-2 w-3/4" style={{ background: 'rgba(255,255,255,.9)' }}>Grow your biotech company with the best talents.</h1>
 				</div>
 			</div>
 		</section>
 		<section className="mt-8 w-screen-lg">
 			<h2 className="text-4xl text-center font-semibold">We are unlike any other job platform. Here's why:</h2>
-			<div className="flex mx-auto max-w-screen-lg mt-8">
-				<div className="w-1/2 border-r-2">
+			<div className="flex md:block mx-auto max-screen-lg mt-8">
+				<div className="w-1/2 md:w-full border-r-2 md:border-0">
 					<div className={tile}>
 						<div className="flex flex-col align-items w-96 items-center mx-auto h-64">
 							<img className="w-24" src="/images/icons/icon_target.png" />
@@ -37,8 +37,8 @@ export default function FindTalent() {
 							<p className="text-center mt-2">Other platforms drown your expensive listing in a sea of 1000s of job postings. The Biovector's selectivity and filtering helps them stay afloat.</p>
 						</div>
 					</div>
-					<hr className=""/>
-					<div className="mx-auto hover:shadow-lg hover:bg-gray-100 duration-300" reuse="tile">
+					<hr className="md:hidden"/>
+					<div className={tile}>
 						<div className="flex flex-col align-items w-96 items-center mx-auto pt-4 h-64">
 							<img className="w-24" src="/images/icons/icon_pricing.png" />
 							<h2 className="text-xl mt-2">Fair pricing</h2>
@@ -46,16 +46,16 @@ export default function FindTalent() {
 						</div>
 					</div>
 				</div>
-				<div className="w-1/2">
-					<div className="mx-auto hover:shadow-lg hover:bg-gray-100 duration-300" reuse="til">
+				<div className="w-1/2 md:w-full">
+					<div className={tile}>
 						<div className="flex flex-col align-items w-96 items-center mx-auto h-64">
 							<img className="w-24" src="/images/icons/icon_scientist.png" />
 							<h2 className="text-xl mt-2">Focussed expertise</h2>
 							<p className="text-center mt-2">Having gathered experience in multiple biotechnology enterprises, we know the intricacies of this special labor market.</p>
 						</div>
 					</div>
-					<hr className="" />
-					<div className="mx-auto hover:shadow-lg hover:bg-gray-100 duration-300">
+					<hr className="md:hidden" />
+					<div className={tile}>
 						<div className="flex flex-col align-items w-96 items-center mx-auto pt-4 h-64">
 							<img className="w-24" src="/images/icons/icon_global.png" />
 							<h2 className="text-xl mt-2">International talents</h2>
@@ -66,9 +66,9 @@ export default function FindTalent() {
 			</div>
 		</section>
 		<section className="mt-8" style={{backgroundColor: '#FFE01A'}}>
-			<h3 className="max-w-screen-md mx-auto text-bold text-4xl text-center h-56 flex items-center justify-center">We consider it integral to our mission to feature listings for student academia for free.</h3>
+			<h3 className="max-screen-md mx-auto text-bold text-4xl md:text-2xl text-center py-8 px-4 flex items-center justify-center">We consider it integral to our mission to feature listings for student academia for free.</h3>
 		</section>
-		<section className="mt-16 max-w-screen-lg mx-auto">
+		<section className="mt-16 max-screen-lg mx-auto">
 			<h2 className="text-4xl text-center font-semibold">Features & Pricing</h2>
 			<table className="mt-4 w-full">
 				<tr>

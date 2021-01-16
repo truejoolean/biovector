@@ -78,7 +78,7 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 			<div className="mb-4">
 				<input type="text" value={filterState['search']} placeholder="Anything specific?" className="w-full p-2 border-gray-500 border-b-2" onChange={searchFilter}/>
 			</div>
-			<div className="flex justify-between">
+			<div className="flex justify-between md:block">
 				<div className="">
 					<div className="flex items-center justify-between"><h1 className="text-2xl">Location</h1><span className="cursor-pointer underline text-sm" onClick={() => disableFilter('location')}>reset filter</span></div>
 						<div className="flex flex-col content-around">
@@ -93,22 +93,21 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 							</select>
 						</div>
 				</div>
-
-				{filtersToRender.map(({ filterTitle, filterOptions }) => {
-					return (
-						<div className="mr-16">
-							<div className="flex items-center justify-between">
-								<h1 className="text-2xl">{prettify(filterTitle)}</h1>
-								<span className="cursor-pointer underline text-sm" onClick={() => disableFilter(filterTitle)}>reset filter</span>
+					{filtersToRender.map(({ filterTitle, filterOptions }) => {
+						return (
+							<div className="mr-16">
+								<div className="flex items-center justify-between">
+									<h1 className="text-2xl">{prettify(filterTitle)}</h1>
+									<span className="cursor-pointer underline text-sm ml-2" onClick={() => disableFilter(filterTitle)}>reset filter</span>
+								</div>
+								<div>
+									{filterOptions.map((filterOption) => {
+										return(<Filter name={filterOption} checked={filterState[filterTitle]?.includes(filterOption)} changeHandler={(args) => changeHandler({ ...args, filterTitle })} />)
+									})}
+								</div>
 							</div>
-							<div>
-								{filterOptions.map((filterOption) => {
-									return(<Filter name={filterOption} checked={filterState[filterTitle]?.includes(filterOption)} changeHandler={(args) => changeHandler({ ...args, filterTitle })} />)
-								})}
-							</div>
-						</div>
-					)
-				})}
+						)
+					})}
 			</div>
 		</div>
 	)
