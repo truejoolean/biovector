@@ -117,12 +117,12 @@ export async function getStaticProps() {
   let allCities = [];
   let allStates = [];
 
-  for (let i = 0; i < listingsPre.length; i++) {
-  	if (!allCities.includes(listingsPre[i].companyCity.toLowerCase())) allCities.push(listingsPre[i].companyCity.toLowerCase());
-  	if (!allStates.includes(listingsPre[i].companyState.toLowerCase() )) allStates.push(listingsPre[i].companyState.toLowerCase());
-  }
-
   let listingsPost = processJobs(listingsPre)
+
+  for (let i = 0; i < listingsPost.length; i++) {
+  	if (!allCities.includes(listingsPost[i].companyCity.toLowerCase())) allCities.push(listingsPost[i].companyCity.toLowerCase());
+  	if (!allStates.includes(listingsPost[i].companyState.toLowerCase() )) allStates.push(listingsPost[i].companyState.toLowerCase());
+  }
 
   return {
     props: { listings: listingsPost , allCities, allStates },
