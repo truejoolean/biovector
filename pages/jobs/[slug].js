@@ -10,6 +10,7 @@ import Router from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
 import { prettify, processOneJob } from '../../util/makePretty.js'
+import Modal from '../../components/modal'
 
 import { Document, Page, pdfjs } from 'react-pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -69,6 +70,19 @@ export default function Post({ listing }) {
     setNumPages(numPages);
   }
 
+  const [isShown, setIsShown] = useState(false);
+
+  const showModal = () => {
+    console.log("showModal called")
+    setIsShown(true)
+  }
+
+  function closeModal () {
+    console.log(window.innerHeight)
+    setIsShown(false)
+    console.log("closeModal called")
+  }
+
   return (
     <Layout footer={false}>
       <Head>
@@ -76,8 +90,9 @@ export default function Post({ listing }) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}/>
         <meta name="description" content={listing.description} />
       </Head>
+      <Modal closeFunc={closeModal} isShown={isShown} instructions={listing.applicationInstructions}/>
       <section className="max-screen-lg flex mx-auto md:mt-4">
-      <div className="" onClick={() => Router.back()}><img src="/images/icons/left-arrow.svg" alt="left arrow icon" className="w-16 back-button"/></div>
+      <div className="" onClick={() => Router.back()}><img src="/images/icons/left-arrow.svg" alt="left arrow icon" className="w-10 back-button"/></div>
 
         <div className="header mt-8 flex items-center">
           <div>
@@ -127,21 +142,24 @@ export default function Post({ listing }) {
           </div>
         </div>
         {/*<Modal show={show} handleClose={hideModal}><p>Modal</p></Modal>*/}
-        {
-          listing.redirectForApplication ?
+        
 
         <div>
         <div className="fixed left-0 bottom-0 w-full h-16 border-t-2 bg-white">
           <div className="flex justify-end">
+          {
+          listing.redirectForApplication ?
               <Link href={listing.redirectTo}><a target="_blank" /*rel="noopener noreferrer"*/><button
               // onClick={showModal}
               className="p-2 my-2 mr-8 text-white bg-blue-700">Apply now at {listing.companyName}</button>
               </a></Link>
+              : <button
+              // onClick={showModal}
+              className="p-2 my-2 mr-8 text-white bg-blue-700" onClick={showModal}>Apply now at {listing.companyName}</button>}
           </div>
         </div>
 
         <div className="h-20 w-full" /></div>
-        : <div />}
       </section>
     </Layout>
 

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-const Modal = ({closeFunc, isShown, instructions}) => {
+const Modal = ({closeFunc, isShown}) => {
   const dynamicModalClass = () => (isShown ? {display: 'block'} : '')
-  console.log(instructions);
 
   return isShown ? (
     <div className="modal" style={dynamicModalClass()} id="channelModal">
@@ -41,13 +40,16 @@ const Modal = ({closeFunc, isShown, instructions}) => {
             <h3 className="text-2xl">How to apply</h3>
             </div>
             <div className="modal-body">
-              <h2 className="text-lg">Good choice, this job rocks!</h2>
-              <p>{instructions}</p>
+              <p className="">This job rocks! Please write a mail to the contact down below to test your chances.</p>
+              Include your:
+              <ul>
+                <li>CV</li>
+              </ul>
               <p className="mt-4">Break a leg!</p>
             </div>
             <div className="modal-footer">
             <button onClick={closeFunc} type="button" className="btn btn-lg">
-              Abort mission!
+              No Thanks
               </button>
             </div>
           </div>
