@@ -14,7 +14,7 @@ const tile = "mx-auto hover:shadow-lg hover:bg-gray-100 duration-300"
 export default function FindTalent() {
 
   return (
-	<Layout>
+	<Layout footer={true}>
 		<Head>
 			<title>{siteTitle}</title>
 			<meta name="description" content="The Biovector lists biotechnology jobs and vacancies and thus connects employees and employers in this nascent field." />
