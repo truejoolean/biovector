@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Modal = ({closeFunc, isShown, instructions}) => {
+const Modal = ({job, closeFunc, isShown, instructions}) => {
   const dynamicModalClass = () => (isShown ? {display: 'block'} : '')
   console.log(instructions);
 
@@ -19,30 +19,20 @@ const Modal = ({closeFunc, isShown, instructions}) => {
             >
             <span aria-hidden="true">&times;</span>
             </button>
-          {/*
-            <h5 className="">Free Measure. Free Quote.</h5>
-            <div className="">
-              <p>woah this is the modal-body</p>
-            </div>
-            <div className="modal-footer">
-              <button className="btn-lg btn btn-primary">
-              <span style={{ color: '#fff' }}>
-              <i className="fa fa-phone mr-1 " />
-              <a href="tel:01234567" style={{ color: '#fff' }}>
-              0123 4567{' '}
-              </a>
-              </span>
-              </button>
-              <button onClick={closeFunc} type="button" className="btn btn-lg">
-              No Thanks
-              </button>
-            </div>
-            */}
             <h3 className="text-2xl">How to apply</h3>
             </div>
             <div className="modal-body">
-              <h2 className="text-lg">Good choice, this job rocks!</h2>
-              <p>{instructions}</p>
+              <h2 className="text-lg">{job ? "Good choice, this job rocks!" : ""}</h2>
+              {job ? <p>{instructions}</p> : ""}
+              {job ? "" : (<div><p>Please write a mail to jo@whrstn.de and include the following details</p>
+              <ul className="instructions">
+                <li>Listing title</li>
+                <li>Short description (This is used for Google For Jobs, please include at max. 200 letters.)</li>
+                <li>The content stating the details of the vacancy. Note that you can also send us a link where to copy it from or a pdf file</li>
+                <li>Your logo</li>
+                <li>Contact details: name, telephone number (optional), e-mail address</li>
+                <li>Instructions on how to apply or a link to redirect to</li>
+              </ul></div>)}
               <p className="mt-4">Break a leg!</p>
             </div>
             <div className="modal-footer">

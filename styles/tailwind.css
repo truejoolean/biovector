@@ -233,6 +233,13 @@
 	.footer-list li {
 		margin-top: 10px;
 	}
+
+	.instructions li {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		list-style-type: circle;
+		margin-left: 20px;
+	}
 /*
 	@media (min-width:576px) {
 		.modal-dialog {

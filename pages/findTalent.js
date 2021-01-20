@@ -1,6 +1,8 @@
+import React, { useState } from 'react';
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/layout'
+import Modal from '../components/modal'
 
 import { ReactElement } from 'react';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
@@ -13,12 +15,26 @@ const tile = "mx-auto hover:shadow-lg hover:bg-gray-100 duration-300"
 
 export default function FindTalent() {
 
-  return (
+	const [isShown, setIsShown] = useState(false);
+
+	const showModal = () => {
+		console.log("showModal called")
+		setIsShown(true)
+	}
+
+	function closeModal () {
+		console.log(window.innerHeight)
+		setIsShown(false)
+		console.log("closeModal called")
+	}
+
+	return (
 	<Layout footer={true}>
 		<Head>
 			<title>{siteTitle}</title>
 			<meta name="description" content="The Biovector lists biotechnology jobs and vacancies and thus connects employees and employers in this nascent field." />
 		</Head>
+		<Modal closeFunc={closeModal} isShown={isShown} instructions="aa"/>
 		<section>
 			<div style={{ backgroundImage: 'url(/images/female_scientist.jpg)', backgroundPosition: 'center', backgroundSize: 'cover' }}>
 				<div className="mx-auto max-screen-lg md:w-11/12 py-32">
@@ -103,7 +119,7 @@ export default function FindTalent() {
 				</tr>
 				<tr>
 					<td className="w-3/12"></td>
-					<td style = {{backgroundColor: '#FFE01A'}} className="w-4/12 text-center font-bold text-2xl text-gray-900 p-4 hover:shadow-lg hover:bg-gray-100">Order now</td>
+					<td style = {{backgroundColor: '#FFE01A'}} onClick={showModal} className="w-4/12 text-center font-bold text-2xl text-gray-900 p-4 hover:shadow-lg hover:bg-gray-100">Order now</td>
 					<td className="border w-4/12 text-center font-bold text-2xl">Coming soon!</td>
 				</tr>
 			</table>

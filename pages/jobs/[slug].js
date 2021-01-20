@@ -21,17 +21,6 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 let show = false;
 
 export default function Post({ listing }) {
-  // function showModal() {
-  //   console.log('showModal called')
-  //   show = true;
-  //   console.log("show is now: ", show)
-  // }
-  // function hideModal() {
-  //   console.log("hideModal called")
-  //   show = false;
-  // }
-
-  // showModal = showModal.bind(this)
 
   console.log(listing)
   // console.log("http://localhost:1337" + listing.pdfFile.url)
@@ -90,7 +79,7 @@ export default function Post({ listing }) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}/>
         <meta name="description" content={listing.description} />
       </Head>
-      <Modal closeFunc={closeModal} isShown={isShown} instructions={listing.applicationInstructions}/>
+      <Modal job={true} closeFunc={closeModal} isShown={isShown} instructions={listing.applicationInstructions}/>
       <section className="max-screen-lg flex mx-auto md:mt-4">
       <div className="" onClick={() => Router.back()}><img src="/images/icons/left-arrow.svg" alt="left arrow icon" className="w-10 back-button"/></div>
 
