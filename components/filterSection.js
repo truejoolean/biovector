@@ -37,7 +37,7 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 	}
 
 	function searchFilter(e) {
-		console.log(e.target.value);
+		console.log("search filter in filterSection: " + e.target.value);
 		filterDispatch({
 			payload: {
 				prop: e.target.value
@@ -68,15 +68,15 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 			actionType: 'RESET_FILTER'
 		})
 	}
-	
-	function renderFilters(filterTitle, filterOptions) {
-
+		
+	function renderOneFilter(filterTitle, filterOption) {
+		return <Filter name={filterOption} checked={filterState[filterTitle]?.includes(filterOption)} changeHandler={(args) => changeHandler({ ...args, filterTitle })} />
 	}
 
 	return (
 		<div>
 			<div className="mb-4">
-				<input type="text" value={filterState['search']} placeholder="Anything specific?" className="w-full p-2 border-gray-500 border-b-2" onChange={searchFilter}/>
+				<input type="text" value={filterState['search']} placeholder="Any specific job title?" className="w-full p-2 border-gray-500 border-b-2" onChange={searchFilter}/>
 			</div>
 			<div className="flex justify-between md:block">
 				<div className="">
@@ -101,9 +101,7 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 									<span className="cursor-pointer underline text-sm ml-2" onClick={() => disableFilter(filterTitle)}>reset filter</span>
 								</div>
 								<div>
-									{filterOptions.map((filterOption) => {
-										return(<Filter name={filterOption} checked={filterState[filterTitle]?.includes(filterOption)} changeHandler={(args) => changeHandler({ ...args, filterTitle })} />)
-									})}
+								{filterOptions.map((filterOption) => renderOneFilter(filterTitle, filterOption))}
 								</div>
 							</div>
 						)

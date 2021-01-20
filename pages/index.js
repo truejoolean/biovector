@@ -42,7 +42,8 @@ const filterReducer = (state, { payload, actionType }) => {
 		}
 
 		case 'SEARCHBAR_SET_FILTER': {
-			const { prop } = payload.prop;
+			// console.log(payload)
+			const prop = payload.prop;
 			return {
 				...state,
 				search: prop
@@ -71,7 +72,10 @@ const filterReducer = (state, { payload, actionType }) => {
 
 export default function Home({ listings, allCities, allStates }) {
 	const [filterState, filterDispatch] = useReducer(filterReducer, filterInitState);
-	console.log("allCities: ", allCities);
+	// console.log("allCities: ", allCities);
+	// console.log(filterState.search)
+	// console.log(filterState.city)
+	console.log(listings[0].companyName)
 
   return (
 	<Layout bg="bg-gray-100" footer={true}>
@@ -97,7 +101,8 @@ export default function Home({ listings, allCities, allStates }) {
 					.filter(({ companyCity }) => filterState.city === 'blank' ? filterState : filterState.city === companyCity)
 					.filter(({ companyState }) => filterState.state === 'blank' ? filterState : filterState.state === companyState)
 					// .filter(({ title }) => filterState.search === '' ? filterState : filterState.search.includes(title))
-					.filter(({ title }) => filterState.search === '' ? filterState : title.includes(filterState.search))
+					// .filter(({ title }) => filterState.search === '' ? filterState : title.includes(filterState.search))
+					.filter(({ title, companyName }) => filterState.search === "" ? filterState : (title.toLowerCase().includes(filterState.search.toLowerCase()) || title.toLowerCase().includes(companyName.toLowerCase())))
 					.map((listing, i) => <JobListItem listing={listing} />)}
 			</ul>
 		</section>

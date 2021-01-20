@@ -2,10 +2,15 @@ import Layout from '../components/layout'
 export default function Impressum() {
 	return(
 		<Layout>
-			<div className="max-w-screen-lg mx-auto">
+			<div className="max-screen-xl mx-auto">
 				<h1 className="text-4xl">Impressum</h1>
 				<h2 className="text-2xl">Johannes Wohrstein UG</h2>
-				Adresse...
+				Oettingenstr. 42
+         <br />80538 München
+         <br />Germany
+         <br />Tel.: +49 177 971 7874
+         <br />E-Mail: jo@whrstn.de
+         <br />Website: biovector.de
 
 				<br />
 				<h2 className="text-2xl">Haftungsausschluss</h2>
