@@ -75,7 +75,7 @@ export default function Home({ listings, allCities, allStates }) {
 	// console.log("allCities: ", allCities);
 	// console.log(filterState.search)
 	// console.log(filterState.city)
-	console.log(listings[0].companyName)
+	console.log(listings[0])
 
   return (
 	<Layout bg="bg-gray-100" footer={true}>
@@ -98,8 +98,9 @@ export default function Home({ listings, allCities, allStates }) {
 			{/*console.log("companyCity: " + listings[0].companyCity)*/}
 				{listings
 					.filter(({ employerType }) => filterState.employerType.includes(employerType))
-					.filter(({ companyCity }) => filterState.city === 'blank' ? filterState : filterState.city === companyCity)
-					.filter(({ companyState }) => filterState.state === 'blank' ? filterState : filterState.state === companyState)
+					.filter(({ companyCity }) => filterState.city === 'blank' ? filterState : filterState.city.toLowerCase() === companyCity.toLowerCase())
+					.filter(({ companyState }) => filterState.state === 'blank' ? filterState : filterState.state.toLowerCase() === companyState.toLowerCase())
+					.filter(({ extra }) => filterState.extra.includes(extra))
 					// .filter(({ title }) => filterState.search === '' ? filterState : filterState.search.includes(title))
 					// .filter(({ title }) => filterState.search === '' ? filterState : title.includes(filterState.search))
 					.filter(({ title, companyName }) => filterState.search === "" ? filterState : (title.toLowerCase().includes(filterState.search.toLowerCase()) || title.toLowerCase().includes(companyName.toLowerCase())))

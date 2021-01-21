@@ -32,7 +32,8 @@ const Modal = ({job, closeFunc, isShown, instructions}) => {
                 <li>Your logo</li>
                 <li>Contact details: name, telephone number (optional), e-mail address</li>
                 <li>Instructions on how to apply or a link to redirect to</li>
-              </ul></div>)}
+              </ul></div>
+              )}
               <p className="mt-4">Break a leg!</p>
             </div>
             <div className="modal-footer">
