@@ -30,7 +30,10 @@
 	}
 
 	.markdown h2 {
-		@apply text-3xl;
+		@apply text-3xl mt-2;
+	}
+	.markdown p {
+		margin-top: 10px;
 	}
 
 	.markdown h3 {

@@ -22,7 +22,7 @@ export default function JobListItem( { listing } ) {
 								{listing.title}
 							</div>
 							<div className="text-base text-gray-400">
-								{prettify(listing.companyState)} · {prettify(listing.companyCity)} · {prettify(listing.employerType)}
+								{prettify(listing.companyState)} · {prettify(listing.companyCity)} · {prettify(listing.employerType)} · {prettify(listing.extra)}
 							</div>
 						</div>
 					</div>
