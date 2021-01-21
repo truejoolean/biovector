@@ -24,7 +24,7 @@ const Modal = ({job, closeFunc, isShown, instructions}) => {
             <div className="modal-body">
               <h2 className="text-lg">{job ? "Good choice, this job rocks!" : ""}</h2>
               {job ? <p>{instructions}</p> : ""}
-              {job ? "" : (<div><p>Please write a mail to jo@whrstn.de and include the following details</p>
+              {job ? "" : (<div><p>Please write a mail to julien@biovector.de and include the following details</p>
               <ul className="instructions">
                 <li>Listing title</li>
                 <li>Short description (This is used for Google For Jobs, please include at max. 200 letters.)</li>
