@@ -10,7 +10,7 @@ import { processJobs } from '../util/makePretty.js'
 
 // import { getAllJobsData, getPosts } from '../lib/jobs'
 
-const siteTitle = "Biovector | Biotechnology Jobs Germany"
+const siteTitle = "Biotech Jobs Germany | biovector.de | Biotechnology"
 
 const filterInitState = {
 	search: "",
