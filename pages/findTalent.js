@@ -119,7 +119,7 @@ export default function FindTalent() {
 				</tr>
 				<tr>
 					<td className="w-3/12"></td>
-					<td style = {{backgroundColor: '#FFE01A'}} onClick={showModal} className="w-4/12 text-center font-bold text-2xl text-gray-900 p-4 hover:shadow-lg hover:bg-gray-100 cursor-pointer">Order now</td>
+					<td style = {{backgroundColor: '#FFE01A'}} onClick={showModal} className="w-4/12 text-center font-bold text-2xl text-gray-900 p-4 hover:shadow-lg hover:bg-gray-100 cursor-pointer track-order-now">Order now</td>
 					<td className="border w-4/12 text-center font-bold text-2xl">Coming soon!</td>
 				</tr>
 			</table>
