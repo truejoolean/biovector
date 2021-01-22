@@ -138,13 +138,13 @@ export default function Post({ listing }) {
           <div className="flex justify-end">
           {
           listing.redirectForApplication ?
-              <Link href={listing.redirectTo}><a target="_blank" /*rel="noopener noreferrer"*/><button className="track-apply-button"
+              <Link href={listing.redirectTo}><a target="_blank" /*rel="noopener noreferrer"*/><button
               // onClick={showModal}
-              className="p-2 my-2 mr-8 text-white bg-blue-700">Apply now at {listing.companyName}</button>
+              className="track-apply-button p-2 my-2 mr-8 text-white bg-blue-700">Apply now at {listing.companyName}</button>
               </a></Link>
-              : <button className="track-apply-button"
+              : <button
               // onClick={showModal}
-              className="p-2 my-2 mr-8 text-white bg-blue-700" onClick={showModal}>Apply now at {listing.companyName}</button>}
+              className="track-apply-button p-2 my-2 mr-8 text-white bg-blue-700" onClick={showModal}>Apply now at {listing.companyName}</button>}
           </div>
         </div>
 
