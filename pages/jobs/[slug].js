@@ -117,7 +117,7 @@ export default function Post({ listing }) {
         <section className="max-screen-md mx-auto text-gray-800">
         <div className="flex mt-6 sm:block">
           <div className="w-1/2 border-l-4 pl-4">
-            <h2 className="text-2xl">Kontakt</h2>
+            <h2 className="text-2xl">Contact</h2>
             {listing.firstName} {listing.lastName}<br />
             {listing.telephoneNumber}<br />
             {listing.mail}<br />

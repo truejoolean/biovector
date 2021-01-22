@@ -5,7 +5,7 @@ import { prettify } from '../util/makePretty.js'
 const filtersToRender = [
 	{
 		filterTitle: "employerType",
-		filterOptions: ["startup", "academia", "corporate", "consulting"]
+		filterOptions: ["startup", "academia", "industry", "consulting"]
 	},
 	{
 		filterTitle: "extra",

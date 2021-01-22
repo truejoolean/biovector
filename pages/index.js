@@ -17,7 +17,7 @@ const filterInitState = {
 	city: 'blank',
 	state: 'blank',
 	extra: ['thesis', 'fullVacancy', 'workingStudent', 'internship'],
-	employerType: ['corporate', 'startup', 'academia', 'consulting'],
+	employerType: ['industry', 'startup', 'academia', 'consulting'],
 	language: ['german', 'english']
 }
 
@@ -75,7 +75,7 @@ export default function Home({ listings, allCities, allStates }) {
 	// console.log("allCities: ", allCities);
 	// console.log(filterState.search)
 	// console.log(filterState.city)
-	console.log(listings[0])
+	console.log(listings)
 
   return (
 	<Layout bg="bg-gray-100" footer={true}>
@@ -101,8 +101,6 @@ export default function Home({ listings, allCities, allStates }) {
 					.filter(({ companyCity }) => filterState.city === 'blank' ? filterState : filterState.city.toLowerCase() === companyCity.toLowerCase())
 					.filter(({ companyState }) => filterState.state === 'blank' ? filterState : filterState.state.toLowerCase() === companyState.toLowerCase())
 					.filter(({ extra }) => filterState.extra.includes(extra))
-					// .filter(({ title }) => filterState.search === '' ? filterState : filterState.search.includes(title))
-					// .filter(({ title }) => filterState.search === '' ? filterState : title.includes(filterState.search))
 					.filter(({ title, companyName }) => filterState.search === "" ? filterState : (title.toLowerCase().includes(filterState.search.toLowerCase()) || title.toLowerCase().includes(companyName.toLowerCase())))
 					.map((listing, i) => <JobListItem listing={listing} />)}
 			</ul>
@@ -114,7 +112,7 @@ export default function Home({ listings, allCities, allStates }) {
 export async function getStaticProps() {
   // Run API calls in parallel
   const listingsAsArray = await Promise.all([
-    fetchAPI("/jobs") // articles are now called listings
+    fetchAPI("/jobs?_sort=publishedAt:DESC") // articles are now called listings
   ]);
 
   let listingsPre = listingsAsArray[0]
