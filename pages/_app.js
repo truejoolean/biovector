@@ -34,6 +34,15 @@ const MyApp = ({ Component, pageProps }) => {
     <>
       <Head>
         {/* <link rel="shortcut icon" href={getStrapiMedia(global.favicon)} /> */}
+      {/*!-- Global site tag (gtag.js) - Google Analytics -->*/}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q61QL9P521"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-Q61QL9P521');
+        </script>
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Staatliches"
