@@ -1,4 +1,5 @@
 export const prettify = (s) => {
+	console.log("pretiffy called with string: " + s);
 	s = s.toLowerCase()
 	let map = {
 		'employertype': 'Employer',
@@ -6,7 +7,8 @@ export const prettify = (s) => {
 		'fullvacancy': 'Full vacancy',
 		'internship': 'Internship',
 
-		'badenwuerttemberg': 'Baden-Wuerttemberg'
+		'badenwuerttemberg': 'Baden-Wuerttemberg',
+		'neuherberg near munich': 'Neuherberg near Munich'
 	}
 
 	if (map[s] !== undefined) return map[s];
@@ -16,6 +18,7 @@ export const prettify = (s) => {
 
 export const processJobs = (allListings) => {
 	for (let i = 0; i < allListings.length; i++) {
+		console.log(allListings[i])
 		allListings[i].companyName = allListings[i].company.name;
 		allListings[i].companyState = allListings[i].company.state;
 		allListings[i].companyCity = allListings[i].company.city;

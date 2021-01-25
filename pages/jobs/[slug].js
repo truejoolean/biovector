@@ -81,7 +81,7 @@ export default function Post({ listing }) {
       </Head>
       <Modal job={true} closeFunc={closeModal} isShown={isShown} instructions={listing.applicationInstructions}/>
       <section className="max-screen-lg flex mx-auto md:mt-4">
-      <div className="" onClick={() => Router.back()}><img src="/images/icons/left-arrow.svg" alt="left arrow icon" className="w-10 back-button"/></div>
+      <Link href="/"><a><div className=""><img src="/images/icons/left-arrow.svg" alt="left arrow icon" className="w-10 back-button"/></div></a></Link>
 
         <div className="header mt-8 flex items-center">
           <div>
