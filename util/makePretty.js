@@ -1,5 +1,4 @@
 export const prettify = (s) => {
-	console.log("pretiffy called with string: " + s);
 	s = s.toLowerCase()
 	let map = {
 		'employertype': 'Employer',
