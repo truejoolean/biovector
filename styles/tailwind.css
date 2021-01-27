@@ -27,6 +27,7 @@
 	}
 	.markdown ul > li {
 		margin-bottom: 8px;
+		text-align: justify;
 	}
 
 	.markdown h2 {
