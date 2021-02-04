@@ -75,7 +75,7 @@ export default function Post({ listing }) {
   return (
     <Layout footer={false}>
       <Head>
-        <title>{listing.title} | Biovector</title>
+        <title>{listing.title} | Biotech Jobs Germany</title>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}/>
         <meta name="description" content={listing.description} />
       </Head>
