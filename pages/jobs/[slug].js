@@ -3,12 +3,13 @@ import ReactMarkdown from "react-markdown";
 import Moment from "react-moment";
 import { fetchAPI } from "../../lib/api";
 import Layout from "../../components/layout";
-import Image from "../../components/image";
+// import Image from "../../components/image";
 // import Modal from "../../components/modal"
 import { getStrapiMedia } from "../../lib/media";
 import Router from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 import { prettify, processOneJob } from '../../util/makePretty.js'
 import Modal from '../../components/modal'
 
@@ -85,14 +86,15 @@ export default function Post({ listing }) {
 
         <div className="header mt-8 flex items-center">
           <div>
-            <img src={getStrapiMedia(listing.image)} className="w-60" alt={listing.companyName + " logo"}/>
+            <Image width="250" height="250" quality="100" src={getStrapiMedia(listing.image)} alt={listing.companyName + " logo"}/>
+
           </div>
-          <div className="ml-8">
+          <div className="ml-8 text-gray-800">
           {listing.companyName}
             <h1 className="text-4xl lg:text-2xl md:text-lg">
               {listing.title}
             </h1>
-            <p className="text-base text-gray-700">{prettify(listing.companyCity)} · {prettify(listing.employerType)}</p>
+            <p className="text-base">{prettify(listing.companyCity)} · {prettify(listing.employerType)}</p>
           </div>
         </div>
       </section>
@@ -111,7 +113,7 @@ export default function Post({ listing }) {
           </Document>
           <hr /><hr className="mt-2" />
         </div>)
-          : <section className="max-screen-md mx-auto text-gray-800 md:w-11/12"><ReactMarkdown source={listing.content} escapeHtml={false} className="markdown"/></section>
+          : <section className="max-screen-md mx-auto text-gray-800 md:w-11/12"><ReactMarkdown source={listing.content} escapeHtml={false} className="markdown text-gray-800"/></section>
         }
 
         <section className="max-screen-md mx-auto text-gray-800">

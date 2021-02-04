@@ -36,7 +36,7 @@ export default function FindTalent() {
 		</Head>
 		<Modal closeFunc={closeModal} isShown={isShown} instructions="aa"/>
 		<section>
-			<div style={{ backgroundImage: 'url(/images/female_scientist.jpg)', backgroundPosition: 'center', backgroundSize: 'cover' }}>
+			<div style={{ backgroundImage: 'url(/images/female_scientist.webp)', backgroundPosition: 'center', backgroundSize: 'cover' }}>
 				<div className="mx-auto max-screen-lg md:w-11/12 py-32">
 					<h1 className="text-5xl md:text-2xl font-semibold inline-block p-2 w-3/4" style={{ background: 'rgba(255,255,255,.9)' }}>Grow your biotech company with the best talents.</h1>
 				</div>

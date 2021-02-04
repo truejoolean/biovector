@@ -91,7 +91,7 @@ export default function Home({ listings, allCities, allStates }) {
 		</div>
 
 		<section className="jobsAndFilter lg:w-11/12 max-screen-lg mx-auto mt-16">
-			<div className="w-full">
+			<div className="w-full" style={{ color:'#666' }}>
 				<FilterSection allCities={allCities} allStates={allStates} filterState={filterState} filterDispatch={filterDispatch} />
 			</div>
 			<ul className="w-full mt-4">
