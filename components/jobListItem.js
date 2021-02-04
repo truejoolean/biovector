@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image'
 // import Image from 'next/image'
 import { getStrapiMedia } from "../lib/media";
 import { prettify } from '../util/makePretty.js'
@@ -12,7 +13,11 @@ export default function JobListItem( { listing } ) {
 			<a>
 				<li className="w-full h-36 flex bg-white hover:shadow-lg duration-300 mb-5 lg:h-auto">
 					<div className="flex my-auto items-center">
-						<img src={imageUrl} className="h-32 w-32 md:w-20 md:h-20 ml-4" alt={listing.companyName + " logo"}/>
+						{/*<img src={require('../public/images/lab.png')} /> */}
+						{/*<img src={imageUrl} className="h-32 w-32 md:w-20 md:h-20 ml-4" alt={listing.companyName + " logo"}/>*/}
+						<div className="ml-4">
+							<Image src={imageUrl} className="h-32 w-32 md:w-20 md:h-20 ml-4" height="128" width="128" alt={listing.companyName + "logo"}/>
+						</div>
 						{/*<img src={require("/uploads/hki_bcd123e80a.jpg")} />*/}
 						{/*<img src={require("" + listing.image.url)} />*/}
 						{/* <Image src="http://localhost:1337/uploads/hki_bcd123e80a.jpg" laoyut="fill"/>*/}
@@ -31,3 +36,5 @@ export default function JobListItem( { listing } ) {
 		</Link>
 	)
 }
+// next/Image works for external CDN stuff
+// react-optimize-images shoudl work for background images
