@@ -14,7 +14,9 @@
 	.bannerHomePage {
 		/*backgroundImage: 'url(/images/lab.png)', backgroundPosition: 'center'*/
 		background-image: url('/images/lab.webp');
-		background-position: center;
+		/*background-position: center;*/
+		background-size: cover;
+		background-position: 80px;
 	}
 
 	.sloganContainer {
