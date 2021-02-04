@@ -19,6 +19,7 @@
     "classnames": "^2.2.6",
     "fs": "0.0.1-security",
     "globby": "^11.0.1",
+    "imagemin-optipng": "^8.0.0",
     "jsdom": "^16.4.0",
     "moment": "^2.29.1",
     "mongodb": "^3.6.3",
@@ -36,7 +37,8 @@
     "react-markdown": "^5.0.3",
     "react-moment": "^1.1.1",
     "react-pdf": "^5.1.0",
-    "tailwindcss": "^2.0.1"
+    "tailwindcss": "^2.0.1",
+    "webp-loader": "^0.6.0"
   },
   "devDependencies": {
     "@prisma/cli": "^2.12.1",
