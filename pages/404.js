@@ -1,5 +1,7 @@
-import Link from 'next/link'
+import redirect from 'nextjs-redirect'
+export default redirect('/')
 
+/*
 export default function FourOhFour() {
   return <div className="flex flex-col w-1/2 mx-auto">
     <h1 className="text-5xl">404 - Page Not Found :(</h1>
@@ -11,3 +13,4 @@ export default function FourOhFour() {
     </Link>
   </div>
 }
+*/
