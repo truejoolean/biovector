@@ -9,7 +9,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
-const siteTitle = "Biovector | Biotechnology Jobs Germany"
+const siteTitle = "Find talents for your biotech endeavours | Biotechnology Jobs Germany"
 
 const tile = "mx-auto hover:shadow-lg hover:bg-gray-100 duration-300"
 
