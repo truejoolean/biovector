@@ -74,7 +74,7 @@ export default function Post({ listing }) {
   }
 
   return (
-    <Layout footer={false}>
+    <Layout footer={false} navbarAbsolute={false}>
       <Head>
         <title>{listing.title} | Biotech Jobs Germany</title>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}/>

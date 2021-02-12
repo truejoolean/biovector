@@ -29,7 +29,7 @@ export default function FindTalent() {
 	}
 
 	return (
-	<Layout footer={true}>
+	<Layout footer={true} navbarAbsolute={true}>
 		<Head>
 			<title>{siteTitle}</title>
 			<meta name="description" content="The Biovector lists biotechnology jobs and vacancies and thus connects employees and employers in this nascent field." />

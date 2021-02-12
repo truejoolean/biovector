@@ -11,6 +11,14 @@
 		line-height: 2.2;
 	}
 
+	.nav-bar {
+		/*background-image: url('/images/lab.webp'), url('/images/lab.png');*/
+		background:rgba(255,255,255,0.3);
+		background-size: cover;
+		background-position: 120px;
+		/*border-bottom: 1px solid #DEDEDE;*/
+	}
+
 	.bannerHomePage {
 		/*backgroundImage: 'url(/images/lab.png)', backgroundPosition: 'center'*/
 		background-image: url('/images/lab.webp'), url('/images/lab.png');

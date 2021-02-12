@@ -78,7 +78,7 @@ export default function Home({ listings, allCities, allStates }) {
 	// console.log(listings)
 
   return (
-	<Layout bg="bg-gray-100" footer={true}>
+	<Layout bg="bg-gray-100" footer={true} navbarAbsolute={true}>
 		<Head>
 			<title>{siteTitle}</title>
 			<meta name="description" content="Visit the Biovector for Germany's top biotechnology jobs and vacancies. Easily search and filter vacancies based on your skillset!" />
