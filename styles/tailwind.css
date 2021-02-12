@@ -27,6 +27,13 @@
 		background-position: 80px;
 	}
 
+	.bannerFindTalent {
+		/*style={{ backgroundImage: 'url(/images/female_scientist.webp)', backgroundPosition: 'center', backgroundSize: 'cover'*/
+		background-image:url(/images/female_scientist.webp), url(/images/female_scientist.jpg);
+		background-size: cover;
+		background-position: center;
+	}
+
 	.sloganContainer {
 		
 	}
