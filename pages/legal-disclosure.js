@@ -4,9 +4,9 @@ export default function Impressum() {
 		<Layout>
 			<div className="max-screen-xl mx-auto">
 				<h1 className="text-4xl">Impressum</h1>
-				<h2 className="text-2xl">Johannes Wohrstein UG</h2>
-				Oettingenstr. 42
-         <br />80538 München
+				<h2 className="text-2xl">WOEHRSTEIN UG (haftungsbeschränkt)</h2>
+				Ortstraße 10A
+         <br />85354 Freising
          <br />Germany
          <br />Tel.: +49 177 971 7874
          <br />E-Mail: jo@whrstn.de
