@@ -7,7 +7,7 @@
     "build": "next build && npm run postbuild",
     "start": "next start -H 0.0.0.0 -p ${PORT:-8080}",
     "export": "npm run build && next export",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
