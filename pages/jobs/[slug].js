@@ -70,16 +70,16 @@ export default function Post({ listing }) {
   const [isShown, setIsShown] = useState(false);
 
   const showModal = () => {
-    console.log("showModal called")
+    // console.log("showModal called")
     setIsShown(true)
   }
 
   function closeModal () {
-    console.log(window.innerHeight)
+    // console.log(window.innerHeight)
     setIsShown(false)
-    console.log("closeModal called")
+    // console.log("closeModal called")
   }
-  console.log("SLUG: ", listing.slug);
+  // console.log("SLUG: ", listing.slug);
   return (
     <Layout footer={false} navbarAbsolute={false}>
       <Head>
@@ -155,11 +155,11 @@ export default function Post({ listing }) {
           listing.redirectForApplication ?
               <Link href={listing.redirectTo}><a target="_blank" /*rel="noopener noreferrer"*/><button
               // onClick={showModal}
-              className="track-apply-button p-3 my-3 mr-8 text-white bg-blue-700 text-lg">{translate("applynow", lang)} {listing.companyName}</button>
+              className="track-apply-button p-3 my-3 mr-8 md:w-full text-white bg-blue-700 text-lg">{translate("applynow", lang)} {listing.companyName}</button>
               </a></Link>
               : <button
               // onClick={showModal}
-              className="track-apply-button p-3 my-3 mr-8 text-white bg-blue-700 text-lg" onClick={showModal}>Apply now at {listing.companyName}</button>}
+              className="track-apply-button p-3 my-3 mr-8 md:w-full text-white bg-blue-700 text-lg" onClick={showModal}>Apply now at {listing.companyName}</button>}
           </div>
         </div>
 
@@ -201,7 +201,7 @@ export async function getStaticProps({ params }) {
   // const categories = await fetchAPI("/categories");
   let listing = data[0];
   listing = processOneJob(listing)
-  console.log(listing)
+  // console.log(listing)
 
   return {
     props: { listing },

@@ -86,7 +86,7 @@ export const translate = (s, lang) => {
 		},
 		targetedlistingsdescription: {
 			en: "Other platforms drown your expensive listing in a sea of 1000s of job postings. The Biovector's selectivity and filtering helps them stay afloat.",
-			de: "Andere Plattformen ertränken Ihre teure Anzeigen in einem See tausender anderer Anzeigen. Die Selektivität und die Filterfunktionen machen Ihre Anzeige langfristig sichtbar."
+			de: "Andere Plattformen ertränken Ihre teuren Anzeigen in einem See tausender anderer Anzeigen. Die Selektivität und die Filterfunktionen machen Ihre Anzeige langfristig sichtbar."
 		},
 		focussedexpertisetitle: {
 			en: "Focussed expertise",
@@ -110,7 +110,7 @@ export const translate = (s, lang) => {
 		},
 		internationaltalentsdescription: {
 			en: "We attract high-potentials from around the world to Germany",
-			de: "Wir ziehen high-potentials der ganzen Welt an."
+			de: "Wir ziehen high-potentials der ganzen Welt an und machen sie auf Ihr Unternehmen aufmerksam."
 		},
 		studentacademiafree: {
 			en: "We consider it integral to our mission to feature listings for student academia for free.",
