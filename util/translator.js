@@ -9,6 +9,7 @@ export const translate = (s, lang) => {
 			en: "Find Germany's most exciting jobs in biotechnology!",
 			de: "Finde Deutschlands top Jobs der Biotechnologie!"
 		},
+		
 		// FilterSection...
 		anycity: {
 			en: "Any city...",
