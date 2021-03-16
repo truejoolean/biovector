@@ -19,6 +19,7 @@ export const translate = (s, lang) => {
 			en: "or",
 			de: "oder"
 		},
+		
 		anystate: {
 			en: "Any state...",
 			de: "Jedes Bundesland..."
