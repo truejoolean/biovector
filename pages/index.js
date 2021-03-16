@@ -39,7 +39,7 @@ const filterReducer = (state, { payload, actionType }) => {
 		}
 		case 'DROPDOWN_SET_FILTER': {
 			const { filterTitle, prop } = payload;
-			console.log({...state, [filterTitle]: prop})
+			// console.log({...state, [filterTitle]: prop})
 			return {
 				...state,
 				[filterTitle]: prop

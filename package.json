@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export && npm run postbuild",
+    "build": "next build && npm run postbuild",
+    // "build": "next build && next export && npm run postbuild",
     "start": "next start -H 0.0.0.0 -p ${PORT:-8080}",
     "export": "npm run build && next export",
     "postbuild": "next-sitemap"
