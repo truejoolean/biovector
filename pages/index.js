@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import styles from '../styles/Home.module.css'
 import JobListItem from '../components/jobListItem'
 import Layout from '../components/layout'
@@ -7,6 +8,10 @@ import FilterSection from '../components/filterSection'
 import { fetchAPI } from "../lib/api";
 import React, { useState, useReducer } from 'react';
 import { processJobs } from '../util/makePretty.js'
+
+// import t from '../locales/translator';
+import { translate } from '../util/translator.js';
+// import de from '../locales/de';
 
 // import { getAllJobsData, getPosts } from '../lib/jobs'
 
@@ -72,6 +77,10 @@ const filterReducer = (state, { payload, actionType }) => {
 
 export default function Home({ listings, allCities, allStates }) {
 	const [filterState, filterDispatch] = useReducer(filterReducer, filterInitState);
+	const router = useRouter();
+	const { locale } = router; // is this equal to const locale = router.locale ? 
+	const lang = locale === 'en' ? 'en' : 'de'
+
 	// console.log("allCities: ", allCities);
 	// console.log(filterState.search)
 	// console.log(filterState.city)
@@ -80,13 +89,17 @@ export default function Home({ listings, allCities, allStates }) {
   return (
 	<Layout bg="bg-gray-100" footer={true} navbarAbsolute={true}>
 		<Head>
+			<link rel="alternate" hreflang="en" href="https://biovector.de/"/>
+			<link rel="alternate" hreflang="de" href="https://biovector.de/de/"/>
+			<link rel="alternate" hreflang="x-default" href="https://biovector.de/"/>
+
 			<title>{siteTitle}</title>
-			<meta name="description" content="Visit the Biovector for Germany's top biotechnology jobs and vacancies. Easily search and filter vacancies based on your skillset!" />
+			<meta name="description" content={translate("pageMetaTitle", lang)} />
 		</Head>
 
 		<div className="bannerHomePage">
 			<div className="mx-auto max-screen-lg md:w-11/12 py-32">
-				<h1 className="text-5xl md:text-3xl font-semibold inline-block p-2" style={{ background: 'rgba(255,255,255,.9)' }}>Find Germany's most exciting jobs in Biotechnology.</h1>
+				<h1 className="text-5xl md:text-3xl font-semibold inline-block p-2" style={{ background: 'rgba(255,255,255,.9)' }}>{translate("tagline", lang)}</h1>
 			</div>
 		</div>
 

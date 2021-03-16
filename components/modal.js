@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const Modal = ({job, closeFunc, isShown, instructions}) => {
   const dynamicModalClass = () => (isShown ? {display: 'block'} : '')
-  console.log(instructions);
+  // console.log(instructions);
 
   return isShown ? (
     <div className="modal" style={dynamicModalClass()} id="channelModal">

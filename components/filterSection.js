@@ -1,6 +1,9 @@
 import Filter from './filter'
 import { prettify } from '../util/makePretty.js'
 // import { fetchAPI } from "../lib/api";
+import { useRouter } from 'next/router'
+
+import { translate } from '../util/translator.js';
 
 const filtersToRender = [
 	{
@@ -18,6 +21,10 @@ const filtersToRender = [
 ]
 
 export default function FilterSection({ filterState, filterDispatch, allCities, allStates }) {
+	const router = useRouter();
+	const { locale } = router; // is this equal to const locale = router.locale ? 
+	const lang = locale === 'en' ? 'en' : 'de'
+
 	const changeHandler = (payload) => {
 		console.log(payload);
 		filterDispatch({
@@ -76,19 +83,19 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 	return (
 		<div>
 			<div className="mb-4">
-				<input type="text" value={filterState['search']} placeholder="Any specific job title?" className="w-full p-2 border-gray-500 border-b-2" onChange={searchFilter}/>
+				<input type="text" value={filterState['search']} placeholder={translate("searchPlaceholder", lang)} className="w-full p-2 border-gray-500 border-b-2" onChange={searchFilter}/>
 			</div>
 			<div className="flex justify-between md:block">
 				<div className="">
-					<div className="flex items-center justify-between"><h1 className="text-2xl">Location</h1><span className="cursor-pointer underline text-sm" onClick={() => disableFilter('location')}>reset filter</span></div>
+					<div className="flex items-center justify-between"><h1 className="text-2xl">{translate("location", lang)}</h1><span className="cursor-pointer underline text-sm" onClick={() => disableFilter('location')}>{translate("resetFilter", lang)}</span></div>
 						<div className="flex flex-col content-around">
 							<select value={filterState['city']} name="city" id="city" className="w-52 p-2" onChange={dropdownHandler}>
-								<option value="blank">Any city...</option>
+								<option value="blank">{translate("anyCity", lang)}</option>
 								{allCities.map((city) => <option value={city}>{prettify(city)}</option>)}
 							</select>
-							<p className="text-lg text-center font-bold">OR</p>
+							<p className="text-lg text-center font-bold">{translate("or", lang)}</p>
 							<select value={filterState['state']} name="state" id="state" className="w-52 p-2" onChange={dropdownHandler}>
-								<option value="blank">Any state...</option>
+								<option value="blank">{translate("anyState", lang)}</option>
 								{allStates.map((state) => <option value={state}>{prettify(state)}</option>)}
 							</select>
 						</div>
@@ -97,8 +104,8 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 						return (
 							<div className="mr-16">
 								<div className="flex items-center justify-between">
-									<h1 className="text-2xl">{prettify(filterTitle)}</h1>
-									<span className="cursor-pointer underline text-sm ml-2" onClick={() => disableFilter(filterTitle)}>reset filter</span>
+									<h1 className="text-2xl">{translate(filterTitle, lang)}</h1>
+									<span className="cursor-pointer underline text-sm ml-2" onClick={() => disableFilter(filterTitle)}>{translate("resetFilter", lang)}</span>
 								</div>
 								<div>
 								{filterOptions.map((filterOption) => renderOneFilter(filterTitle, filterOption))}

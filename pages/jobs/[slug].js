@@ -13,6 +13,9 @@ import Image from 'next/image';
 import { prettify, processOneJob } from '../../util/makePretty.js'
 import Modal from '../../components/modal'
 
+import { useRouter } from 'next/router'
+import { translate } from '../../util/translator'
+
 import { Document, Page, pdfjs } from 'react-pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 // import { ReactElement } from 'react';
@@ -23,7 +26,11 @@ let show = false;
 
 export default function Post({ listing }) {
 
-  console.log(listing)
+  const router = useRouter();
+  const { locale } = router; // is this equal to const locale = router.locale ? 
+  const lang = locale === 'en' ? 'en' : 'de'
+
+  // console.log(listing)
   // console.log("http://localhost:1337" + listing.pdfFile.url)
   // console.log("http://localhost:1337" + listing.image.formats.thumbnail.url)
   const structuredData = {
@@ -56,7 +63,7 @@ export default function Post({ listing }) {
   const [pageNumber, setPageNumber] = useState(1);
 
   function onDocumentLoadSuccess({ numPages }) {
-    console.log("TRIGGA")
+    // console.log("TRIGGA")
     setNumPages(numPages);
   }
 
@@ -72,10 +79,16 @@ export default function Post({ listing }) {
     setIsShown(false)
     console.log("closeModal called")
   }
-
+  console.log("SLUG: ", listing.slug);
   return (
     <Layout footer={false} navbarAbsolute={false}>
       <Head>
+
+        <link rel="alternate" hreflang="en" href={"https://biovector.de/jobs/" + listing.slug}/>
+        <link rel="alternate" hreflang="de" href={"https://biovector.de/de/jobs/" + listing.slug}/>
+        <link rel="alternate" hreflang="x-default" href={"https://biovector.de/jobs/" + listing.slug}/>
+
+
         <title>{listing.title} | Biotech Jobs Germany</title>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}/>
         <meta name="description" content={listing.description} />
@@ -119,13 +132,13 @@ export default function Post({ listing }) {
         <section className="max-screen-md mx-auto text-gray-800">
         <div className="flex mt-6 sm:block">
           <div className="w-1/2 border-l-4 pl-4">
-            <h2 className="text-2xl">Contact</h2>
+            <h2 className="text-2xl">{translate("contact", lang)}</h2>
             {listing.firstName} {listing.lastName}<br />
             {listing.telephoneNumber}<br />
             {listing.mail}<br />
           </div>
           <div className="w-1/2 border-l-4 pl-4">
-            <h2 className="text-2xl">Location</h2>
+            <h2 className="text-2xl">{translate("location", lang)}</h2>
               {listing.companyName}<br />
               {listing.companyStreet}<br />
               {listing.companyPostalCode} {listing.companyCity.charAt(0).toUpperCase() + listing.companyCity.slice(1)}<br />
@@ -136,17 +149,17 @@ export default function Post({ listing }) {
         
 
         <div>
-        <div className="fixed left-0 bottom-0 w-full h-16 border-t-2 bg-white">
+        <div className="fixed left-0 bottom-0 w-full h-20 border-t-2 bg-white">
           <div className="flex justify-end">
           {
           listing.redirectForApplication ?
               <Link href={listing.redirectTo}><a target="_blank" /*rel="noopener noreferrer"*/><button
               // onClick={showModal}
-              className="track-apply-button p-2 my-2 mr-8 text-white bg-blue-700">Apply now at {listing.companyName}</button>
+              className="track-apply-button p-3 my-3 mr-8 text-white bg-blue-700 text-lg">{translate("applynow", lang)} {listing.companyName}</button>
               </a></Link>
               : <button
               // onClick={showModal}
-              className="track-apply-button p-2 my-2 mr-8 text-white bg-blue-700" onClick={showModal}>Apply now at {listing.companyName}</button>}
+              className="track-apply-button p-3 my-3 mr-8 text-white bg-blue-700 text-lg" onClick={showModal}>Apply now at {listing.companyName}</button>}
           </div>
         </div>
 
@@ -160,15 +173,25 @@ export default function Post({ listing }) {
 
 export async function getStaticPaths() {
   const jobs = await fetchAPI("/jobs");
+  let paths = [];
+
+  for (let i = 0; i < jobs.length; i++) {
+    paths.push({params: { slug: jobs[i].slug }, locale: 'en'});
+    paths.push({params: { slug: jobs[i].slug }, locale: 'de'});
+  }
 
   return {
-    paths: jobs.map((job) => ({
-      params: {
-        slug: job.slug,
-      },
-    })),
+    paths,
+    fallback: false
+  }
+/*
+  return {
+    paths:
+    jobs.map((job) => ({
+      params: { slug: job.slug}, locale: 'en'
+    }))
     fallback: false,
-  };
+  };*/
 }
 
 export async function getStaticProps({ params }) {

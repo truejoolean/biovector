@@ -45,7 +45,6 @@ const MyApp = ({ Component, pageProps }) => {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
-      <noscript dangerouslySetInnerHTML={{__html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden;"></iframe>`}} />
       <GlobalContext.Provider value={{global: global, activeFilters: activeFilters}}>
         <Component {...pageProps} />
       </GlobalContext.Provider>
