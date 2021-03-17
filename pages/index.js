@@ -93,7 +93,7 @@ export default function Home({ listings, allCities, allStates }) {
 			<link rel="alternate" hreflang="de" href="https://biovector.de/de"/>
 			<link rel="alternate" hreflang="x-default" href="https://biovector.de/"/>
 
-			<title>{siteTitle}</title>
+			<title>{translate("sitetitle", lang)}</title>
 			<meta name="description" content={translate("pageMetaTitle", lang)} />
 		</Head>
 

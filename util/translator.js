@@ -9,6 +9,10 @@ export const translate = (s, lang) => {
 			en: "Find Germany's most exciting jobs in biotechnology!",
 			de: "Finde Deutschlands top Jobs der Biotechnologie!"
 		},
+		sitetitle: {
+			en: "Biotech Jobs Germany | biovector.de | Biotechnology",
+			de: "Biotechnologie Jobs Deutschland | biovector.de | Jobbörse"
+		}
 
 		// FilterSection...
 		anycity: {
