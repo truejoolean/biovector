@@ -24,14 +24,14 @@ export default function FindTalent() {
 	const [isShown, setIsShown] = useState(false);
 
 	const showModal = () => {
-		console.log("showModal called")
+		// console.log("showModal called")
 		setIsShown(true)
 	}
 
 	function closeModal () {
-		console.log(window.innerHeight)
+		// console.log(window.innerHeight)
 		setIsShown(false)
-		console.log("closeModal called")
+		// console.log("closeModal called")
 	}
 
 	return (

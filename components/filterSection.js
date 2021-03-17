@@ -26,7 +26,7 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 	const lang = locale === 'en' ? 'en' : 'de'
 
 	const changeHandler = (payload) => {
-		console.log(payload);
+		// console.log(payload);
 		filterDispatch({
 			payload,
 			actionType: 'CHECKBOX_SET_FILTER',
@@ -34,8 +34,8 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 	}
 
 	function dropdownHandler(e) {
-		console.log(e.target.name);
-		console.log(e.target.value);
+		// console.log(e.target.name);
+		// console.log(e.target.value);
 		let payload = {filterTitle: e.target.name, prop: e.target.value}
 		filterDispatch({
 			payload,
@@ -44,7 +44,7 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 	}
 
 	function searchFilter(e) {
-		console.log("search filter in filterSection: " + e.target.value);
+		// console.log("search filter in filterSection: " + e.target.value);
 		filterDispatch({
 			payload: {
 				prop: e.target.value
@@ -54,7 +54,7 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 	}
 
 	function disableFilter(filterTitle) {
-		console.log("disabling filter: " + filterTitle )
+		// console.log("disabling filter: " + filterTitle )
 		if (filterTitle === 'location') { // location needs to disable two filters
 			filterDispatch({
 				payload: {

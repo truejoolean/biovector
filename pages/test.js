@@ -5,14 +5,14 @@ export default function Test() {
 	const [isShown, setIsShown] = useState(true);
 
 	const showModal = () => {
-		console.log("showModal called")
+		// console.log("showModal called")
 		setIsShown(true)
 	}
 
 	function closeModal () {
 		console.log(window.innerHeight)
 		setIsShown(false)
-		console.log("closeModal called")
+		// console.log("closeModal called")
 	}
 	return (
 		<div className="w-full h-full bg-gray-200">
