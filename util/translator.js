@@ -1,18 +1,18 @@
 export const translate = (s, lang) => {
 	s = s.toLowerCase();
 	let map = {
+		sitetitle: {
+			en: "Biotech Jobs Germany | biovector.de | Biotechnology vacancies",
+			de: "Biotechnologie Jobs Deutschland | biovector.de | Stellenbörse"
+		},
 		pagemetatitle: {
-			en: "Visit the Biovector for Germany's top biotechnology jobs and vacancies. Easily search and filter vacancies based on your skillset!",
-			de: "Finde Deutschlands Top Auswahl für Biotechnologie Jobs und Stellenanzeigen, übersichtlich und auf Deine Bedürfnisse angepasst."
+			en: "Visit the Biovector for Germany's top biotechnology jobs and vacancies. Easily filter jobs for students, bachelors, masters and postgraduates.",
+			de: "Finde Deutschlands Top Biotechnologie Jobs und Stellenangebote, übersichtlich und auf Deine Bedürfnisse angepasst."
 		},
 		tagline: {
 			en: "Find Germany's most exciting jobs in biotechnology!",
 			de: "Finde Deutschlands top Jobs der Biotechnologie!"
 		},
-		sitetitle: {
-			en: "Biotech Jobs Germany | biovector.de | Biotechnology",
-			de: "Biotechnologie Jobs Deutschland | biovector.de | Jobbörse"
-		}
 
 		// FilterSection...
 		anycity: {
