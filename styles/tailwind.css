@@ -38,6 +38,15 @@
 		
 	}
 
+	.markdown {
+		font-family: "charter", "Georgia", "Cambria", "Times New Roman", "Times", "serif charter";
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 32px;
+		letter-spacing: -0.063px;
+		text-rendering: optimizelegibility;
+	}
+
 	/* .markdown is a workaround so that ReactMarkdown uses css */
 	.markdown h1 {
 		@apply text-4xl font-bold mb-2;
@@ -46,7 +55,7 @@
 		list-style: disc;
 		padding-left: 30px;
 		margin-top: 10px;
-		margin-bottom: 20px;
+		margin-bottom: 30px;
 	}
 	.markdown ul > li {
 		margin-bottom: 8px;
@@ -58,7 +67,9 @@
 	}
 	.markdown p {
 		margin-top: 10px;
+		margin-bottom: 30px;
 		text-align: justify;
+
 	}
 
 	.markdown h3 {
