@@ -33,6 +33,21 @@ export default function Post({ listing }) {
   // console.log(listing)
   // console.log("http://localhost:1337" + listing.pdfFile.url)
   // console.log("http://localhost:1337" + listing.image.formats.thumbnail.url)
+  const employmentType = "OTHER"; // preprocess for Google For Jobs
+  switch(listing.extra) {
+    case "fullVacancy":
+      employmentType = "FULL_TIME";
+      break;
+    case "internship":
+      employmentType = "INTERN";
+      break;
+    case "workingStudent":
+      employmentType = "PART_TIME";
+      break;
+    default:
+      break;
+  }
+
   const structuredData = {
     "@type": "JobPosting",
     "@context": "https://schema.org/",
@@ -40,6 +55,7 @@ export default function Post({ listing }) {
     "description": listing.description,
     "datePosted": listing.publishedAt, // todo: check if correct format
     "validThrough": listing.validUntil,
+    "employmentType": employmentType,
     "hiringOrganization": {
       "@type": "Organization",
       "name": listing.companyName,
