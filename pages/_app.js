@@ -53,11 +53,8 @@ const MyApp = ({ Component, pageProps }) => {
 
         legal.widget({
             type: "cookie",
-            widgetPublicKey: "RNU5hgLUTSDDD4gnNNGawgee",
-        });`}}
-      />
-
-
+            widgetPublicKey: "AHbSLfk996oZmxPBFEAMM4u4",
+        });`}} />
     </>
   );
 };
