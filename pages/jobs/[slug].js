@@ -33,7 +33,7 @@ export default function Post({ listing }) {
   // console.log(listing)
   // console.log("http://localhost:1337" + listing.pdfFile.url)
   // console.log("http://localhost:1337" + listing.image.formats.thumbnail.url)
-  const employmentType = "OTHER"; // preprocess for Google For Jobs
+  let employmentType = "OTHER"; // preprocess for Google For Jobs
   switch(listing.extra) {
     case "fullVacancy":
       employmentType = "FULL_TIME";
