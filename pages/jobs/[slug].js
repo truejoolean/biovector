@@ -39,6 +39,7 @@ export default function Post({ listing }) {
     "title": listing.title,
     "description": listing.description,
     "datePosted": listing.publishedAt, // todo: check if correct format
+    "validThrough": listing.validUntil,
     "hiringOrganization": {
       "@type": "Organization",
       "name": listing.companyName,
