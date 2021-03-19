@@ -26,6 +26,7 @@
 		background-size: cover;
 		background-position: 80px;
 	}
+	@media only screen and (max-device-width: 600px) { .bannerHomePage{background-image: url('/images/lab05.webp');} }
 
 	.bannerFindTalent {
 		/*style={{ backgroundImage: 'url(/images/female_scientist.webp)', backgroundPosition: 'center', backgroundSize: 'cover'*/
