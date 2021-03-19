@@ -54,32 +54,20 @@ async function generateSiteMap() {
                 .replace('.js', '')
                 .replace('.md', '')
               const route = path === '/index' ? '' : path;
-              return `
-                      <url>
+              return `<url>
                           <loc>${`https://biovector.de${route}`}</loc>
                       </url>
-                  `
+                      `
             })
             .join('')}
           ${jobPaths
             .map(jobPath => {
-              return `
-                <url>
-                  <loc>${`https://biovector.de/jobs/${jobPath}`}</loc>
-                  <xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href=${`https://biovector.de/jobs/${jobPath}`} />
-                  <xhtml:link
-                    rel="alternate"
-                    hreflang="de"
-                    href=${`https://biovector.de/de/jobs/${jobPath}`} />
-                </url>
-              `
+              return `<url><loc>${`https://biovector.de/jobs/${jobPath}`}</loc><xhtml:link rel="alternate" hreflang="en" href=${`https://biovector.de/jobs/${jobPath}`} /><xhtml:link rel="alternate" hreflang="de" href=${`https://biovector.de/de/jobs/${jobPath}`} /></url>`
             }).join('')}
           }
       </urlset>
   `
+  console.log(sitemap);
   fs.writeFileSync('public/sitemap.xml', sitemap)
 }
 
