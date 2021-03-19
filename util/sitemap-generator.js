@@ -62,7 +62,11 @@ async function generateSiteMap() {
             .join('')}
           ${jobPaths
             .map(jobPath => {
-              return `<url><loc>${`https://biovector.de/jobs/${jobPath}`}</loc><xhtml:link rel="alternate" hreflang="en" href=${`https://biovector.de/jobs/${jobPath}`} /><xhtml:link rel="alternate" hreflang="de" href=${`https://biovector.de/de/jobs/${jobPath}`} /></url>`
+              return `  <url>
+    <loc>${`https://biovector.de/jobs/${jobPath}`}</loc>
+      <xhtml:link rel="alternate" hreflang="en" href=${`"https://biovector.de/jobs/${jobPath}"`} />
+      <xhtml:link rel="alternate" hreflang="de" href=${`"https://biovector.de/de/jobs/${jobPath}"`} />
+  </url>`
             }).join('')}
       </urlset>
   `
