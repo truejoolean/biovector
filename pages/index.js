@@ -94,7 +94,7 @@ export default function Home({ listings, allCities, allStates }) {
   return (
 	<Layout bg="bg-gray-100" footer={true} navbarAbsolute={true}>
 		<Head>
-			{/*<script id="mcjs" dangerouslySetInnerHTML={{__html: `!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/ac98e47188302a54db3dff986/2fa6448b43f36c8da429d1fbe.js");`}} />*/}
+			<script id="mcjs" dangerouslySetInnerHTML={{__html: `!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/ac98e47188302a54db3dff986/2fa6448b43f36c8da429d1fbe.js");`}} />
 
 			<link rel="alternate" hreflang="en" href="https://biovector.de/"/>
 			<link rel="alternate" hreflang="de" href="https://biovector.de/de"/>
@@ -108,9 +108,9 @@ export default function Home({ listings, allCities, allStates }) {
 				<h1 className="text-5xl md:text-3xl font-semibold inline-block p-2" style={{ background: 'rgba(255,255,255,.9)' }}>{translate("tagline", lang)}</h1>
 			</div>
 		</div>
-		<section className="newsletter lg:w-11/12 max-screen-lg mx-auto mt-4">
+		{/*<section className="newsletter lg:w-11/12 max-screen-lg mx-auto mt-4">
 			<button onClick={showMailingPopup} className="w-full bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-xl">Click here to receive the job posts to your inbox!</button>
-		</section>
+		</section>*/}
 		<section className="jobsAndFilter lg:w-11/12 max-screen-lg mx-auto mt-4">
 			<div className="w-full" style={{ color:'#666' }}>
 				<FilterSection allCities={allCities} allStates={allStates} filterState={filterState} filterDispatch={filterDispatch} />
