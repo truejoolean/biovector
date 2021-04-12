@@ -15,7 +15,7 @@ import { translate } from '../util/translator.js';
 
 // import { getAllJobsData, getPosts } from '../lib/jobs'
 
-const siteTitle = "Biotech Jobs Germany | biovector.de | Biotechnology"
+// const siteTitle = "Biotech Jobs Germany | biovector.de | Biotechnology"
 
 const filterInitState = {
 	search: "",
@@ -89,6 +89,7 @@ export default function Home({ listings, allCities, allStates }) {
   return (
 	<Layout bg="bg-gray-100" footer={true} navbarAbsolute={true}>
 		<Head>
+			<script id="mcjs" dangerouslySetInnerHTML={{__html: `!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/ac98e47188302a54db3dff986/2fa6448b43f36c8da429d1fbe.js");`}} />
 			<link rel="alternate" hreflang="en" href="https://biovector.de/"/>
 			<link rel="alternate" hreflang="de" href="https://biovector.de/de"/>
 			<link rel="alternate" hreflang="x-default" href="https://biovector.de/"/>
