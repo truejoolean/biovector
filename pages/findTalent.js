@@ -93,8 +93,12 @@ export default function FindTalent() {
 			</div>
 		</section>
 		<section className="mt-8" style={{backgroundColor: '#FFE01A'}}>
-			<h3 className="max-screen-md mx-auto text-bold text-4xl md:text-2xl text-center py-8 px-4 flex items-center justify-center">{translate("studentacademiafree", lang)}</h3>
+			<h3 className="max-screen-md mx-auto text-bold text-4xl md:text-2xl text-center py-8 px-4 flex items-center justify-center">{translate("completelyfree", lang)}</h3>
 		</section>
+		<div className="max-screen-md mx-auto mt-4">
+			<button onClick={showModal} className="flex w-full justify-center bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-2xl font-bold">{translate("postnow", lang)}</button>
+		</div>
+	{/*
 		<section className="mt-16 max-screen-lg mx-auto">
 			<h2 className="text-4xl text-center font-semibold">{translate("featuresandpricing", lang)}</h2>
 			<table className="mt-4 w-full">
@@ -135,6 +139,7 @@ export default function FindTalent() {
 				</tr>
 			</table>
 		</section>
+	*/}
 
 		
 	</Layout>

@@ -103,8 +103,8 @@ export const translate = (s, lang) => {
 			de: "Die Erfahrung, die unser Team in der Biotechnologie Branche sammeln durfte, erlaubt uns die gezielte Ausrichtung auf diesen speziellen Arbeitsmarkt."
 		},
 		fairpricingtitle: {
-			en: "Fair pricing",
-			de: "Faire Preise"
+			en: "Free",
+			de: "Kostenlos"
 		},
 		fairpricingdescription: {
 			en: "We want you to invest into amazing talents, not recruiters.",
@@ -122,9 +122,17 @@ export const translate = (s, lang) => {
 			en: "We consider it integral to our mission to feature listings for student academia for free.",
 			de: "Wir betrachten es als zentral zu unserer Mission, Anzeigen für studentische Academia kostenlos anzubieten."
 		},
+		completelyfree: {
+			en: "Pricing? The biovector is completely free. There are no liabilities attached to posting whatsoever. Why? Because we can.",
+			de: "Preise? Der biovector ist komplett kostenlos. Es sind keine Verpflichtungen mit einem Post auf dem biovector verbunden. Warum? Weil wir es können."
+		},
 		featuresandpricing: {
 			en: "Features & Pricing",
 			de: "Features und Preise"
+		},
+		postnow: {
+			en: "Post a job now!",
+			de: "Jetzt Post abschicken!"
 		},
 		price: {
 			en: "Price",
