@@ -100,6 +100,7 @@ export default function Home({ listings, allCities, allStates }) {
 	  const showModal = () => {
 	    // console.log("showModal called")
 	    setIsShown(true)
+	    plausible('newsletter-signup')
 	  }
 
 	  function closeModal () {
