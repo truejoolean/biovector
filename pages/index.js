@@ -7,7 +7,9 @@ import Layout from '../components/layout'
 import FilterSection from '../components/filterSection'
 import { fetchAPI } from "../lib/api";
 import React, { useState, useReducer } from 'react';
-import { processJobs } from '../util/makePretty.js'
+import { processJobs } from '../util/makePretty.js';
+import GeneralModal from '../components/generalModal.js';
+
 
 // import t from '../locales/translator';
 import { translate } from '../util/translator.js';
@@ -75,6 +77,8 @@ const filterReducer = (state, { payload, actionType }) => {
 	}
 }
 
+let show = false;
+
 export default function Home({ listings, allCities, allStates }) {
 	const [filterState, filterDispatch] = useReducer(filterReducer, filterInitState);
 	const router = useRouter();
@@ -88,13 +92,25 @@ export default function Home({ listings, allCities, allStates }) {
 
 	function showMailingPopup() {
 		console.log("showMailingPopup")
-		!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/ac98e47188302a54db3dff986/2fa6448b43f36c8da429d1fbe.js");
+
 	}
+
+	const [isShown, setIsShown] = useState(false);
+
+	  const showModal = () => {
+	    // console.log("showModal called")
+	    setIsShown(true)
+	  }
+
+	  function closeModal () {
+	    // console.log(window.innerHeight)
+	    setIsShown(false)
+	    // console.log("closeModal called")
+	  }
 
   return (
 	<Layout bg="bg-gray-100" footer={true} navbarAbsolute={true}>
 		<Head>
-			<script id="mcjs" dangerouslySetInnerHTML={{__html: `!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/ac98e47188302a54db3dff986/2fa6448b43f36c8da429d1fbe.js");`}} />
 
 			<link rel="alternate" hreflang="en" href="https://biovector.de/"/>
 			<link rel="alternate" hreflang="de" href="https://biovector.de/de"/>
@@ -103,14 +119,15 @@ export default function Home({ listings, allCities, allStates }) {
 			<title>{translate("sitetitle", lang)}</title>
 			<meta name="description" content={translate("pageMetaTitle", lang)} />
 		</Head>
+		<GeneralModal closeFunc={closeModal} isShown={isShown} />
 		<div className="bannerHomePage">
 			<div className="mx-auto max-screen-lg md:w-11/12 py-32">
 				<h1 className="text-5xl md:text-3xl font-semibold inline-block p-2" style={{ background: 'rgba(255,255,255,.9)' }}>{translate("tagline", lang)}</h1>
 			</div>
 		</div>
-		{/*<section className="newsletter lg:w-11/12 max-screen-lg mx-auto mt-4">
-			<button onClick={showMailingPopup} className="w-full bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-xl">Click here to receive the job posts to your inbox!</button>
-		</section>*/}
+		<section className="newsletter lg:w-11/12 max-screen-lg mx-auto mt-4">
+			<button onClick={showModal} className="justify-center items-center flex w-full bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-xl"><img src="/images/icons/bell.svg" className="w-7 mr-4" />Click here to receive the job posts to your inbox!</button>
+		</section>
 		<section className="jobsAndFilter lg:w-11/12 max-screen-lg mx-auto mt-4">
 			<div className="w-full" style={{ color:'#666' }}>
 				<FilterSection allCities={allCities} allStates={allStates} filterState={filterState} filterDispatch={filterDispatch} />
