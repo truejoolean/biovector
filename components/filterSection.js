@@ -87,7 +87,7 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 			</div>
 			<div className="flex justify-between md:block">
 				<div className="">
-					<div className="flex items-center justify-between"><h1 className="text-2xl">{translate("location", lang)}</h1><span className="cursor-pointer underline text-sm" onClick={() => disableFilter('location')}>{translate("resetFilter", lang)}</span></div>
+					<div className="flex items-center justify-between"><h1 className="text-2xl text-gray-700">{translate("location", lang)}</h1><span className="cursor-pointer underline text-sm" onClick={() => disableFilter('location')}>{translate("resetFilter", lang)}</span></div>
 						<div className="flex flex-col content-around">
 							<select value={filterState['city']} name="city" id="city" className="w-52 p-2" onChange={dropdownHandler}>
 								<option value="blank">{translate("anyCity", lang)}</option>
@@ -104,7 +104,7 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 						return (
 							<div className="mr-16">
 								<div className="flex items-center justify-between">
-									<h1 className="text-2xl">{translate(filterTitle, lang)}</h1>
+									<h1 className="text-2xl text-gray-700">{translate(filterTitle, lang)}</h1>
 									<span className="cursor-pointer underline text-sm ml-2" onClick={() => disableFilter(filterTitle)}>{translate("resetFilter", lang)}</span>
 								</div>
 								<div>
