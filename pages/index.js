@@ -125,7 +125,7 @@ export default function Home({ listings, allCities, allStates }) {
 				<h1 className="text-5xl md:text-3xl font-semibold inline-block p-2" style={{ background: 'rgba(255,255,255,.9)' }}>{translate("tagline", lang)}</h1>
 			</div>
 		</div>
-		<section className="newsletter lg:w-11/12 max-screen-lg mx-auto mt-4">
+		<section className="md:hidden newsletter lg:w-11/12 max-screen-lg mx-auto mt-4">
 			<button onClick={showModal} className="justify-center items-center flex w-full bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-xl"><img src="/images/icons/bell.svg" className="w-7 mr-4" />Click here to receive the job posts to your inbox!</button>
 		</section>
 		<section className="jobsAndFilter lg:w-11/12 max-screen-lg mx-auto mt-4">
