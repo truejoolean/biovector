@@ -24,8 +24,16 @@
 		/*background-image: url('/images/lab.webp');*/
 		background-image: url('/images/microscope.webp');
 		/*background-position: center;*/
+		/*background-size: cover;
+		background-position: left center;*/
+
+		/* parallax scrolling */
+		min-height: 368px;
+
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
 		background-size: cover;
-		background-position: left center;
 	}
 	@media only screen and (max-device-width: 600px) { .bannerHomePage{background-image: url('/images/lab05.webp');} }
 
