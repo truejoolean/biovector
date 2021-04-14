@@ -45,6 +45,7 @@ export default function FindTalent() {
 			<title>{siteTitle}</title>
 			<meta name="description" content={translate("findtalentmetatitle", lang)} />
 		</Head>
+		<script src="https://storage.googleapis.com/niro-eu-static/widget/v1-2-3/index.min.js"></script><niroflow-modal niroflow-id="biovector-job-listing" width="800px" pass-parameters="true" dynamic-height="true"></niroflow-modal>
 		<Modal closeFunc={closeModal} isShown={isShown} instructions="aa"/>
 		<section>
 			<div className="bannerFindTalent">
@@ -96,7 +97,7 @@ export default function FindTalent() {
 			<h3 className="max-screen-md mx-auto text-bold text-4xl md:text-2xl text-center py-8 px-4 flex items-center justify-center">{translate("completelyfree", lang)}</h3>
 		</section>
 		<div className="max-screen-md mx-auto mt-4">
-			<button onClick={showModal} className="flex w-full justify-center bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-2xl font-bold">{translate("postnow", lang)}</button>
+			<a href="#niroflow-biovector-job-listing"><button className="flex w-full justify-center bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-2xl font-bold">{translate("postnow", lang)}</button></a>
 		</div>
 	{/*
 		<section className="mt-16 max-screen-lg mx-auto">

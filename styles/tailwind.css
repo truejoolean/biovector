@@ -24,8 +24,10 @@
 		/*background-image: url('/images/lab.webp');*/
 		background-image: url('/images/microscope.webp');
 		/*background-position: center;*/
-		/*background-size: cover;
-		background-position: left center;*/
+		
+
+		background-size: cover;
+		background-position: left center;
 
 		/* parallax scrolling */
 		min-height: 368px;
@@ -35,7 +37,14 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
-	@media only screen and (max-device-width: 600px) { .bannerHomePage{background-image: url('/images/lab05.webp');} }
+	@media only screen and (max-device-width: 600px) { .bannerHomePage{
+		background-image: url('/images/microscope.webp');
+
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	} }
 
 	.bannerFindTalent {
 		/*style={{ backgroundImage: 'url(/images/female_scientist.webp)', backgroundPosition: 'center', backgroundSize: 'cover'*/
