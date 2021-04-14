@@ -123,8 +123,8 @@ export const translate = (s, lang) => {
 			de: "Wir betrachten es als zentral zu unserer Mission, Anzeigen für studentische Academia kostenlos anzubieten."
 		},
 		completelyfree: {
-			en: "Pricing? The biovector is completely free. There are no liabilities attached to posting whatsoever. Why? Because we can.",
-			de: "Preise? Der biovector ist komplett kostenlos. Es sind keine Verpflichtungen mit einem Post auf dem biovector verbunden. Warum? Weil wir es können."
+			en: "Pricing? The biovector is completely free. There are no liabilities attached to posting whatsoever.",
+			de: "Preise? Der biovector ist komplett kostenlos. Es sind keine Verpflichtungen mit einem Post auf dem biovector verbunden."
 		},
 		featuresandpricing: {
 			en: "Features & Pricing",
