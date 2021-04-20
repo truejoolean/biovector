@@ -47,6 +47,7 @@ export default function FindTalent() {
 		</Head>
 		<script src="https://storage.googleapis.com/niro-eu-static/widget/v1-2-3/index.min.js"></script><niroflow-modal niroflow-id="biovector-job-listing" width="800px" pass-parameters="true" dynamic-height="true"></niroflow-modal>
 
+	{/*
 		<script type="text/plain"
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
@@ -60,7 +61,7 @@ export default function FindTalent() {
               `,
             }}
           />
-
+	*/}
 		<Modal closeFunc={closeModal} isShown={isShown} instructions="aa"/>
 		<section>
 			<div className="bannerFindTalent">
