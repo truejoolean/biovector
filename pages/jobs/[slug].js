@@ -88,7 +88,7 @@ export default function Post({ listing }) {
 
   function applyButtonClicked(l) {
     console.log('applyButtonClicked for plausible')
-    plausible('apply-button', {props: {title: listing.title }})
+    plausible('apply-button', {props: {title: listing.title + listing.company }})
   }
 
   const [isShown, setIsShown] = useState(false);
