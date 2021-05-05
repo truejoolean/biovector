@@ -86,7 +86,8 @@ export default function Post({ listing }) {
     setNumPages(numPages);
   }
 
-  function applyButtonClicked(listing) {
+  function applyButtonClicked() {
+    console.log("listing: ", listing)
     console.log('applyButtonClicked for plausible')
     plausible('apply-button-click', {props: {title: listing.title + " " + listing.companyName, company: listing.companyName }})
   }
