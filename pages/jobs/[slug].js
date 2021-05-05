@@ -48,6 +48,8 @@ export default function Post({ listing }) {
       break;
   }
 
+  console.log("listing.image.url", listing.image.url);
+
   const structuredData = {
     "@type": "JobPosting",
     "@context": "https://schema.org/",
@@ -82,6 +84,11 @@ export default function Post({ listing }) {
   function onDocumentLoadSuccess({ numPages }) {
     // console.log("TRIGGA")
     setNumPages(numPages);
+  }
+
+  function applyButtonClicked(l) {
+    console.log('applyButtonClicked for plausible')
+    plausible('apply-button', {props: {title: listing.title }})
   }
 
   const [isShown, setIsShown] = useState(false);
@@ -167,7 +174,7 @@ export default function Post({ listing }) {
 
         <div>
         <div className="fixed left-0 bottom-0 w-full h-20 border-t-2 bg-white">
-          <div className="flex justify-end">
+          <div className="flex justify-end" onClick={applyButtonClicked}>
           {
           listing.redirectForApplication ?
               <Link href={listing.redirectTo}><a target="_blank" /*rel="noopener noreferrer"*/><button

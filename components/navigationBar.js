@@ -8,6 +8,7 @@ export default function NavigationBar({ absolute }) {
 	const lang = locale === 'en' ? 'en' : 'de'
 
 	const changeLanguage = (e) => {
+		plausible('change-language');
 		const locale = e.target.value;
 		// console.log("new locale: " + locale)
 		router.push("/", "/", { locale });
