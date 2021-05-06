@@ -7,6 +7,9 @@
                           <loc>https://biovector.de/findTalent</loc>
                       </url>
                       <url>
+                          <loc>https://biovector.de/impressum</loc>
+                      </url>
+                      <url>
                           <loc>https://biovector.de</loc>
                       </url>
                       <url>
@@ -20,6 +23,10 @@
                       </url>
                       
             <url>
+    <loc>https://biovector.de/jobs/technische-assistenten-m-w-d-gesucht</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/technische-assistenten-m-w-d-gesucht" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/technische-assistenten-m-w-d-gesucht" />
+  </url>  <url>
     <loc>https://biovector.de/jobs/biological-technical-assistant-m-f-d</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/biological-technical-assistant-m-f-d" />
       <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/biological-technical-assistant-m-f-d" />
@@ -28,9 +35,17 @@
       <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/research-assistant-lab-technician-position-m-f-d-in-pathogen-mediated-immuno-modulation" />
       <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/research-assistant-lab-technician-position-m-f-d-in-pathogen-mediated-immuno-modulation" />
   </url>  <url>
+    <loc>https://biovector.de/jobs/bachelor-oder-master-of-science-biologie-biochemie-fuer-eine-position-als-project-assistant-m-w-d-laboratory-services-ref-nr-21-a102</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/bachelor-oder-master-of-science-biologie-biochemie-fuer-eine-position-als-project-assistant-m-w-d-laboratory-services-ref-nr-21-a102" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/bachelor-oder-master-of-science-biologie-biochemie-fuer-eine-position-als-project-assistant-m-w-d-laboratory-services-ref-nr-21-a102" />
+  </url>  <url>
     <loc>https://biovector.de/jobs/group-leader-m-f-d-translocation-of-complex-macromolecules-across-the-intestinal-epithelial-barrier</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/group-leader-m-f-d-translocation-of-complex-macromolecules-across-the-intestinal-epithelial-barrier" />
       <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/group-leader-m-f-d-translocation-of-complex-macromolecules-across-the-intestinal-epithelial-barrier" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/test-job</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/test-job" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/test-job" />
   </url>  <url>
     <loc>https://biovector.de/jobs/team-lead-bioinformatics-f-m-d</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/team-lead-bioinformatics-f-m-d" />
@@ -44,13 +59,13 @@
       <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/clinical-research-associate-craii-or-scra-anywhere-germany-office-based-or-remote-based" />
       <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/clinical-research-associate-craii-or-scra-anywhere-germany-office-based-or-remote-based" />
   </url>  <url>
+    <loc>https://biovector.de/jobs/qualifizierungsingenieur-m-w-d-fuer-verfahrens-pharmatechnik-und-biotechnologie-in-der-qa</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/qualifizierungsingenieur-m-w-d-fuer-verfahrens-pharmatechnik-und-biotechnologie-in-der-qa" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/qualifizierungsingenieur-m-w-d-fuer-verfahrens-pharmatechnik-und-biotechnologie-in-der-qa" />
+  </url>  <url>
     <loc>https://biovector.de/jobs/research-associate-m-w-d-analytics-quantification-of-biomolecules</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/research-associate-m-w-d-analytics-quantification-of-biomolecules" />
       <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/research-associate-m-w-d-analytics-quantification-of-biomolecules" />
-  </url>  <url>
-    <loc>https://biovector.de/jobs/werkstudent-en-in-aus-dem-betriebswirtschaftlichen-umfeld</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/werkstudent-en-in-aus-dem-betriebswirtschaftlichen-umfeld" />
-      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/werkstudent-en-in-aus-dem-betriebswirtschaftlichen-umfeld" />
   </url>  <url>
     <loc>https://biovector.de/jobs/pharma-biotech-medical-devices-qualified-person-w-m</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/pharma-biotech-medical-devices-qualified-person-w-m" />
@@ -148,6 +163,10 @@
       <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/data-scientist-in-clinical-research-f-m-d" />
       <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/data-scientist-in-clinical-research-f-m-d" />
   </url>  <url>
+    <loc>https://biovector.de/jobs/studentische-hilfskraft-werkstudent-m-w-d-im-einkauf</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/studentische-hilfskraft-werkstudent-m-w-d-im-einkauf" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/studentische-hilfskraft-werkstudent-m-w-d-im-einkauf" />
+  </url>  <url>
     <loc>https://biovector.de/jobs/projektassistent-m-w-d-in-voll-oder-teilzeit</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/projektassistent-m-w-d-in-voll-oder-teilzeit" />
       <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/projektassistent-m-w-d-in-voll-oder-teilzeit" />
@@ -196,13 +215,13 @@
       <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/scientist-pharmaceutical-development-m-f-d" />
       <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/scientist-pharmaceutical-development-m-f-d" />
   </url>  <url>
+    <loc>https://biovector.de/jobs/research-group-leader-m-f-d-in-neuroscience</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/research-group-leader-m-f-d-in-neuroscience" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/research-group-leader-m-f-d-in-neuroscience" />
+  </url>  <url>
     <loc>https://biovector.de/jobs/biologe-biotechnologe-qualitaetsmanager-zellkultur</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/biologe-biotechnologe-qualitaetsmanager-zellkultur" />
       <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/biologe-biotechnologe-qualitaetsmanager-zellkultur" />
-  </url>  <url>
-    <loc>https://biovector.de/jobs/labormitarbeiter-mit-fachrichtung-biochemie-mikrobiologie-biotechnologie-biologie-m-w-d-to-872-b3</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/labormitarbeiter-mit-fachrichtung-biochemie-mikrobiologie-biotechnologie-biologie-m-w-d-to-872-b3" />
-      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/labormitarbeiter-mit-fachrichtung-biochemie-mikrobiologie-biotechnologie-biologie-m-w-d-to-872-b3" />
   </url>  <url>
     <loc>https://biovector.de/jobs/biologin-en-m-w-d-bzw-mikrobiologin-en-m-w-d</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/biologin-en-m-w-d-bzw-mikrobiologin-en-m-w-d" />
@@ -215,6 +234,10 @@
     <loc>https://biovector.de/jobs/research-associate-for-computational-systems-biology</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/research-associate-for-computational-systems-biology" />
       <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/research-associate-for-computational-systems-biology" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/postdoctoral-position-m-f-d-in-neuroscience</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/postdoctoral-position-m-f-d-in-neuroscience" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/postdoctoral-position-m-f-d-in-neuroscience" />
   </url>  <url>
     <loc>https://biovector.de/jobs/research-scientist-f-m-d-chemical-biology</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/research-scientist-f-m-d-chemical-biology" />
@@ -240,6 +263,10 @@
       <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/associate-scientist-protein-formulation" />
       <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/associate-scientist-protein-formulation" />
   </url>  <url>
+    <loc>https://biovector.de/jobs/studentische-r-mitarbeiter-in-fuer-den-bereich-biotech-i-pharma</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/studentische-r-mitarbeiter-in-fuer-den-bereich-biotech-i-pharma" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/studentische-r-mitarbeiter-in-fuer-den-bereich-biotech-i-pharma" />
+  </url>  <url>
     <loc>https://biovector.de/jobs/scientist-wissenschaftlicher-mitarbeiter-w-m-d-fuer-die-analytik-eines-covid-19-impfstoffs</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/scientist-wissenschaftlicher-mitarbeiter-w-m-d-fuer-die-analytik-eines-covid-19-impfstoffs" />
       <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/scientist-wissenschaftlicher-mitarbeiter-w-m-d-fuer-die-analytik-eines-covid-19-impfstoffs" />
@@ -251,6 +278,10 @@
     <loc>https://biovector.de/jobs/thesis-development-of-a-cloud-platform-for-phenotype-and-genotype-data</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/thesis-development-of-a-cloud-platform-for-phenotype-and-genotype-data" />
       <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/thesis-development-of-a-cloud-platform-for-phenotype-and-genotype-data" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/synthetic-chemist-r-and-d</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/synthetic-chemist-r-and-d" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/synthetic-chemist-r-and-d" />
   </url>  <url>
     <loc>https://biovector.de/jobs/business-developer-kryobiologie-pharmazie-home-office</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/business-developer-kryobiologie-pharmazie-home-office" />
@@ -288,6 +319,14 @@
       <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/sales-consultant-life-sciences" />
       <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/sales-consultant-life-sciences" />
   </url>  <url>
+    <loc>https://biovector.de/jobs/sales-manager-deepc-radiology-ai</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/sales-manager-deepc-radiology-ai" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/sales-manager-deepc-radiology-ai" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/team-manager-teamleiter-w-m-d-downstream-processing-dsp</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/team-manager-teamleiter-w-m-d-downstream-processing-dsp" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/team-manager-teamleiter-w-m-d-downstream-processing-dsp" />
+  </url>  <url>
     <loc>https://biovector.de/jobs/open-bioinformatics-postdoc-position-on-data-science-and-ai-in-systems-biology-in-the-cosy-bio-lab-of-jan-baumbach</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/open-bioinformatics-postdoc-position-on-data-science-and-ai-in-systems-biology-in-the-cosy-bio-lab-of-jan-baumbach" />
       <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/open-bioinformatics-postdoc-position-on-data-science-and-ai-in-systems-biology-in-the-cosy-bio-lab-of-jan-baumbach" />
@@ -307,6 +346,82 @@
     <loc>https://biovector.de/jobs/private-lehrkraefte-m-w-d-fuer-biologie-in-muenchen-gesucht</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/private-lehrkraefte-m-w-d-fuer-biologie-in-muenchen-gesucht" />
       <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/private-lehrkraefte-m-w-d-fuer-biologie-in-muenchen-gesucht" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/technician-m-w-d-vaccine-und-virale-vektoren</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/technician-m-w-d-vaccine-und-virale-vektoren" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/technician-m-w-d-vaccine-und-virale-vektoren" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/bachelor-biotech-biotechniker-biologielaborant-technic-techniker-in-biotechnik</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/bachelor-biotech-biotechniker-biologielaborant-technic-techniker-in-biotechnik" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/bachelor-biotech-biotechniker-biologielaborant-technic-techniker-in-biotechnik" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/project-product-manager-f-m-x</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/project-product-manager-f-m-x" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/project-product-manager-f-m-x" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/chemistry-technician-cta-or-chemielaborant</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/chemistry-technician-cta-or-chemielaborant" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/chemistry-technician-cta-or-chemielaborant" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/studentische-hilfskraft-werkstudent-m-w-d-im-bereich-qc</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/studentische-hilfskraft-werkstudent-m-w-d-im-bereich-qc" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/studentische-hilfskraft-werkstudent-m-w-d-im-bereich-qc" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/technical-writer-m-f-d</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/technical-writer-m-f-d" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/technical-writer-m-f-d" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/research-assistants-m-f-d</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/research-assistants-m-f-d" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/research-assistants-m-f-d" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/naturwissenschaftler-als-healthcare-consultant-pharmaindustrie-biotechnologie-m-w-d</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/naturwissenschaftler-als-healthcare-consultant-pharmaindustrie-biotechnologie-m-w-d" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/naturwissenschaftler-als-healthcare-consultant-pharmaindustrie-biotechnologie-m-w-d" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/account-and-sales-manager-r-and-d-chemistry-and-biotech</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/account-and-sales-manager-r-and-d-chemistry-and-biotech" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/account-and-sales-manager-r-and-d-chemistry-and-biotech" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/bioinformatician-f-m-d-enabling-technologies</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/bioinformatician-f-m-d-enabling-technologies" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/bioinformatician-f-m-d-enabling-technologies" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/senior-laborassistent-m-w-d</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/senior-laborassistent-m-w-d" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/senior-laborassistent-m-w-d" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/sr-statistiker-m-w-d</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/sr-statistiker-m-w-d" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/sr-statistiker-m-w-d" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/associate-scientist-biostatistics-m-w-d</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/associate-scientist-biostatistics-m-w-d" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/associate-scientist-biostatistics-m-w-d" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/business-development-manager-consulting-and-analytics-for-hemp-products-and-derivatives</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/business-development-manager-consulting-and-analytics-for-hemp-products-and-derivatives" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/business-development-manager-consulting-and-analytics-for-hemp-products-and-derivatives" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/projektleiter-bioanalytik-m-w-d-laborservice-ref-nr-21-b107</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/projektleiter-bioanalytik-m-w-d-laborservice-ref-nr-21-b107" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/projektleiter-bioanalytik-m-w-d-laborservice-ref-nr-21-b107" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/working-student-freelancer-dymium-medtech</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/working-student-freelancer-dymium-medtech" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/working-student-freelancer-dymium-medtech" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/working-student-freelancer-biomedical</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/working-student-freelancer-biomedical" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/working-student-freelancer-biomedical" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/business-development-associate-biotechnology</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/business-development-associate-biotechnology" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/business-development-associate-biotechnology" />
+  </url>  <url>
+    <loc>https://biovector.de/jobs/naturwissenschaftler-chemie-physik-biologie-biotechnologie-als-business-analyst-fuer-laborautomatisierung-m-w-d</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://biovector.de/jobs/naturwissenschaftler-chemie-physik-biologie-biotechnologie-als-business-analyst-fuer-laborautomatisierung-m-w-d" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://biovector.de/de/jobs/naturwissenschaftler-chemie-physik-biologie-biotechnologie-als-business-analyst-fuer-laborautomatisierung-m-w-d" />
   </url>
       </urlset>
   
