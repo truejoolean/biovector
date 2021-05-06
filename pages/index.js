@@ -169,6 +169,6 @@ export async function getStaticProps() {
 
   return {
     props: { listings: listingsPost , allCities, allStates },
-    revalidate: 1,
+    // revalidate: 1,
   };
 }
