@@ -16,8 +16,8 @@ import Modal from '../../components/modal'
 import { useRouter } from 'next/router'
 import { translate } from '../../util/translator'
 
-//import { Document, Page, pdfjs } from 'react-pdf';
-//pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+import { Document, Page, pdfjs } from 'react-pdf';
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 // import { ReactElement } from 'react';
 // import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
@@ -140,7 +140,7 @@ export default function Post({ listing }) {
       <hr className="my-4 max-screen-lg mx-auto"/>
 
         {/*<p className="text-gray-800">{listing.content}</p>*/}
-        {/*listing.usePdf ? (<div className="max-screen-lg mx-auto text-gray-800">
+        {listing.usePdf ? (<div className="max-screen-lg mx-auto text-gray-800">
           <Document
             file={"https://api.biovector.de" + listing.pdfFile.url}
             onLoadSuccess={onDocumentLoadSuccess}
@@ -153,8 +153,7 @@ export default function Post({ listing }) {
           <hr /><hr className="mt-2" />
         </div>)
           : <section className="max-screen-md mx-auto text-gray-800 md:w-11/12"><ReactMarkdown source={listing.content} escapeHtml={false} className="markdown text-gray-800"/></section>
-        */}
-        <section className="max-screen-md mx-auto text-gray-800 md:w-11/12"><ReactMarkdown source={listing.content} escapeHtml={false} className="markdown text-gray-800"/></section>
+        }
 
         <section className="max-screen-md mx-auto text-gray-800">
         <div className="flex mt-6 sm:block">
