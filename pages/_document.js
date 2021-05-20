@@ -13,6 +13,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+        {/*
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
@@ -37,6 +38,7 @@ class MyDocument extends Document {
           })(window,document,'script','dataLayer','GTM-55MR6K4');`}} />
           <script async defer data-domain="biovector.de" src="https://plausible.io/js/plausible.js"></script>
           <script async defer data-domain="<yourdomain.com>" src="https://plausible.io/js/plausible.js"></script>
+        */}
           <script dangerouslySetInnerHTML={{__html: `window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }`}}></script>
         </Head>
         <body>
