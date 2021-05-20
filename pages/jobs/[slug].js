@@ -152,17 +152,18 @@ export default function Post({ listing }) {
           </Document>
           <hr /><hr className="mt-2" />
         </div>)
-          : <section className="max-screen-md mx-auto text-gray-800 md:w-11/12"><ReactMarkdown source={listing.content} escapeHtml={false} className="markdown text-gray-800"/></section>
+          : <section className="max-screen-md mx-auto text-gray-800 md:w-11/12"><ReactMarkdown style={{ color:'#666' }} source={listing.content} escapeHtml={false} className="markdown text-gray-800"/></section>
         }
 
         <section className="max-screen-md mx-auto text-gray-800">
         <div className="flex mt-6 sm:block">
+        {(listing.firstName && listing.lastName) ? 
           <div className="w-1/2 border-l-4 pl-4">
             <h2 className="text-2xl">{translate("contact", lang)}</h2>
-            {listing.firstName} {listing.lastName}<br />
-            {listing.telephoneNumber}<br />
-            {listing.mail}<br />
-          </div>
+            {listing.firstName} {listing.lastName}
+            <br />{listing.telephoneNumber}
+            <br />{listing.mail}<br />
+          </div> : <div />}
           <div className="w-1/2 border-l-4 pl-4">
             <h2 className="text-2xl">{translate("location", lang)}</h2>
               {listing.companyName}<br />
