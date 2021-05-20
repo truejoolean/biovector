@@ -126,8 +126,32 @@ export default function Home({ listings, allCities, allStates }) {
 				<h1 className="text-5xl md:text-3xl font-semibold inline-block p-2" style={{ background: 'rgba(255,255,255,.9)' }}>{translate("tagline", lang)}</h1>
 			</div>
 		</div>
-		<section className="md:hidden sm:hidden newsletter lg:w-11/12 max-screen-lg mx-auto mt-4">
-			<button onClick={showModal} className="justify-center items-center flex w-full bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-xl"><img src="/images/icons/bell.svg" className="w-7 mr-4" />Click here to receive the job posts to your inbox!</button>
+		<section className="md:hidden sm:hidden newsletter lg:w-11/12 max-screen-lg mx-auto mt-4 flex justify-around">
+			<div className="w-11/12 mr-4" onClick={() => plausible('facebook-click')}>
+				<Link href="https://www.facebook.com/biovectorJobs"><a>
+					<button
+					className="justify-center items-center flex w-full bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-xl">
+						<img src="/images/icons/facebook.png" className="h-6 mr-4" />Get your dream job right to your Facebook feed!
+					</button>
+				</a></Link>
+			</div>
+			<div className="w-11/12" onClick={() => plausible('twitter-click')}>
+				<Link href="https://twitter.com/biovector_jobs"><a>
+					<button
+					className="justify-center items-center flex w-full bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-xl">
+						<img src="/images/icons/twitter.png" className="h-6 mr-4" />Get your dream job right to your Twitter feed!
+					</button>
+				</a></Link>
+			</div>
+		{/*
+			<div>
+				<button
+				onClick={showModal}
+				className="justify-center items-center flex w-full bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-xl">
+					<img src="/images/icons/bell.svg" className="w-7 mr-4" />Click here to receive the job posts to your inbox!
+				</button>
+			</div>
+		*/}
 		</section>
 		<section className="jobsAndFilter lg:w-11/12 max-screen-lg mx-auto mt-4">
 			<div className="w-full" style={{ color:'#666' }}>
