@@ -36,9 +36,10 @@ class MyDocument extends Document {
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-55MR6K4');`}} />
+                  */}
           <script async defer data-domain="biovector.de" src="https://plausible.io/js/plausible.js"></script>
           <script async defer data-domain="<yourdomain.com>" src="https://plausible.io/js/plausible.js"></script>
-        */}
+
           <script dangerouslySetInnerHTML={{__html: `window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }`}}></script>
         </Head>
         <body>
