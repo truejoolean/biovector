@@ -112,7 +112,6 @@ export default function Home({ listings, allCities, allStates }) {
   return (
 	<Layout bg="bg-gray-100" footer={true} navbarAbsolute={true}>
 		<Head>
-
 			<link rel="alternate" hreflang="en" href="https://biovector.de/"/>
 			<link rel="alternate" hreflang="de" href="https://biovector.de/de"/>
 			<link rel="alternate" hreflang="x-default" href="https://biovector.de/"/>

@@ -27,6 +27,7 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 
 	const changeHandler = (payload) => {
 		// console.log(payload);
+		plausible('checkbox-filter', {props: {filter: payload.filterTitle, value: payload.prop }})
 		filterDispatch({
 			payload,
 			actionType: 'CHECKBOX_SET_FILTER',
@@ -36,6 +37,8 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 	function dropdownHandler(e) {
 		// console.log(e.target.name);
 		// console.log(e.target.value);
+		plausible('dropdown-filter', {props: {filter: e.target.name, value: e.target.value }})
+
 		let payload = {filterTitle: e.target.name, prop: e.target.value}
 		filterDispatch({
 			payload,
