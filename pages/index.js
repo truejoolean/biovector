@@ -17,7 +17,7 @@ import { translate } from '../util/translator.js';
 
 // import { getAllJobsData, getPosts } from '../lib/jobs'
 
-// const siteTitle = "Biotech Jobs Germany | biovector.de | Biotechnology"
+// const siteTitle = "Biotech Jobs Germany | biovector.de | Biotechnology"
 
 const filterInitState = {
 	search: "",
@@ -84,6 +84,8 @@ export default function Home({ listings, allCities, allStates }) {
 	const router = useRouter();
 	const { locale } = router; // is this equal to const locale = router.locale ? 
 	const lang = locale === 'en' ? 'en' : 'de'
+
+	console.log("number of posts: ", listings.length)
 
 	// console.log("allCities: ", allCities);
 	// console.log(filterState.search)
@@ -174,7 +176,7 @@ export default function Home({ listings, allCities, allStates }) {
 export async function getStaticProps() {
   // Run API calls in parallel
   const listingsAsArray = await Promise.all([
-    fetchAPI("/jobs?_sort=publishedAt:DESC") // articles are now called listings
+    fetchAPI("/jobs?_limit=-1&_sort=publishedAt:DESC") // articles are now called listings
   ]);
 
   let listingsPre = listingsAsArray[0]
