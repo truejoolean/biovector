@@ -47,6 +47,7 @@ export default function FindTalent() {
 		</Head>
 		<script src="https://storage.googleapis.com/niro-eu-static/widget/v1-2-3/index.min.js"></script><niroflow-modal niroflow-id="biovector-job-listing" width="800px" pass-parameters="true" dynamic-height="true"></niroflow-modal>
 
+
 	{/*
 		<script type="text/plain"
             // eslint-disable-next-line react/no-danger
@@ -114,7 +115,9 @@ export default function FindTalent() {
 		</section>
 		<div className="max-screen-md mx-auto mt-4">
 			{/*<a href="#niroflow-biovector-job-listing"><button className="flex w-full justify-center bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-2xl font-bold">{translate("postnow", lang)}</button></a>*/}
+
 			<button onClick={showModal} className="flex w-full justify-center bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-2xl font-bold">{translate("postnow", lang)}</button>
+			<script src="https://storage.googleapis.com/niro-eu-static/widget/v1-2-3/index.min.js"></script><niroflow niroflow-id="biovector-job-listing" width="800px" pass-parameters="true" dynamic-height="true"></niroflow>
 		</div>
 	{/*
 		<section className="mt-16 max-screen-lg mx-auto">
