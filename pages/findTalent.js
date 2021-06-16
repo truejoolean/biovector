@@ -117,7 +117,7 @@ export default function FindTalent() {
 			{/*<a href="#niroflow-biovector-job-listing"><button className="flex w-full justify-center bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-2xl font-bold">{translate("postnow", lang)}</button></a>*/}
 			{/*<button onClick={showModal} className="flex w-full justify-center bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-2xl font-bold">{translate("postnow", lang)}</button>*/}
 			<Link href="https://heyflow.id/biovector-job-listing#start">
-				<a>
+				<a target="_blank">
 					<button className="flex w-full justify-center bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-2xl font-bold">{translate("postnow", lang)}</button>
 				</a>
 			</Link>
