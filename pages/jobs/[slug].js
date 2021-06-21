@@ -124,6 +124,7 @@ export default function Post({ listing }) {
         <meta name="twitter:title" content={listing.title} />
         <meta name="twitter:description" content={listing.description} />
         <meta name="twitter:image" content={"https://api.biovector.de" + listing.image.url} />
+        <meta name="og:image" content={"https://api.biovector.de" + listing.image.url} />
 
       </Head>
       <Modal job={true} closeFunc={closeModal} isShown={isShown} instructions={listing.applicationInstructions}/>
