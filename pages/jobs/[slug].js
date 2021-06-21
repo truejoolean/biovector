@@ -106,6 +106,7 @@ export default function Post({ listing }) {
     // console.log("closeModal called")
   }
   // console.log("SLUG: ", listing.slug);
+  console.log("listing.image: " + listing.image.url);
   return (
     <Layout footer={false} navbarAbsolute={false}>
       <Head>
@@ -118,6 +119,12 @@ export default function Post({ listing }) {
         <title>{listing.title} | Biotech Jobs Germany</title>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}/>
         <meta name="description" content={listing.description} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@biovector_jobs" />
+        <meta name="twitter:title" content={listing.title} />
+        <meta name="twitter:description" content={listing.description} />
+        <meta name="twitter:image" content={"https://api.biovector.de" + listing.image} />
+
       </Head>
       <Modal job={true} closeFunc={closeModal} isShown={isShown} instructions={listing.applicationInstructions}/>
       <section className="max-screen-lg flex mx-auto md:mt-4">
