@@ -129,7 +129,7 @@ export default function Home({ listings, allCities, allStates }) {
 		</div>
 		<section className="md:hidden sm:hidden newsletter lg:w-11/12 max-screen-lg mx-auto mt-4 flex justify-around">
 			<div className="w-11/12 mr-4" onClick={() => plausible('facebook-click')}>
-				<a href="https://www.facebook.com/biovectorJobs" target="_blank" />
+				<a href="https://www.facebook.com/biovectorJobs" target="_blank">
 					<button
 					className="justify-center items-center flex w-full bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-xl">
 						<img src="/images/icons/facebook.png" className="h-6 mr-4" />Get your dream job right to your Facebook feed!
