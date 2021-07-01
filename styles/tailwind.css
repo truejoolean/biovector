@@ -19,6 +19,10 @@
 		/*border-bottom: 1px solid #DEDEDE;*/
 	}
 
+	.lowerBannerHeight {
+		min-height: 100px !important;
+	}
+
 	.bannerHomePage {
 		/*backgroundImage: 'url(/images/lab.png)', backgroundPosition: 'center'*/
 		/*background-image: url('/images/lab.webp');*/

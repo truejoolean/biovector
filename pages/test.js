@@ -15,6 +15,6 @@ export default function Test() {
 		// console.log("closeModal called")
 	}
 	return (
-		<iframe src="https://biovector.de/bio-rn" />
+		<iframe src="https://biovector.de/bio-rn" height="100%" width="100%"/>
 		)
 }

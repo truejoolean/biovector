@@ -1,10 +1,16 @@
 import JobListItem from '../components/jobListItem'
 import { fetchAPI } from "../lib/api";
 import { processJobs } from '../util/makePretty.js';
+import { translate } from '../util/translator.js';
 
 export default function BioRN({ listings }) {
   return(
     <div>
+      <div className="bannerHomePage lowerBannerHeight">
+        <div className="mx-auto max-screen-lg md:w-11/12 py-16">
+          <h1 className="text-5xl md:text-3xl font-semibold inline-block p-2" style={{ background: 'rgba(255,255,255,.9)' }}>{translate("tagline", "de")}</h1>
+        </div>
+      </div>
       <section className="jobsAndFilter lg:w-11/12 max-screen-lg mx-auto mt-4">
         <ul className="w-full mt-4">
         {/*console.log("companyCity: " + listings[0].companyCity)*/}
@@ -18,6 +24,7 @@ export default function BioRN({ listings }) {
             */
             .map((listing, i) => <JobListItem gray={true} listing={listing} />)}
         </ul>
+        <a href="https://biovector.de"><button className="flex w-full justify-center bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-2xl font-bold hover:bg-blue-600 duration-300">Zu allen Jobanzeigen von Biovector</button></a>
       </section>
     </div>
   )
@@ -32,8 +39,8 @@ export async function getStaticProps() {
   let listingsPre = listingsAsArray[0]
   let listingsPost = processJobs(listingsPre)
 
-  let listingsFiltered = listingsPost.filter(listing => listing.company.city === "heidelberg")
-  console.log(listingsFiltered.length)
+  let listingsFiltered = listingsPost.filter(listing => listing.company.city === "heidelberg" || listing.company.city === "mannheim")
+  listingsFiltered = listingsFiltered.slice(0, 4);
 
   return {
     props: { listings: listingsFiltered },
