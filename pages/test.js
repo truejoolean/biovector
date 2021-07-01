@@ -15,10 +15,6 @@ export default function Test() {
 		// console.log("closeModal called")
 	}
 	return (
-		<div className="w-full h-full bg-gray-200">
-			<h2 className="text-xl">Hey this is test</h2>
-			<button onClick={showModal}>Open the modal</button>
-			<Modal closeFunc={closeModal} isShown={isShown} />
-		</div>
+		<iframe src="https://biovector.de/bio-rn" />
 		)
 }
