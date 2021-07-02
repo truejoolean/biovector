@@ -116,7 +116,7 @@ export default function Post({ listing }) {
         <link rel="alternate" hreflang="x-default" href={"https://biovector.de/jobs/" + listing.slug}/>
 
 
-        <title>{listing.title} | Biotech Jobs Germany</title>
+        <title>{listing.title}</title>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}/>
         <meta name="description" content={listing.description} />
         <meta name="twitter:card" content="summary" />
@@ -170,13 +170,12 @@ export default function Post({ listing }) {
 
         <section className="max-screen-md mx-auto text-gray-800">
         <div className="flex mt-6 sm:block">
-        {(listing.firstName && listing.lastName) ? 
           <div className="w-1/2 border-l-4 pl-4">
             <h2 className="text-2xl">{translate("contact", lang)}</h2>
             {listing.firstName} {listing.lastName}
             <br />{listing.telephoneNumber}
             <br />{listing.mail}<br />
-          </div> : <div />}
+          </div>
           <div className="w-1/2 border-l-4 pl-4">
             <h2 className="text-2xl">{translate("location", lang)}</h2>
               {listing.companyName}<br />

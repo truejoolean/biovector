@@ -6,7 +6,7 @@ export const translate = (s, lang) => {
 			de: "Biotechnologie Jobs Deutschland | biovector.de | Stellenbörse"
 		},
 		pagemetatitle: {
-			en: "Visit the Biovector for Germany's top biotechnology jobs and vacancies. Easily filter jobs for students, bachelors, masters and postgraduates.",
+			en: "Visit the Biovector to find Germany's top biotechnology jobs and vacancies. Easily filter jobs for students, bachelors, masters and postgraduates.",
 			de: "Finde Deutschlands Top Biotechnologie Jobs und Stellenangebote, übersichtlich und auf Deine Bedürfnisse angepasst."
 		},
 		tagline: {
