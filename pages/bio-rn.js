@@ -37,7 +37,7 @@ export async function getStaticProps() {
   ]);
 
   let listingsPre = listingsAsArray[0]
-  let listingsPost = processJobs(listingsPre)
+  let listingsPost = processJobs(listingsPre).slice(0,5)
 
   // let listingsFiltered = listingsPost.filter(listing => listing.company.city === "heidelberg" || listing.company.city === "mannheim")
   // listingsFiltered = listingsFiltered.slice(0, 4);
