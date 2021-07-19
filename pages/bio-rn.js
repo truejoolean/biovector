@@ -39,11 +39,11 @@ export async function getStaticProps() {
   let listingsPre = listingsAsArray[0]
   let listingsPost = processJobs(listingsPre)
 
-  let listingsFiltered = listingsPost.filter(listing => listing.company.city === "heidelberg" || listing.company.city === "mannheim")
-  listingsFiltered = listingsFiltered.slice(0, 4);
+  // let listingsFiltered = listingsPost.filter(listing => listing.company.city === "heidelberg" || listing.company.city === "mannheim")
+  // listingsFiltered = listingsFiltered.slice(0, 4);
 
   return {
-    props: { listings: listingsFiltered },
+    props: { listings: listingsPost },
     // revalidate: 1,
   };
 }
