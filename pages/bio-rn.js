@@ -27,6 +27,7 @@ export default function BioRN({ listings }) {
         <a href="https://biovector.de"><button className="flex w-full justify-center bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-2xl font-bold hover:bg-blue-600 duration-300">Zu allen Jobanzeigen von Biovector</button></a>
       </section>
     </div>
+    
   )
 }
 
