@@ -7,6 +7,7 @@ export default function BioRN({ listings }) {
   return(
     <div>
       <div className="bannerHomePage lowerBannerHeight">
+        <a href="https://biovector.de"><div className="ml-4"><img src="/images/logo_blue_bar_white.svg" className="h-16 mx-auto"/></div></a>
         <div className="mx-auto max-screen-lg md:w-11/12 py-16">
           <h1 className="text-5xl md:text-3xl font-semibold inline-block p-2" style={{ background: 'rgba(255,255,255,.9)' }}>{translate("tagline", "de")}</h1>
         </div>
@@ -24,7 +25,7 @@ export default function BioRN({ listings }) {
             */
             .map((listing, i) => <JobListItem gray={true} listing={listing} />)}
         </ul>
-        <a href="https://biovector.de"><button className="flex w-full justify-center bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-2xl font-bold hover:bg-blue-600 duration-300">Zu allen Jobanzeigen von Biovector</button></a>
+        <a href="https://biovector.de"><button className="flex w-full justify-center bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-md text-2xl font-bold hover:bg-blue-600 duration-300">Zu allen Jobanzeigen von Biovector</button></a>
       </section>
     </div>
     
@@ -38,7 +39,7 @@ export async function getStaticProps() {
   ]);
 
   let listingsPre = listingsAsArray[0]
-  let listingsPost = processJobs(listingsPre).slice(0,5)
+  let listingsPost = processJobs(listingsPre).slice(0,10)
 
   // let listingsFiltered = listingsPost.filter(listing => listing.company.city === "heidelberg" || listing.company.city === "mannheim")
   // listingsFiltered = listingsFiltered.slice(0, 4);
