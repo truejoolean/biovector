@@ -120,6 +120,11 @@ export default function Home({ listings, allCities, allStates }) {
 
       <meta property="og:image" content="https://biovector.de/images/logo_blue.svg" />
 
+      <meta property='og:title' content='Biovector | Biotech Jobs Germany | Biotechnology'/>
+			<meta property='og:image' content='https://biovector.de/images/logo_blue.svg'/>
+			<meta property='og:description' content="The Biovector collects Germany's top vacancies for biotechnology, ranging from theses in startups over working student opportunities to consulting careers."/>
+			<meta property='og:url' content='https://biovector.de'/>
+
 			<title>{translate("sitetitle", lang)}</title>
 			<meta name="description" content={translate("pageMetaTitle", lang)} />
 		</Head>
