@@ -118,7 +118,7 @@ export default function Home({ listings, allCities, allStates }) {
 			<link rel="alternate" hreflang="de" href="https://biovector.de/de"/>
 			<link rel="alternate" hreflang="x-default" href="https://biovector.de/"/>
 
-      <meta property="og:image" content="https://biovector.de/images/microscope.png" />
+      <meta property='og:image' content="https://biovector.de/images/microscope.png" />
       <meta property='og:title' content='Biovector | Biotech Jobs Germany | Biotechnology'/>
 			<meta property='og:description' content="The Biovector collects Germany's top vacancies for biotechnology, ranging from theses in startups over working student opportunities to consulting careers."/>
 			<meta property='og:url' content='https://biovector.de'/>
@@ -202,3 +202,26 @@ export async function getStaticProps() {
     // revalidate: 1,
   };
 }
+
+
+
+
+
+
+<meta content="https://storage.googleapis.com/heyflow-eu-static/heyflow-og-v2-en.png" property="twitter:image">
+<meta content="Create better customer interactions with conversational flows. More personal. More conversions. Build your flow today! No coding required." name="description">
+
+
+<meta content="Heyflow | Customer Interaction Flows" property="og:title">
+<meta content="Create better customer interactions with conversational flows. More personal. More conversions. Build your flow today! No coding required." property="og:description">
+<meta content="https://storage.googleapis.com/heyflow-eu-static/heyflow-og-v2-en.png" property="og:image">
+
+<meta content="Heyflow | Customer Interaction Flows" property="twitter:title">
+<meta content="Create better customer interactions with conversational flows. More personal. More conversions. Build your flow today! No coding required." property="twitter:description">
+
+
+
+
+
+
+
