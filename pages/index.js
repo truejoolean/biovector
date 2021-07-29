@@ -118,10 +118,8 @@ export default function Home({ listings, allCities, allStates }) {
 			<link rel="alternate" hreflang="de" href="https://biovector.de/de"/>
 			<link rel="alternate" hreflang="x-default" href="https://biovector.de/"/>
 
-      <meta property="og:image" content="https://biovector.de/images/logo_blue.svg" />
-
+      <meta property="og:image" content="https://biovector.de/images/microscope.png" />
       <meta property='og:title' content='Biovector | Biotech Jobs Germany | Biotechnology'/>
-			<meta property='og:image' content='https://biovector.de/images/logo_blue.svg'/>
 			<meta property='og:description' content="The Biovector collects Germany's top vacancies for biotechnology, ranging from theses in startups over working student opportunities to consulting careers."/>
 			<meta property='og:url' content='https://biovector.de'/>
 
