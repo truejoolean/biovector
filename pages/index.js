@@ -124,7 +124,7 @@ export default function Home({ listings, allCities, allStates }) {
 			<meta property='og:url' content='https://biovector.de'/>
 */}
 
-<!-- HTML Meta Tags -->
+
 <title>Biovector | Biotech Jobs Germany | Biotechnology</title>
 <meta name="description" content="The Biovector collects Germany's top vacancies for biotechnology, ranging from theses in startups over working student opportunities to consulting careers.">
 
@@ -143,7 +143,6 @@ export default function Home({ listings, allCities, allStates }) {
 <meta name="twitter:description" content="The Biovector collects Germany's top vacancies for biotechnology, ranging from theses in startups over working student opportunities to consulting careers.">
 <meta name="twitter:image" content="https://biovector.de/images/microscope.png">
 
-<!-- Meta Tags Generated via https://www.opengraph.xyz -->
       
 
 			<title>{translate("sitetitle", lang)}</title>
