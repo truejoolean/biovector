@@ -117,11 +117,34 @@ export default function Home({ listings, allCities, allStates }) {
 			<link rel="alternate" hreflang="en" href="https://biovector.de/"/>
 			<link rel="alternate" hreflang="de" href="https://biovector.de/de"/>
 			<link rel="alternate" hreflang="x-default" href="https://biovector.de/"/>
-
+{/*
       <meta name="image" property='og:image' content="https://biovector.de/images/microscope.png" />
       <meta property='og:title' content='Biovector | Biotech Jobs Germany | Biotechnology'/>
 			<meta property='og:description' content="The Biovector collects Germany's top vacancies for biotechnology, ranging from theses in startups over working student opportunities to consulting careers."/>
 			<meta property='og:url' content='https://biovector.de'/>
+*/}
+
+<!-- HTML Meta Tags -->
+<title>Biovector | Biotech Jobs Germany | Biotechnology</title>
+<meta name="description" content="The Biovector collects Germany's top vacancies for biotechnology, ranging from theses in startups over working student opportunities to consulting careers.">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://biovector.de/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Biovector | Biotech Jobs Germany | Biotechnology">
+<meta property="og:description" content="The Biovector collects Germany's top vacancies for biotechnology, ranging from theses in startups over working student opportunities to consulting careers.">
+<meta property="og:image" content="https://biovector.de/images/microscope.png">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="biovector.de">
+<meta property="twitter:url" content="https://biovector.de/">
+<meta name="twitter:title" content="Biovector | Biotech Jobs Germany | Biotechnology">
+<meta name="twitter:description" content="The Biovector collects Germany's top vacancies for biotechnology, ranging from theses in startups over working student opportunities to consulting careers.">
+<meta name="twitter:image" content="https://biovector.de/images/microscope.png">
+
+<!-- Meta Tags Generated via https://www.opengraph.xyz -->
+      
 
 			<title>{translate("sitetitle", lang)}</title>
 			<meta name="description" content={translate("pageMetaTitle", lang)} />
