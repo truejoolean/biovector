@@ -126,21 +126,21 @@ export default function Home({ listings, allCities, allStates }) {
 
 
 <title>Biovector | Biotech Jobs Germany | Biotechnology</title>
-<meta name="description" content="The Biovector collects Germany's top vacancies for biotechnology, ranging from theses in startups over working student opportunities to consulting careers.">
+<meta name="description" content="The Biovector collects Germany's top vacancies for biotechnology, ranging from theses in startups over working student opportunities to consulting careers." />
 
 
-<meta property="og:url" content="https://biovector.de/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Biovector | Biotech Jobs Germany | Biotechnology">
-<meta property="og:description" content="The Biovector collects Germany's top vacancies for biotechnology, ranging from theses in startups over working student opportunities to consulting careers.">
-<meta property="og:image" content="https://biovector.de/images/microscope.png">
+<meta property="og:url" content="https://biovector.de/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Biovector | Biotech Jobs Germany | Biotechnology" />
+<meta property="og:description" content="The Biovector collects Germany's top vacancies for biotechnology, ranging from theses in startups over working student opportunities to consulting careers." />
+<meta property="og:image" content="https://biovector.de/images/microscope.png" />
 
-<meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:domain" content="biovector.de">
-<meta property="twitter:url" content="https://biovector.de/">
-<meta name="twitter:title" content="Biovector | Biotech Jobs Germany | Biotechnology">
-<meta name="twitter:description" content="The Biovector collects Germany's top vacancies for biotechnology, ranging from theses in startups over working student opportunities to consulting careers.">
-<meta name="twitter:image" content="https://biovector.de/images/microscope.png">
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:domain" content="biovector.de" />
+<meta property="twitter:url" content="https://biovector.de/" />
+<meta name="twitter:title" content="Biovector | Biotech Jobs Germany | Biotechnology" />
+<meta name="twitter:description" content="The Biovector collects Germany's top vacancies for biotechnology, ranging from theses in startups over working student opportunities to consulting careers." />
+<meta name="twitter:image" content="https://biovector.de/images/microscope.png" />
 
       
 
