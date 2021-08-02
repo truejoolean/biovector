@@ -153,22 +153,31 @@ export default function Home({ listings, allCities, allStates }) {
 				<h1 className="text-5xl md:text-3xl font-semibold inline-block p-2" style={{ background: 'rgba(255,255,255,.9)' }}>{translate("tagline", lang)}</h1>
 			</div>
 		</div>
-		<section className="md:hidden sm:hidden newsletter lg:w-11/12 max-screen-lg mx-auto mt-4 flex justify-around">
-			<div className="w-11/12 mr-4" onClick={() => plausible('facebook-click')}>
-				<a href="https://www.facebook.com/biovectorJobs" target="_blank">
-					<button
-					className="justify-center items-center flex w-full bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-xl">
-						<img src="/images/icons/facebook.png" className="h-6 mr-4" />Get your dream job right to your Facebook feed!
-					</button>
-				</a>
+		<section className="md:hidden sm:hidden newsletter lg:w-11/12 max-screen-lg mx-auto mt-4">
+			<div className="flex justify-around">
+				<div className="w-11/12 mr-4" onClick={() => plausible('facebook-click')}>
+					<a href="https://www.facebook.com/biovectorJobs" target="_blank">
+						<button
+						className="justify-center items-center flex w-full bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-xl">
+							<img src="/images/icons/facebook.png" className="h-6 mr-4" />Get your dream job right to your Facebook feed!
+						</button>
+					</a>
+				</div>
+				<div className="w-11/12" onClick={() => plausible('twitter-click')}>
+					<a href="https://twitter.com/biovector_jobs" target="_blank">
+						<button
+						className="justify-center items-center flex w-full bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-xl">
+							<img src="/images/icons/twitter.png" className="h-6 mr-4" />Get your dream job right to your Twitter feed!
+						</button>
+					</a>
+				</div>
 			</div>
-			<div className="w-11/12" onClick={() => plausible('twitter-click')}>
-				<a href="https://twitter.com/biovector_jobs" target="_blank">
-					<button
-					className="justify-center items-center flex w-full bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-xl">
-						<img src="/images/icons/twitter.png" className="h-6 mr-4" />Get your dream job right to your Twitter feed!
-					</button>
-				</a>
+			<div className="mt-4">
+				<Link href="https://heyflow.id/biovector-job-listing#start">
+					<a target="_blank">
+						<button className="flex w-full justify-center bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-2xl font-bold">{translate("postnow", lang)}</button>
+					</a>
+				</Link>
 			</div>
 		{/*
 			<div>

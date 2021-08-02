@@ -172,8 +172,8 @@ export default function Post({ listing }) {
         <div className="flex mt-6 sm:block">
           <div className="w-1/2 border-l-4 pl-4">
             <h2 className="text-2xl">{translate("contact", lang)}</h2>
-            {listing.firstName} {listing.lastName}
-            <br />{listing.telephoneNumber}
+            {/*{listing.firstName} {listing.lastName}*/}
+            {/*<br />{listing.telephoneNumber}*/}
             <br />{listing.mail}<br />
           </div>
           <div className="w-1/2 border-l-4 pl-4">

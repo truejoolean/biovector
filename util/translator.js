@@ -131,8 +131,8 @@ export const translate = (s, lang) => {
 			de: "Features und Preise"
 		},
 		postnow: {
-			en: "Post a job now!",
-			de: "Jetzt Post abschicken!"
+			en: "Click here to post a job for free in less than three minutes!",
+			de: "Jetzt kostenlos posten!"
 		},
 		price: {
 			en: "Price",
