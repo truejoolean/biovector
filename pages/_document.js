@@ -43,8 +43,10 @@ class MyDocument extends Document {
           <script dangerouslySetInnerHTML={{__html: `window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }`}}></script>
         </Head>
         <body>
+        {/*}
           <Main />
           <NextScript />
+        */}
         </body>
       </Html>
     );

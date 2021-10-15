@@ -57,6 +57,13 @@
 		background-position: center;
 	}
 
+	.bannerPartners {
+		/*style={{ backgroundImage: 'url(/images/female_scientist.webp)', backgroundPosition: 'center', backgroundSize: 'cover'*/
+		background-image:url(/images/network.jpg);
+		background-size: cover;
+		background-position: center;
+	}
+
 	.sloganContainer {
 		
 	}
