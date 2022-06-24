@@ -26,7 +26,8 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 	const lang = locale === 'en' ? 'en' : 'de'
 
 	const changeHandler = (payload) => {
-		console.log(payload);
+		// console.log(payload);
+		plausible('checkbox-filter', {props: {filter: payload.filterTitle, value: payload.prop }})
 		filterDispatch({
 			payload,
 			actionType: 'CHECKBOX_SET_FILTER',
@@ -34,8 +35,10 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 	}
 
 	function dropdownHandler(e) {
-		console.log(e.target.name);
-		console.log(e.target.value);
+		// console.log(e.target.name);
+		// console.log(e.target.value);
+		plausible('dropdown-filter', {props: {filter: e.target.name, value: e.target.value }})
+
 		let payload = {filterTitle: e.target.name, prop: e.target.value}
 		filterDispatch({
 			payload,
@@ -44,7 +47,7 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 	}
 
 	function searchFilter(e) {
-		console.log("search filter in filterSection: " + e.target.value);
+		// console.log("search filter in filterSection: " + e.target.value);
 		filterDispatch({
 			payload: {
 				prop: e.target.value
@@ -54,7 +57,7 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 	}
 
 	function disableFilter(filterTitle) {
-		console.log("disabling filter: " + filterTitle )
+		// console.log("disabling filter: " + filterTitle )
 		if (filterTitle === 'location') { // location needs to disable two filters
 			filterDispatch({
 				payload: {
@@ -87,7 +90,7 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 			</div>
 			<div className="flex justify-between md:block">
 				<div className="">
-					<div className="flex items-center justify-between"><h1 className="text-2xl">{translate("location", lang)}</h1><span className="cursor-pointer underline text-sm" onClick={() => disableFilter('location')}>{translate("resetFilter", lang)}</span></div>
+					<div className="flex items-center justify-between"><h1 className="text-2xl text-gray-700">{translate("location", lang)}</h1><span className="cursor-pointer underline text-sm" onClick={() => disableFilter('location')}>{translate("resetFilter", lang)}</span></div>
 						<div className="flex flex-col content-around">
 							<select value={filterState['city']} name="city" id="city" className="w-52 p-2" onChange={dropdownHandler}>
 								<option value="blank">{translate("anyCity", lang)}</option>
@@ -104,7 +107,7 @@ export default function FilterSection({ filterState, filterDispatch, allCities, 
 						return (
 							<div className="mr-16">
 								<div className="flex items-center justify-between">
-									<h1 className="text-2xl">{translate(filterTitle, lang)}</h1>
+									<h1 className="text-2xl text-gray-700">{translate(filterTitle, lang)}</h1>
 									<span className="cursor-pointer underline text-sm ml-2" onClick={() => disableFilter(filterTitle)}>{translate("resetFilter", lang)}</span>
 								</div>
 								<div>

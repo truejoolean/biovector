@@ -7,7 +7,9 @@ import Layout from '../components/layout'
 import FilterSection from '../components/filterSection'
 import { fetchAPI } from "../lib/api";
 import React, { useState, useReducer } from 'react';
-import { processJobs } from '../util/makePretty.js'
+import { processJobs } from '../util/makePretty.js';
+import GeneralModal from '../components/generalModal.js';
+
 
 // import t from '../locales/translator';
 import { translate } from '../util/translator.js';
@@ -15,7 +17,7 @@ import { translate } from '../util/translator.js';
 
 // import { getAllJobsData, getPosts } from '../lib/jobs'
 
-const siteTitle = "Biotech Jobs Germany | biovector.de | Biotechnology"
+// const siteTitle = "Biotech Jobs Germany | biovector.de | Biotechnology"
 
 const filterInitState = {
 	search: "",
@@ -75,16 +77,39 @@ const filterReducer = (state, { payload, actionType }) => {
 	}
 }
 
+let show = false;
+
 export default function Home({ listings, allCities, allStates }) {
 	const [filterState, filterDispatch] = useReducer(filterReducer, filterInitState);
 	const router = useRouter();
 	const { locale } = router; // is this equal to const locale = router.locale ? 
 	const lang = locale === 'en' ? 'en' : 'de'
 
+	console.log("number of posts: ", listings.length)
+
 	// console.log("allCities: ", allCities);
 	// console.log(filterState.search)
 	// console.log(filterState.city)
 	// console.log(listings)
+
+	function showMailingPopup() {
+		console.log("showMailingPopup")
+
+	}
+
+	const [isShown, setIsShown] = useState(false);
+
+	  const showModal = () => {
+	    // console.log("showModal called")
+	    setIsShown(true)
+	    plausible('newsletter-signup')
+	  }
+
+	  function closeModal () {
+	    // console.log(window.innerHeight)
+	    setIsShown(false)
+	    // console.log("closeModal called")
+	  }
 
   return (
 	<Layout bg="bg-gray-100" footer={true} navbarAbsolute={true}>
@@ -92,18 +117,79 @@ export default function Home({ listings, allCities, allStates }) {
 			<link rel="alternate" hreflang="en" href="https://biovector.de/"/>
 			<link rel="alternate" hreflang="de" href="https://biovector.de/de"/>
 			<link rel="alternate" hreflang="x-default" href="https://biovector.de/"/>
+{/*
+      <meta name="image" property='og:image' content="https://biovector.de/images/microscope.png" />
+      <meta property='og:title' content='Biovector | Biotech Jobs Germany | Biotechnology'/>
+			<meta property='og:description' content="The Biovector collects Germany's top vacancies for biotechnology, ranging from theses in startups over working student opportunities to consulting careers."/>
+			<meta property='og:url' content='https://biovector.de'/>
+*/}
 
-			<title>{siteTitle}</title>
+
+<title>Biovector | Biotech Jobs Germany | Biotechnology</title>
+<meta name="description" content="The Biovector collects Germany's top vacancies for biotechnology, ranging from theses in startups over working student opportunities to consulting careers." />
+
+
+<meta property="og:url" content="https://biovector.de/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Biovector | Biotech Jobs Germany | Biotechnology" />
+<meta property="og:description" content="The Biovector collects Germany's top vacancies for biotechnology, ranging from theses in startups over working student opportunities to consulting careers." />
+<meta property="og:image" content="https://biovector.de/images/microscope.png" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:domain" content="biovector.de" />
+<meta property="twitter:url" content="https://biovector.de/" />
+<meta name="twitter:title" content="Biovector | Biotech Jobs Germany | Biotechnology" />
+<meta name="twitter:description" content="The Biovector collects Germany's top vacancies for biotechnology, ranging from theses in startups over working student opportunities to consulting careers." />
+<meta name="twitter:image" content="https://biovector.de/images/microscope.png" />
+
+      
+
+			<title>{translate("sitetitle", lang)}</title>
 			<meta name="description" content={translate("pageMetaTitle", lang)} />
 		</Head>
-
+		<GeneralModal closeFunc={closeModal} isShown={isShown} />
 		<div className="bannerHomePage">
 			<div className="mx-auto max-screen-lg md:w-11/12 py-32">
 				<h1 className="text-5xl md:text-3xl font-semibold inline-block p-2" style={{ background: 'rgba(255,255,255,.9)' }}>{translate("tagline", lang)}</h1>
 			</div>
 		</div>
-
-		<section className="jobsAndFilter lg:w-11/12 max-screen-lg mx-auto mt-16">
+		<section className="md:hidden sm:hidden newsletter lg:w-11/12 max-screen-lg mx-auto mt-4">
+			<div className="flex justify-around">
+				<div className="w-11/12 mr-4" onClick={() => plausible('facebook-click')}>
+					<a href="https://www.facebook.com/biovectorJobs" target="_blank">
+						<button
+						className="justify-center items-center flex w-full bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-xl">
+							<img src="/images/icons/facebook.png" className="h-6 mr-4" />Get your dream job right to your Facebook feed!
+						</button>
+					</a>
+				</div>
+				<div className="w-11/12" onClick={() => plausible('twitter-click')}>
+					<a href="https://twitter.com/biovector_jobs" target="_blank">
+						<button
+						className="justify-center items-center flex w-full bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-xl">
+							<img src="/images/icons/twitter.png" className="h-6 mr-4" />Get your dream job right to your Twitter feed!
+						</button>
+					</a>
+				</div>
+			</div>
+			<div className="mt-4">
+				<Link href="https://heyflow.id/biovector-job-listing#start">
+					<a target="_blank">
+						<button className="flex w-full justify-center bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-2xl font-bold">{translate("postnow", lang)}</button>
+					</a>
+				</Link>
+			</div>
+		{/*
+			<div>
+				<button
+				onClick={showModal}
+				className="justify-center items-center flex w-full bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-xl">
+					<img src="/images/icons/bell.svg" className="w-7 mr-4" />Click here to receive the job posts to your inbox!
+				</button>
+			</div>
+		*/}
+		</section>
+		<section className="jobsAndFilter lg:w-11/12 max-screen-lg mx-auto mt-4">
 			<div className="w-full" style={{ color:'#666' }}>
 				<FilterSection allCities={allCities} allStates={allStates} filterState={filterState} filterDispatch={filterDispatch} />
 			</div>
@@ -125,7 +211,7 @@ export default function Home({ listings, allCities, allStates }) {
 export async function getStaticProps() {
   // Run API calls in parallel
   const listingsAsArray = await Promise.all([
-    fetchAPI("/jobs?_sort=publishedAt:DESC") // articles are now called listings
+    fetchAPI("/jobs?_limit=-1&_sort=publishedAt:DESC") // articles are now called listings
   ]);
 
   let listingsPre = listingsAsArray[0]
@@ -143,6 +229,9 @@ export async function getStaticProps() {
 
   return {
     props: { listings: listingsPost , allCities, allStates },
-    revalidate: 60,
+    // revalidate: 1,
   };
 }
+
+
+

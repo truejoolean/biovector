@@ -18,6 +18,7 @@ import { translate } from '../../util/translator'
 
 import { Document, Page, pdfjs } from 'react-pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
 // import { ReactElement } from 'react';
 // import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -33,12 +34,31 @@ export default function Post({ listing }) {
   // console.log(listing)
   // console.log("http://localhost:1337" + listing.pdfFile.url)
   // console.log("http://localhost:1337" + listing.image.formats.thumbnail.url)
+  let employmentType = "OTHER"; // preprocess for Google For Jobs
+  switch(listing.extra) {
+    case "fullVacancy":
+      employmentType = "FULL_TIME";
+      break;
+    case "internship":
+      employmentType = "INTERN";
+      break;
+    case "workingStudent":
+      employmentType = "PART_TIME";
+      break;
+    default:
+      break;
+  }
+
+  // console.log("listing.image.url", listing.image.url);
+
   const structuredData = {
     "@type": "JobPosting",
     "@context": "https://schema.org/",
     "title": listing.title,
     "description": listing.description,
     "datePosted": listing.publishedAt, // todo: check if correct format
+    "validThrough": listing.validUntil,
+    "employmentType": employmentType,
     "hiringOrganization": {
       "@type": "Organization",
       "name": listing.companyName,
@@ -67,6 +87,12 @@ export default function Post({ listing }) {
     setNumPages(numPages);
   }
 
+  function applyButtonClicked() {
+    console.log("listing: ", listing)
+    console.log('applyButtonClicked for plausible')
+    plausible('apply-button-click', {props: {title: listing.title + " " + listing.companyName, company: listing.companyName }})
+  }
+
   const [isShown, setIsShown] = useState(false);
 
   const showModal = () => {
@@ -80,6 +106,7 @@ export default function Post({ listing }) {
     // console.log("closeModal called")
   }
   // console.log("SLUG: ", listing.slug);
+  console.log("listing.image: " + listing.image.url);
   return (
     <Layout footer={false} navbarAbsolute={false}>
       <Head>
@@ -89,9 +116,21 @@ export default function Post({ listing }) {
         <link rel="alternate" hreflang="x-default" href={"https://biovector.de/jobs/" + listing.slug}/>
 
 
-        <title>{listing.title} | Biotech Jobs Germany</title>
+        <title>{listing.title}</title>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}/>
         <meta name="description" content={listing.description} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@biovector_jobs" />
+        <meta name="twitter:title" content={listing.title} />
+        <meta name="twitter:description" content={listing.description} />
+        <meta name="twitter:image" content={"https://api.biovector.de" + listing.image.url} />
+
+        <meta property="og:title" content={listing.title} />
+        <meta property="og:image" content={"https://api.biovector.de" + listing.image.url} />
+        <meta property="og:description" content={listing.description} />
+        <meta property="og:url" content={"https://biovector.de/listing/jobs" + listing.slug} />
+        
+
       </Head>
       <Modal job={true} closeFunc={closeModal} isShown={isShown} instructions={listing.applicationInstructions}/>
       <section className="max-screen-lg flex mx-auto md:mt-4">
@@ -126,16 +165,16 @@ export default function Post({ listing }) {
           </Document>
           <hr /><hr className="mt-2" />
         </div>)
-          : <section className="max-screen-md mx-auto text-gray-800 md:w-11/12"><ReactMarkdown source={listing.content} escapeHtml={false} className="markdown text-gray-800"/></section>
+          : <section className="max-screen-md mx-auto text-gray-800 md:w-11/12"><ReactMarkdown style={{ color:'#666' }} source={listing.content} escapeHtml={false} className="markdown text-gray-800"/></section>
         }
 
         <section className="max-screen-md mx-auto text-gray-800">
         <div className="flex mt-6 sm:block">
           <div className="w-1/2 border-l-4 pl-4">
             <h2 className="text-2xl">{translate("contact", lang)}</h2>
-            {listing.firstName} {listing.lastName}<br />
-            {listing.telephoneNumber}<br />
-            {listing.mail}<br />
+            {/*{listing.firstName} {listing.lastName}*/}
+            {/*<br />{listing.telephoneNumber}*/}
+            <br />{listing.mail}<br />
           </div>
           <div className="w-1/2 border-l-4 pl-4">
             <h2 className="text-2xl">{translate("location", lang)}</h2>
@@ -150,7 +189,7 @@ export default function Post({ listing }) {
 
         <div>
         <div className="fixed left-0 bottom-0 w-full h-20 border-t-2 bg-white">
-          <div className="flex justify-end">
+          <div className="flex justify-end" onClick={applyButtonClicked}>
           {
           listing.redirectForApplication ?
               <Link href={listing.redirectTo}><a target="_blank" /*rel="noopener noreferrer"*/><button
@@ -172,7 +211,7 @@ export default function Post({ listing }) {
 
 
 export async function getStaticPaths() {
-  const jobs = await fetchAPI("/jobs");
+  const jobs = await fetchAPI("/jobs?_limit=-1");
   let paths = [];
 
   for (let i = 0; i < jobs.length; i++) {
@@ -182,7 +221,8 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false
+    fallback: false,
+    // revalidate: 10
   }
 /*
   return {
@@ -205,6 +245,6 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { listing },
-    revalidate: 1,
+    revalidate: 10,
   };
 }

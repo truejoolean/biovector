@@ -17,7 +17,7 @@ export const prettify = (s) => {
 
 export const processJobs = (allListings) => {
 	for (let i = 0; i < allListings.length; i++) {
-		console.log(allListings[i])
+		// console.log(allListings[i])
 		allListings[i].companyName = allListings[i].company.name;
 		allListings[i].companyState = allListings[i].company.state;
 		allListings[i].companyCity = allListings[i].company.city;
@@ -25,7 +25,7 @@ export const processJobs = (allListings) => {
 		allListings[i].companyPostalCode = allListings[i].company.postalCode;
 		allListings[i].image = allListings[i].company.logo;
 	}
-	console.log(allListings)
+	// console.log(allListings)
 	return allListings;
 }
 

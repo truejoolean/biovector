@@ -24,14 +24,14 @@ export default function FindTalent() {
 	const [isShown, setIsShown] = useState(false);
 
 	const showModal = () => {
-		console.log("showModal called")
+		// console.log("showModal called")
 		setIsShown(true)
 	}
 
 	function closeModal () {
-		console.log(window.innerHeight)
+		// console.log(window.innerHeight)
 		setIsShown(false)
-		console.log("closeModal called")
+		// console.log("closeModal called")
 	}
 
 	return (
@@ -45,6 +45,24 @@ export default function FindTalent() {
 			<title>{siteTitle}</title>
 			<meta name="description" content={translate("findtalentmetatitle", lang)} />
 		</Head>
+		<script src="https://storage.googleapis.com/niro-eu-static/widget/v1-2-3/index.min.js"></script><niroflow-modal niroflow-id="biovector-job-listing" width="800px" pass-parameters="true" dynamic-height="true"></niroflow-modal>
+
+
+	{/*
+		<script type="text/plain"
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_MEASUREMENT_ID}', {
+                  page_path: window.location.pathname,
+                });
+              `,
+            }}
+          />
+	*/}
 		<Modal closeFunc={closeModal} isShown={isShown} instructions="aa"/>
 		<section>
 			<div className="bannerFindTalent">
@@ -93,8 +111,20 @@ export default function FindTalent() {
 			</div>
 		</section>
 		<section className="mt-8" style={{backgroundColor: '#FFE01A'}}>
-			<h3 className="max-screen-md mx-auto text-bold text-4xl md:text-2xl text-center py-8 px-4 flex items-center justify-center">{translate("studentacademiafree", lang)}</h3>
+			<h3 className="max-screen-md mx-auto text-bold text-4xl md:text-2xl text-center py-8 px-4 flex items-center justify-center">{translate("completelyfree", lang)}</h3>
 		</section>
+		<div className="max-screen-md mx-auto mt-4">
+			{/*<a href="#niroflow-biovector-job-listing"><button className="flex w-full justify-center bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-2xl font-bold">{translate("postnow", lang)}</button></a>*/}
+			{/*<button onClick={showModal} className="flex w-full justify-center bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-2xl font-bold">{translate("postnow", lang)}</button>*/}
+			<Link href="https://heyflow.id/biovector-job-listing#start">
+				<a target="_blank">
+					<button className="flex w-full justify-center bg-blue-700 text-white rounded-lg px-4 py-4 md:py-2 md:text-xs text-2xl font-bold">{translate("postnow", lang)}</button>
+				</a>
+			</Link>
+		{/*<div className="mt-8"><script src="https://storage.googleapis.com/niro-eu-static/widget/v1-2-3/index.min.js"></script><niroflow niroflow-id="biovector-job-listing" width="800px" pass-parameters="true" dynamic-height="true"></niroflow></div>*/}
+
+		</div>
+	{/*
 		<section className="mt-16 max-screen-lg mx-auto">
 			<h2 className="text-4xl text-center font-semibold">{translate("featuresandpricing", lang)}</h2>
 			<table className="mt-4 w-full">
@@ -135,6 +165,7 @@ export default function FindTalent() {
 				</tr>
 			</table>
 		</section>
+	*/}
 
 		
 	</Layout>

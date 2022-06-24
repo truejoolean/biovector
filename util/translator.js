@@ -1,13 +1,17 @@
 export const translate = (s, lang) => {
 	s = s.toLowerCase();
 	let map = {
+		sitetitle: {
+			en: "Biotech Jobs Germany | biovector.de | Biotechnology vacancies",
+			de: "Biotechnologie Jobs Deutschland | biovector.de | Stellenbörse"
+		},
 		pagemetatitle: {
-			en: "Visit the Biovector for Germany's top biotechnology jobs and vacancies. Easily search and filter vacancies based on your skillset!",
-			de: "Finde Deutschlands Top Auswahl für Biotechnologie Jobs und Stellenanzeigen, übersichtlich und auf Deine Bedürfnisse angepasst."
+			en: "Visit the Biovector to find Germany's top biotechnology jobs and vacancies. Easily filter jobs for students, bachelors, masters and postgraduates.",
+			de: "Finde Deutschlands Top Biotechnologie Jobs und Stellenangebote, übersichtlich und auf Deine Bedürfnisse angepasst."
 		},
 		tagline: {
-			en: "Find Germany's most exciting jobs in biotechnology!",
-			de: "Finde Deutschlands top Jobs der Biotechnologie!"
+			en: "Find Germany's most exciting jobs in biotechnology and life sciences!",
+			de: "Finde Deutschlands top Jobs der Biotechnologie und Life Sciences!"
 		},
 
 		// FilterSection...
@@ -19,6 +23,7 @@ export const translate = (s, lang) => {
 			en: "or",
 			de: "oder"
 		},
+		
 		anystate: {
 			en: "Any state...",
 			de: "Jedes Bundesland..."
@@ -98,8 +103,8 @@ export const translate = (s, lang) => {
 			de: "Die Erfahrung, die unser Team in der Biotechnologie Branche sammeln durfte, erlaubt uns die gezielte Ausrichtung auf diesen speziellen Arbeitsmarkt."
 		},
 		fairpricingtitle: {
-			en: "Fair pricing",
-			de: "Faire Preise"
+			en: "Free",
+			de: "Kostenlos"
 		},
 		fairpricingdescription: {
 			en: "We want you to invest into amazing talents, not recruiters.",
@@ -117,9 +122,17 @@ export const translate = (s, lang) => {
 			en: "We consider it integral to our mission to feature listings for student academia for free.",
 			de: "Wir betrachten es als zentral zu unserer Mission, Anzeigen für studentische Academia kostenlos anzubieten."
 		},
+		completelyfree: {
+			en: "Pricing? The biovector is completely free. There are no liabilities attached to posting whatsoever.",
+			de: "Preise? Der biovector ist komplett kostenlos. Es sind keine Verpflichtungen mit einem Post auf dem biovector verbunden."
+		},
 		featuresandpricing: {
 			en: "Features & Pricing",
 			de: "Features und Preise"
+		},
+		postnow: {
+			en: "Click here to post a job for free in less than three minutes!",
+			de: "Jetzt kostenlos posten!"
 		},
 		price: {
 			en: "Price",

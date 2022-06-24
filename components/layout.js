@@ -1,6 +1,6 @@
 import NavigationBar from './navigationBar'
 import Footer from './footer'
-import CookieConsent from "react-cookie-consent";
+// import CookieConsent from "react-cookie-consent";
 
 
 export default function Layout({ children, bg, footer, navbarAbsolute }) {
@@ -11,7 +11,6 @@ export default function Layout({ children, bg, footer, navbarAbsolute }) {
 			{footer
 				? <Footer />
 				: <div/>}
-			<CookieConsent>The Biovector uses cookies to enhance your user experience.</CookieConsent>
 		</div>
 	)
 }
