@@ -1,19 +1,17 @@
-import Document, {
-  Html, Head, Main, NextScript,
-} from 'next/document';
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
-  }
+    static async getInitialProps(ctx) {
+        const initialProps = await Document.getInitialProps(ctx);
+        return { ...initialProps };
+    }
 
-  render() {
-    const GA_MEASUREMENT_ID = 'G-Q61QL9P521'; // Paste your GTAG here
-    return (
-      <Html lang="en">
-        <Head>
-        {/*
+    render() {
+        const GA_MEASUREMENT_ID = "G-XYZXYZ"; // Paste your GTAG here
+        return (
+            <Html lang='en'>
+                <Head>
+                    {/*
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
@@ -37,20 +35,24 @@ class MyDocument extends Document {
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-55MR6K4');`}} />
                   */}
-          <script async defer data-domain="biovector.de" src="https://plausible.io/js/plausible.js"></script>
-          <script async defer data-domain="<yourdomain.com>" src="https://plausible.io/js/plausible.js"></script>
+                    <script async defer data-domain='biovector.de' src='https://plausible.io/js/plausible.js'></script>
+                    <script async defer data-domain='<yourdomain.com>' src='https://plausible.io/js/plausible.js'></script>
 
-          <script dangerouslySetInnerHTML={{__html: `window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }`}}></script>
-        </Head>
-        <body>
-        {/*}
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }`,
+                        }}
+                    ></script>
+                </Head>
+                <body>
+                    {/*}
           <Main />
           <NextScript />
         */}
-        </body>
-      </Html>
-    );
-  }
+                </body>
+            </Html>
+        );
+    }
 }
 
 export default MyDocument;
